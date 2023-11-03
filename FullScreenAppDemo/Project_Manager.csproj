@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAE01541-BC61-44C5-93A0-CC64731CE3EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FullScreenAppDemo</RootNamespace>
+    <AssemblyName>FullScreenAppDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\ProjectDAO.cs" />
+    <Compile Include="DAO\TeamDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DBConnection.cs" />
+    <Compile Include="DTO\Project.cs" />
+    <Compile Include="DTO\Team.cs" />
+    <Compile Include="DTO\User.cs" />
+    <Compile Include="DTO\UserSession.cs" />
+    <Compile Include="View\FormAddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddProject.Designer.cs">
+      <DependentUpon>FormAddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddTask.Designer.cs">
+      <DependentUpon>FormAddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAddTaskFromProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddTaskFromProject.Designer.cs">
+      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAddRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddRequest.Designer.cs">
+      <DependentUpon>FormAddRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAlert.Designer.cs">
+      <DependentUpon>FormAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCalculateSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCalculateSalary.Designer.cs">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCompanyInfo.Designer.cs">
+      <DependentUpon>FormCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateProject.Designer.cs">
+      <DependentUpon>FormViewOrUpdateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateTask.Designer.cs">
+      <DependentUpon>FormViewOrUpdateTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.cs">
+      <SubType>Form</SubType>
+      <CustomToolNamespace>FullScreenAppDemo</CustomToolNamespace>
+    </Compile>
+    <Compile Include="View\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCHome.Designer.cs">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCLeaveRequest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCLeaveRequest.Designer.cs">
+      <DependentUpon>UCLeaveRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCProjects.Designer.cs">
+      <DependentUpon>UCProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCSalary.Designer.cs">
+      <DependentUpon>UCSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCTask.Designer.cs">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCTeam.Designer.cs">
+      <DependentUpon>UCTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCTimeKeeping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCTimeKeeping.Designer.cs">
+      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCUpdateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCUpdateInfo.Designer.cs">
+      <DependentUpon>UCUpdateInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UCUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UC\UCUser.Designer.cs">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\FormAddProject.resx">
+      <DependentUpon>FormAddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddTask.resx">
+      <DependentUpon>FormAddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddTaskFromProject.resx">
+      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddRequest.resx">
+      <DependentUpon>FormAddRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAlert.resx">
+      <DependentUpon>FormAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCalculateSalary.resx">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCompanyInfo.resx">
+      <DependentUpon>FormCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormViewOrUpdateProject.resx">
+      <DependentUpon>FormViewOrUpdateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormViewOrUpdateTask.resx">
+      <DependentUpon>FormViewOrUpdateTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCHome.resx">
+      <DependentUpon>UCHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCLeaveRequest.resx">
+      <DependentUpon>UCLeaveRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCProjects.resx">
+      <DependentUpon>UCProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCSalary.resx">
+      <DependentUpon>UCSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCTask.resx">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCTeam.resx">
+      <DependentUpon>UCTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCTimeKeeping.resx">
+      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCUpdateInfo.resx">
+      <DependentUpon>UCUpdateInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UC\UCUser.resx">
+      <DependentUpon>UCUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+    <None Include="Resources\icons8-chevron-left-50 %281%291.png" />
+    <None Include="Resources\icons8-chevron-left-50 %281%292.png" />
+    <None Include="Resources\icons8-chevron-left-501.png" />
+    <Content Include="Resources\O9FG400.jpg" />
+    <Content Include="Resources\O9FG4001.jpg" />
+    <Content Include="Resources\plus.png" />
+    <None Include="Resources\plus1.png" />
+    <Content Include="Resources\printer.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\success.png" />
+    <Content Include="Resources\trash.png" />
+    <None Include="Resources\trash1.png" />
+    <Content Include="Resources\user-circle %281%29.png" />
+    <Content Include="Resources\user-circle.png" />
+    <Content Include="Resources\warning.png" />
+    <Content Include="Resources\x.png" />
+    <Content Include="Resources\x1.png" />
+    <None Include="Resources\team2.jfif" />
+    <None Include="Resources\request.jfif" />
+    <None Include="Resources\salary.jfif" />
+    <None Include="Resources\team.jpg" />
+    <None Include="Resources\icons8-user-24 %281%29.png" />
+    <Content Include="Resources\10673808141645017009-48.png" />
+    <Content Include="Resources\10673808141645017009-481.png" />
+    <Content Include="Resources\10673808141645017009-482.png" />
+    <Content Include="Resources\132352648716276482833764-128 %281%29.png" />
+    <Content Include="Resources\15009037641673701313-64.png" />
+    <Content Include="Resources\21367537321540882611-48.png" />
+    <Content Include="Resources\8011.jpg" />
+    <Content Include="Resources\8437872081540882603-48.png" />
+    <Content Include="Resources\8ed02249fe4fdf66fbb1ebfe4211bf63.jpg" />
+    <Content Include="Resources\arrow-back-up.png" />
+    <Content Include="Resources\avatar.jpg" />
+    <Content Include="Resources\bell-filled.png" />
+    <Content Include="Resources\bg.jpg" />
+    <Content Include="Resources\bg3.jpg" />
+    <Content Include="Resources\brand-apple.png" />
+    <Content Include="Resources\brand-coinbase.png" />
+    <Content Include="Resources\caculate-salary.jpg" />
+    <Content Include="Resources\company-background.png" />
+    <Content Include="Resources\device-floppy.png" />
+    <Content Include="Resources\download.jpg" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\edit - Copy.png" />
+    <Content Include="Resources\edit.png" />
+    <Content Include="Resources\error.png" />
+    <Content Include="Resources\eye-filled.png" />
+    <Content Include="Resources\icons8-add-32.png" />
+    <Content Include="Resources\icons8-add-48.png" />
+    <Content Include="Resources\icons8-add-64.png" />
+    <Content Include="Resources\icons8-approved-48 %281%29 %28Custom%29.png" />
+    <Content Include="Resources\icons8-approved-48 %28Custom%29.png" />
+    <Content Include="Resources\icons8-available-updates-24.png" />
+    <Content Include="Resources\icons8-bell-50.png" />
+    <Content Include="Resources\icons8-calculate-50.png" />
+    <Content Include="Resources\icons8-cancel-48.png" />
+    <Content Include="Resources\icons8-cancel-67.png" />
+    <Content Include="Resources\icons8-chevron-left-50 %281%29.png" />
+    <Content Include="Resources\icons8-chevron-left-50.png" />
+    <Content Include="Resources\icons8-chevron-left-80 %281%29.png" />
+    <Content Include="Resources\icons8-chevron-left-80.png" />
+    <Content Include="Resources\icons8-eye-25.png" />
+    <Content Include="Resources\icons8-home-48 %281%29.png" />
+    <Content Include="Resources\icons8-home-48 %282%29.png" />
+    <Content Include="Resources\icons8-home-48.png" />
+    <Content Include="Resources\icons8-kpi-32.png" />
+    <Content Include="Resources\icons8-logout-rounded-100.png" />
+    <Content Include="Resources\icons8-money-yours-24.png" />
+    <Content Include="Resources\icons8-pencil-32.png" />
+    <Content Include="Resources\icons8-project-50.png" />
+    <Content Include="Resources\icons8-project-501.png" />
+    <Content Include="Resources\icons8-receive-euro-50.png" />
+    <Content Include="Resources\icons8-refresh-32.png" />
+    <Content Include="Resources\icons8-rejected-48 %281%29.png" />
+    <Content Include="Resources\icons8-request-64.png" />
+    <Content Include="Resources\icons8-search-48.png" />
+    <Content Include="Resources\icons8-search-481.png" />
+    <Content Include="Resources\icons8-search-482.png" />
+    <Content Include="Resources\icons8-slice-100 %281%29.png" />
+    <Content Include="Resources\icons8-slice-100.png" />
+    <Content Include="Resources\icons8-tasklist-30.png" />
+    <Content Include="Resources\icons8-team-48.png" />
+    <Content Include="Resources\icons8-uninstalling-updates-32.png" />
+    <Content Include="Resources\icons8-user-24.png" />
+    <Content Include="Resources\icons8-user-48.png" />
+    <Content Include="Resources\icons8_cancel_25px.png" />
+    <Content Include="Resources\icons8_eye_25.png" />
+    <Content Include="Resources\info.png" />
+    <Content Include="Resources\Logo Project AM.png" />
+    <None Include="Resources\user1.jfif" />
+    <None Include="Resources\Mesa de trabajo 1 copia%404x1.png" />
+    <None Include="Resources\Logo Project AM1.png" />
+    <Content Include="Resources\Mesa de trabajo 1 copia%404x.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
