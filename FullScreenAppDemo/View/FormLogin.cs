@@ -64,7 +64,7 @@ namespace FullScreenAppDemo
 
                     UserSession.LoginUser(loginUser);
 
-                    FormMain main = new FormMain();
+                    FormAddRequest main = new FormAddRequest();
                     this.Hide();
                     main.ShowDialog();
                     
