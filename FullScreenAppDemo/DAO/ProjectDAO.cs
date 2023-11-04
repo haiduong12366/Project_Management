@@ -1,4 +1,4 @@
-﻿using FullScreenAppDemo.DTO;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,7 @@ namespace FullScreenAppDemo.DAO
 {
     internal class ProjectDAO
     {
+        company_management_Entities entity = new company_management_Entities();
         private static ProjectDAO instance;
         public static ProjectDAO Instance
         {
@@ -20,27 +21,36 @@ namespace FullScreenAppDemo.DAO
         private ProjectDAO() { }
 
 
-        public int AddProject(int idCreator, int idAssignee, string name, string description,
+        public void AddProject(int idCreator, int idAssignee, string name, string description,
             DateTime startDate, DateTime endDate, int progress, int idTeam, float bonus)
         {
-            string sql = "USP_AddProject @idCreator , @idAssignee , @name , @description , @startDate , @endDate , @progress , @idTeam , @bonus ";
+            project pj = new project();
+            pj.idCreator = idCreator;
+            pj.idAssignee = idAssignee;
+            pj.name = name;
+            pj.description = description;
+            pj.startDate = startDate;
+            pj.endDate = endDate;
+            pj.progress = progress;
+            pj.idTeam = idTeam;
+            pj.bonus = bonus;
             try
             {
-                int count = DBConnection.Instance.ExecuteNonQuery(sql, new object[] {idCreator, idAssignee,name, description,
-            startDate, endDate, progress, idTeam, bonus});
-                return count;
+                entity.projects.Add(pj);
+                entity.SaveChanges();
+                MessageBox.Show("Thêm thành công");
             }
-            catch { return 0; }
-           
-            }
-            public void LoadTeamToCombobox(ComboBox comboBox)
-            {
-                List<Team> list = TeamDAO.Instance.GetAllTeams();
+            catch { MessageBox.Show("Thêm thất bại"); }
 
-                comboBox.DataSource = list;
-                comboBox.DisplayMember = "name";
-                comboBox.ValueMember = "id";
-                comboBox.SelectedIndex = 0;
-            }
+        }
+        public void LoadTeamToCombobox(ComboBox comboBox)
+        {
+            List<team> list = entity.teams.ToList();
+
+            comboBox.DataSource = list;
+            comboBox.DisplayMember = "name";
+            comboBox.ValueMember = "id";
+            comboBox.SelectedIndex = 0;
         }
     }
+}

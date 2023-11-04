@@ -1,5 +1,4 @@
 ﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,22 +49,14 @@ namespace FullScreenAppDemo
             {
                 int idCreator = 1;
                 //int idCreator = UserSession.LoggedInUser.Id;
-                int IdAssignee = (cb_AssigneeTeam.SelectedItem as Team).IdLeader;
+                int IdAssignee = (int)(cb_AssigneeTeam.SelectedItem as team).idLeader;
                 string name = tb_projectName.Text;
                 string desc = tb_Desciption.Text;
                 int progress = 0;
-                int idteam = (cb_AssigneeTeam.SelectedItem as Team).Id;
+                int idteam = (cb_AssigneeTeam.SelectedItem as team).id;
                 float bonus = (float)Convert.ToInt32(tb_Bonus.Text);
-                int count = ProjectDAO.Instance.AddProject(idCreator, IdAssignee, name, desc, dt_startDate.Value, dt_endDate.Value, progress, idteam, bonus);
-                if (count > 0)
-                {
-                    MessageBox.Show("Thêm thành công");
-                    ClearFields();
-                }
-                else
-                {
-                    MessageBox.Show("Thêm thất bại");
-                }
+                ProjectDAO.Instance.AddProject(idCreator, IdAssignee, name, desc, dt_startDate.Value, dt_endDate.Value, progress, idteam, bonus);
+                ClearFields();
 
 
             }

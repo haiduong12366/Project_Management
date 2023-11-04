@@ -1,5 +1,4 @@
-﻿using FullScreenAppDemo.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,6 +9,7 @@ namespace FullScreenAppDemo.DAO
 {
     internal class TeamDAO
     {
+        company_management_Entities entity = new company_management_Entities();
         private static TeamDAO instance;
         public static TeamDAO Instance
         {
@@ -19,15 +19,8 @@ namespace FullScreenAppDemo.DAO
 
         private TeamDAO() { }
 
-        public List<Team> GetAllTeams() { 
-            List<Team> list = new List<Team>();
-            string sql = "select * from teams";
-            DataTable dt = DBConnection.Instance.ExecuteQuery(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-                Team team = new Team(row);
-                list.Add(team);
-            }
+        public List<team> GetAllTeams() { 
+            List<team> list = entity.teams.ToList<team>();
             return list;
         }
     }

@@ -77,15 +77,11 @@ D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\Project_Manag
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormAddProject.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormAddTask.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormAddTaskFromProject.resources
-D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormAlert.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormCalculateSalary.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormCompanyInfo.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormViewOrUpdateProject.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormViewOrUpdateTask.resources
-D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.Login.resources
-D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.Main.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.Properties.Resources.resources
-D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.User.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.View.UC.UCHome.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.View.UC.UCLeaveRequest.resources
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.View.UC.UCProjects.resources
@@ -101,3 +97,10 @@ D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\Project_Manag
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.exe
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.pdb
 D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormAddRequest.resources
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\bin\Debug\EntityFramework.dll
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\bin\Debug\EntityFramework.SqlServer.dll
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\bin\Debug\EntityFramework.xml
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\bin\Debug\EntityFramework.SqlServer.xml
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormMain.resources
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormLogin.resources
+D:\dh\nam3\hk1\winform\Project_Manager\FullScreenAppDemo\obj\Debug\FullScreenAppDemo.FormUser.resources

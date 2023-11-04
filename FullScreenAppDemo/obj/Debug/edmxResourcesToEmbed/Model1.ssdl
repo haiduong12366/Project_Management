@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="company_managementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="checkin_checkout">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="checkinTime" Type="datetime2" Precision="0" Nullable="false" />
+    <Property Name="checkoutTime" Type="datetime2" Precision="0" />
+    <Property Name="totalHours" Type="float" />
+    <Property Name="date" Type="datetime2" Precision="0" />
+  </EntityType>
+  <EntityType Name="leaveRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" />
+    <Property Name="requestDate" Type="datetime" />
+    <Property Name="startDate" Type="datetime" />
+    <Property Name="endDate" Type="datetime" />
+    <Property Name="numberDay" Type="int" />
+    <Property Name="content" Type="nvarchar" MaxLength="1000" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="idApprover" Type="int" />
+  </EntityType>
+  <EntityType Name="position">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCreator" Type="int" Nullable="false" />
+    <Property Name="idAssignee" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="startDate" Type="datetime" />
+    <Property Name="endDate" Type="datetime" />
+    <Property Name="progress" Type="int" />
+    <Property Name="idTeam" Type="int" />
+    <Property Name="bonus" Type="float" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="salary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" />
+    <Property Name="basicSalary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="totalHours" Type="float" />
+    <Property Name="overtimeHours" Type="float" />
+    <Property Name="leaveHours" Type="float" />
+    <Property Name="bonus" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="allowance" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="tax" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="insurance" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="finalSalary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="fromDate" Type="datetime" />
+    <Property Name="toDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="task">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCreator" Type="int" Nullable="false" />
+    <Property Name="idAssignee" Type="int" />
+    <Property Name="taskName" Type="nvarchar" MaxLength="100" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="deadline" Type="datetime" />
+    <Property Name="progress" Type="int" />
+    <Property Name="idTeam" Type="int" />
+    <Property Name="bonus" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="idProject" Type="int" />
+  </EntityType>
+  <EntityType Name="teams">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="idLeader" Type="int" />
+    <Property Name="avatar" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="user_salary">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="basicSalary" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="allowance" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="tax" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="insurance" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="user_team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" />
+    <Property Name="idTeam" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+    <Property Name="fullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="nvarchar" MaxLength="50" />
+    <Property Name="avatar" Type="varbinary(max)" />
+    <Property Name="idRole" Type="int" />
+    <Property Name="idPosition" Type="int" />
+  </EntityType>
+  <Association Name="FK_leaveRequest_Approver">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="leaveRequest" Type="Self.leaveRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="leaveRequest">
+        <PropertyRef Name="idApprover" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_leaveRequest_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="leaveRequest" Type="Self.leaveRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="leaveRequest">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_assignee">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="project" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="idAssignee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_creator">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="project" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="idCreator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_project_teams">
+    <End Role="teams" Type="Self.teams" Multiplicity="0..1" />
+    <End Role="project" Type="Self.project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teams">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project">
+        <PropertyRef Name="idTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_salary_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="salary" Type="Self.salary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="salary">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_task_project">
+    <End Role="project" Type="Self.project" Multiplicity="0..1" />
+    <End Role="task" Type="Self.task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task">
+        <PropertyRef Name="idProject" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tasks_assignee">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="task" Type="Self.task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task">
+        <PropertyRef Name="idAssignee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tasks_creator">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task" Type="Self.task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task">
+        <PropertyRef Name="idCreator" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tasks_teams">
+    <End Role="teams" Type="Self.teams" Multiplicity="0..1" />
+    <End Role="task" Type="Self.task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teams">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task">
+        <PropertyRef Name="idTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_teams_leader">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="teams" Type="Self.teams" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="teams">
+        <PropertyRef Name="idLeader" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_salary_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="user_salary" Type="Self.user_salary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_salary">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_team_member">
+    <End Role="teams" Type="Self.teams" Multiplicity="0..1" />
+    <End Role="user_team" Type="Self.user_team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teams">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_team">
+        <PropertyRef Name="idTeam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_user_team_users">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="user_team" Type="Self.user_team" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="user_team">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserCiCo">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="checkin_checkout" Type="Self.checkin_checkout" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="checkin_checkout">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_position">
+    <End Role="position" Type="Self.position" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="position">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="idPosition" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_role">
+    <End Role="role" Type="Self.role" Multiplicity="0..1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="USP_AddProject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idCreator" Type="int" Mode="In" />
+    <Parameter Name="idAssignee" Type="int" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="description" Type="nvarchar" Mode="In" />
+    <Parameter Name="startDate" Type="datetime" Mode="In" />
+    <Parameter Name="endDate" Type="datetime" Mode="In" />
+    <Parameter Name="progress" Type="int" Mode="In" />
+    <Parameter Name="idTeam" Type="int" Mode="In" />
+    <Parameter Name="bonus" Type="float" Mode="In" />
+  </Function>
+  <EntityContainer Name="company_managementModelStoreContainer">
+    <EntitySet Name="checkin_checkout" EntityType="Self.checkin_checkout" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="leaveRequest" EntityType="Self.leaveRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="position" EntityType="Self.position" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="salary" EntityType="Self.salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task" EntityType="Self.task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="teams" EntityType="Self.teams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_salary" EntityType="Self.user_salary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="user_team" EntityType="Self.user_team" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_leaveRequest_Approver" Association="Self.FK_leaveRequest_Approver">
+      <End Role="users" EntitySet="users" />
+      <End Role="leaveRequest" EntitySet="leaveRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_leaveRequest_users" Association="Self.FK_leaveRequest_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="leaveRequest" EntitySet="leaveRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_assignee" Association="Self.FK_project_assignee">
+      <End Role="users" EntitySet="users" />
+      <End Role="project" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_creator" Association="Self.FK_project_creator">
+      <End Role="users" EntitySet="users" />
+      <End Role="project" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_project_teams" Association="Self.FK_project_teams">
+      <End Role="teams" EntitySet="teams" />
+      <End Role="project" EntitySet="project" />
+    </AssociationSet>
+    <AssociationSet Name="FK_salary_users" Association="Self.FK_salary_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="salary" EntitySet="salary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_task_project" Association="Self.FK_task_project">
+      <End Role="project" EntitySet="project" />
+      <End Role="task" EntitySet="task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tasks_assignee" Association="Self.FK_tasks_assignee">
+      <End Role="users" EntitySet="users" />
+      <End Role="task" EntitySet="task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tasks_creator" Association="Self.FK_tasks_creator">
+      <End Role="users" EntitySet="users" />
+      <End Role="task" EntitySet="task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tasks_teams" Association="Self.FK_tasks_teams">
+      <End Role="teams" EntitySet="teams" />
+      <End Role="task" EntitySet="task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_teams_leader" Association="Self.FK_teams_leader">
+      <End Role="users" EntitySet="users" />
+      <End Role="teams" EntitySet="teams" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_salary_users" Association="Self.FK_user_salary_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_salary" EntitySet="user_salary" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_team_member" Association="Self.FK_user_team_member">
+      <End Role="teams" EntitySet="teams" />
+      <End Role="user_team" EntitySet="user_team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_user_team_users" Association="Self.FK_user_team_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="user_team" EntitySet="user_team" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserCiCo" Association="Self.FK_UserCiCo">
+      <End Role="users" EntitySet="users" />
+      <End Role="checkin_checkout" EntitySet="checkin_checkout" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_position" Association="Self.FK_users_position">
+      <End Role="position" EntitySet="position" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
+      <End Role="role" EntitySet="role" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

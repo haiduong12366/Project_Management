@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="company_managementModelStoreContainer" CdmEntityContainer="company_management_Entities">
+    <EntitySetMapping Name="checkin_checkout">
+      <EntityTypeMapping TypeName="company_managementModel.checkin_checkout">
+        <MappingFragment StoreEntitySet="checkin_checkout">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="checkinTime" ColumnName="checkinTime" />
+          <ScalarProperty Name="checkoutTime" ColumnName="checkoutTime" />
+          <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="leaveRequests">
+      <EntityTypeMapping TypeName="company_managementModel.leaveRequest">
+        <MappingFragment StoreEntitySet="leaveRequest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="requestDate" ColumnName="requestDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="numberDay" ColumnName="numberDay" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idApprover" ColumnName="idApprover" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="positions">
+      <EntityTypeMapping TypeName="company_managementModel.position">
+        <MappingFragment StoreEntitySet="position">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="company_managementModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCreator" ColumnName="idCreator" />
+          <ScalarProperty Name="idAssignee" ColumnName="idAssignee" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="progress" ColumnName="progress" />
+          <ScalarProperty Name="idTeam" ColumnName="idTeam" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="company_managementModel.role">
+        <MappingFragment StoreEntitySet="role">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="salaries">
+      <EntityTypeMapping TypeName="company_managementModel.salary">
+        <MappingFragment StoreEntitySet="salary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="basicSalary" ColumnName="basicSalary" />
+          <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+          <ScalarProperty Name="overtimeHours" ColumnName="overtimeHours" />
+          <ScalarProperty Name="leaveHours" ColumnName="leaveHours" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+          <ScalarProperty Name="allowance" ColumnName="allowance" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="insurance" ColumnName="insurance" />
+          <ScalarProperty Name="finalSalary" ColumnName="finalSalary" />
+          <ScalarProperty Name="fromDate" ColumnName="fromDate" />
+          <ScalarProperty Name="toDate" ColumnName="toDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tasks">
+      <EntityTypeMapping TypeName="company_managementModel.task">
+        <MappingFragment StoreEntitySet="task">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCreator" ColumnName="idCreator" />
+          <ScalarProperty Name="idAssignee" ColumnName="idAssignee" />
+          <ScalarProperty Name="taskName" ColumnName="taskName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="progress" ColumnName="progress" />
+          <ScalarProperty Name="idTeam" ColumnName="idTeam" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+          <ScalarProperty Name="idProject" ColumnName="idProject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="company_managementModel.team">
+        <MappingFragment StoreEntitySet="teams">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="idLeader" ColumnName="idLeader" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_salary">
+      <EntityTypeMapping TypeName="company_managementModel.user_salary">
+        <MappingFragment StoreEntitySet="user_salary">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="basicSalary" ColumnName="basicSalary" />
+          <ScalarProperty Name="allowance" ColumnName="allowance" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="insurance" ColumnName="insurance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_team">
+      <EntityTypeMapping TypeName="company_managementModel.user_team">
+        <MappingFragment StoreEntitySet="user_team">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idTeam" ColumnName="idTeam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="company_managementModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="idPosition" ColumnName="idPosition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_AddProject" FunctionName="company_managementModel.Store.USP_AddProject" />
+  </EntityContainerMapping>
+</Mapping>
