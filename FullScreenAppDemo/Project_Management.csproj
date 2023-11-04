@@ -168,23 +168,17 @@
     <Compile Include="View\FormAddRequest.Designer.cs">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormCalculateSalary.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormCalculateSalary.Designer.cs">
-      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormCompanyInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormCompanyInfo.Designer.cs">
-      <DependentUpon>FormCompanyInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormViewOrUpdateProject.cs">
       <SubType>Form</SubType>
@@ -276,14 +270,11 @@
     <EmbeddedResource Include="View\FormAddRequest.resx">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormCalculateSalary.resx">
-      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormCompanyInfo.resx">
-      <DependentUpon>FormCompanyInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormViewOrUpdateProject.resx">
       <DependentUpon>FormViewOrUpdateProject.cs</DependentUpon>
