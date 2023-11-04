@@ -310,7 +310,7 @@ namespace FullScreenAppDemo
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(108, 41);
             this.btnCancel.TabIndex = 116;
-            this.btnCancel.Text = "Tải lại";
+            this.btnCancel.Text = "Refresh";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
@@ -329,7 +329,7 @@ namespace FullScreenAppDemo
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 41);
             this.btnSave.TabIndex = 115;
-            this.btnSave.Text = "Lưu";
+            this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormAddTask

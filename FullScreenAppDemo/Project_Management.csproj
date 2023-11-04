@@ -150,6 +150,12 @@
     <Compile Include="user_team.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\FormAddTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddTeam.Designer.cs">
+      <DependentUpon>FormAddTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormAddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,11 +186,29 @@
     <Compile Include="View\FormForgotPassword.Designer.cs">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormUpdateTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormUpdateTeam.Designer.cs">
+      <DependentUpon>FormUpdateTeam.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormViewOrUpdateProject.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormViewOrUpdateProject.Designer.cs">
       <DependentUpon>FormViewOrUpdateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormViewOrUpdateRequest.Designer.cs">
+      <DependentUpon>FormViewOrUpdateRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormViewOrUpdateTask.cs">
       <SubType>Form</SubType>
@@ -201,11 +225,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormUser.cs">
+    <Compile Include="View\FormViewOrUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormUser.Designer.cs">
-      <DependentUpon>FormUser.cs</DependentUpon>
+    <Compile Include="View\FormViewOrUpdateUser.Designer.cs">
+      <DependentUpon>FormViewOrUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UC\UcHome.cs">
       <SubType>UserControl</SubType>
@@ -249,18 +273,15 @@
     <Compile Include="View\UC\UcTimeKeeping.Designer.cs">
       <DependentUpon>UcTimeKeeping.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UcUpdateCPInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="View\UC\UcUpdateCPInfo.Designer.cs">
-      <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\UC\UcUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\UC\UcUser.Designer.cs">
       <DependentUpon>UcUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormAddTeam.resx">
+      <DependentUpon>FormAddTeam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddProject.resx">
       <DependentUpon>FormAddProject.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,8 +297,17 @@
     <EmbeddedResource Include="View\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormUpdateTeam.resx">
+      <DependentUpon>FormUpdateTeam.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormViewOrUpdateProject.resx">
       <DependentUpon>FormViewOrUpdateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormViewOrUpdateRequest.resx">
+      <DependentUpon>FormViewOrUpdateRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormViewOrUpdateTask.resx">
       <DependentUpon>FormViewOrUpdateTask.cs</DependentUpon>
@@ -295,8 +325,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FormUser.resx">
-      <DependentUpon>FormUser.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormViewOrUpdateUser.resx">
+      <DependentUpon>FormViewOrUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UC\UcHome.resx">
       <DependentUpon>UcHome.cs</DependentUpon>
@@ -318,9 +348,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\UC\UcTimeKeeping.resx">
       <DependentUpon>UcTimeKeeping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UcUpdateCPInfo.resx">
-      <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UC\UcUser.resx">
       <DependentUpon>UcUser.cs</DependentUpon>

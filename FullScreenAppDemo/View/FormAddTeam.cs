@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo
+namespace FullScreenAppDemo.View
 {
-    public partial class FormUser : Form
+    public partial class FormAddTeam : Form
     {
-        public FormUser()
+        public FormAddTeam()
         {
             InitializeComponent();
         }

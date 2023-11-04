@@ -125,7 +125,7 @@ namespace company_management.View
             {
                 case 0:
 
-                    FormUser formUser = new FormUser();
+                    FormViewOrUpdateUser formUser = new FormViewOrUpdateUser();
                     formUser.ShowDialog();
                     break;
 

@@ -49,7 +49,7 @@ namespace FullScreenAppDemo
             // 
             this.dt_endDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_endDate.Location = new System.Drawing.Point(474, 179);
-            this.dt_endDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dt_endDate.Margin = new System.Windows.Forms.Padding(2);
             this.dt_endDate.Name = "dt_endDate";
             this.dt_endDate.Size = new System.Drawing.Size(254, 26);
             this.dt_endDate.TabIndex = 124;
@@ -73,7 +73,7 @@ namespace FullScreenAppDemo
             // 
             this.dt_startDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_startDate.Location = new System.Drawing.Point(474, 109);
-            this.dt_startDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dt_startDate.Margin = new System.Windows.Forms.Padding(2);
             this.dt_startDate.Name = "dt_startDate";
             this.dt_startDate.Size = new System.Drawing.Size(254, 26);
             this.dt_startDate.TabIndex = 122;
@@ -123,6 +123,7 @@ namespace FullScreenAppDemo
             this.tb_Bonus.ForeColor = System.Drawing.Color.Black;
             this.tb_Bonus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_Bonus.Location = new System.Drawing.Point(474, 249);
+            this.tb_Bonus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_Bonus.Name = "tb_Bonus";
             this.tb_Bonus.PasswordChar = '\0';
             this.tb_Bonus.PlaceholderText = "Exp: 200 $";
@@ -159,11 +160,11 @@ namespace FullScreenAppDemo
             this.btn_Cancel.ForeColor = System.Drawing.Color.Black;
             this.btn_Cancel.HoverState.FillColor = System.Drawing.Color.Red;
             this.btn_Cancel.Location = new System.Drawing.Point(34, 373);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(97, 41);
             this.btn_Cancel.TabIndex = 117;
-            this.btn_Cancel.Text = "Hủy";
+            this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Save
@@ -178,11 +179,11 @@ namespace FullScreenAppDemo
             this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btn_Save.ForeColor = System.Drawing.Color.White;
             this.btn_Save.Location = new System.Drawing.Point(170, 373);
-            this.btn_Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Save.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(95, 41);
             this.btn_Save.TabIndex = 116;
-            this.btn_Save.Text = "Lưu";
+            this.btn_Save.Text = "Save";
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // cb_AssigneeTeam
@@ -197,7 +198,7 @@ namespace FullScreenAppDemo
             this.cb_AssigneeTeam.ForeColor = System.Drawing.Color.Black;
             this.cb_AssigneeTeam.ItemHeight = 30;
             this.cb_AssigneeTeam.Location = new System.Drawing.Point(474, 41);
-            this.cb_AssigneeTeam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_AssigneeTeam.Margin = new System.Windows.Forms.Padding(2);
             this.cb_AssigneeTeam.Name = "cb_AssigneeTeam";
             this.cb_AssigneeTeam.Size = new System.Drawing.Size(254, 36);
             this.cb_AssigneeTeam.TabIndex = 115;
@@ -247,6 +248,7 @@ namespace FullScreenAppDemo
             this.tb_Desciption.ForeColor = System.Drawing.Color.Black;
             this.tb_Desciption.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_Desciption.Location = new System.Drawing.Point(34, 109);
+            this.tb_Desciption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_Desciption.Multiline = true;
             this.tb_Desciption.Name = "tb_Desciption";
             this.tb_Desciption.PasswordChar = '\0';
@@ -270,6 +272,7 @@ namespace FullScreenAppDemo
             this.tb_projectName.ForeColor = System.Drawing.Color.Black;
             this.tb_projectName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_projectName.Location = new System.Drawing.Point(34, 41);
+            this.tb_projectName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tb_projectName.Name = "tb_projectName";
             this.tb_projectName.PasswordChar = '\0';
             this.tb_projectName.PlaceholderText = "This is title";
@@ -296,7 +299,7 @@ namespace FullScreenAppDemo
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tb_Desciption);
             this.Controls.Add(this.tb_projectName);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddProject";
             this.Text = "FormAddProject";
             this.ResumeLayout(false);
