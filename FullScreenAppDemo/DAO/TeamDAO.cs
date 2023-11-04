@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FullScreenAppDemo.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +23,29 @@ namespace FullScreenAppDemo.DAO
         public List<team> GetAllTeams() { 
             List<team> list = entity.teams.ToList<team>();
             return list;
+        }
+
+        public List<team> GetTeamByLeader(int idteam)
+        {
+            var query = from item in entity.teams where item.id == idteam select item;
+            return query.ToList<team>();
+
+        }
+        public List<team> GetTeamByID()
+        {
+            List<team> teams = new List<team>();
+
+
+            if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+            {
+                teams = TeamDAO.instance.GetAllTeams();
+            }
+            else if (UserDAO.Instance.IsLeader())
+            {
+                teams = TeamDAO.instance.GetTeamByLeader(UserSession.LoggedInUser.id);
+            }
+
+            return teams;
         }
     }
 }

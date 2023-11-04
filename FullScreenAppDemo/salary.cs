@@ -16,15 +16,15 @@ namespace FullScreenAppDemo
     {
         public int id { get; set; }
         public Nullable<int> idUser { get; set; }
-        public Nullable<decimal> basicSalary { get; set; }
+        public Nullable<double> basicSalary { get; set; }
         public Nullable<double> totalHours { get; set; }
         public Nullable<double> overtimeHours { get; set; }
         public Nullable<double> leaveHours { get; set; }
-        public Nullable<decimal> bonus { get; set; }
-        public Nullable<decimal> allowance { get; set; }
-        public Nullable<decimal> tax { get; set; }
-        public Nullable<decimal> insurance { get; set; }
-        public Nullable<decimal> finalSalary { get; set; }
+        public Nullable<double> bonus { get; set; }
+        public Nullable<double> allowance { get; set; }
+        public Nullable<double> tax { get; set; }
+        public Nullable<double> insurance { get; set; }
+        public Nullable<double> finalSalary { get; set; }
         public Nullable<System.DateTime> fromDate { get; set; }
         public Nullable<System.DateTime> toDate { get; set; }
     

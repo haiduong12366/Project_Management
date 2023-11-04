@@ -61,6 +61,26 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Web.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Chart.Controls.4.7.2046\lib\net35\System.Windows.Forms.DataVisualization.Design.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -79,6 +99,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DAO\ProjectDAO.cs" />
+    <Compile Include="DAO\RequestDAO.cs" />
+    <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DAO\TeamDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DBConnection.cs" />
@@ -140,12 +162,6 @@
     <Compile Include="View\FormAddTask.Designer.cs">
       <DependentUpon>FormAddTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormAddTaskFromProject.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormAddTaskFromProject.Designer.cs">
-      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormAddRequest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,7 +183,7 @@
     <Compile Include="View\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormMain.designer.cs">
+    <Compile Include="View\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormViewOrUpdateProject.cs">
@@ -197,68 +213,65 @@
     <Compile Include="View\FormUser.Designer.cs">
       <DependentUpon>FormUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCHome.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UC\UCHome.Designer.cs">
-      <DependentUpon>UCHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UC\UCLeaveRequest.cs">
+    <Compile Include="View\UC\UcHome.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCLeaveRequest.Designer.cs">
-      <DependentUpon>UCLeaveRequest.cs</DependentUpon>
+    <Compile Include="View\UC\UcHome.Designer.cs">
+      <DependentUpon>UcHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCProjects.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcLeaveRequest.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCProjects.Designer.cs">
-      <DependentUpon>UCProjects.cs</DependentUpon>
+    <Compile Include="View\UC\UcLeaveRequest.Designer.cs">
+      <DependentUpon>UcLeaveRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCSalary.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcProject.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCSalary.Designer.cs">
-      <DependentUpon>UCSalary.cs</DependentUpon>
+    <Compile Include="View\UC\UcProject.Designer.cs">
+      <DependentUpon>UcProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCTask.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcSalary.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCTask.Designer.cs">
-      <DependentUpon>UCTask.cs</DependentUpon>
+    <Compile Include="View\UC\UcSalary.Designer.cs">
+      <DependentUpon>UcSalary.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCTeam.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcTask.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCTeam.Designer.cs">
-      <DependentUpon>UCTeam.cs</DependentUpon>
+    <Compile Include="View\UC\UcTask.Designer.cs">
+      <DependentUpon>UcTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCTimeKeeping.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcTeam.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCTimeKeeping.Designer.cs">
-      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    <Compile Include="View\UC\UcTeam.Designer.cs">
+      <DependentUpon>UcTeam.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCUpdateInfo.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcTimeKeeping.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCUpdateInfo.Designer.cs">
-      <DependentUpon>UCUpdateInfo.cs</DependentUpon>
+    <Compile Include="View\UC\UcTimeKeeping.Designer.cs">
+      <DependentUpon>UcTimeKeeping.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\UC\UCUser.cs">
-      <SubType>Form</SubType>
+    <Compile Include="View\UC\UcUpdateCPInfo.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\UC\UCUser.Designer.cs">
-      <DependentUpon>UCUser.cs</DependentUpon>
+    <Compile Include="View\UC\UcUpdateCPInfo.Designer.cs">
+      <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UC\UcUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UC\UcUser.Designer.cs">
+      <DependentUpon>UcUser.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\FormAddProject.resx">
       <DependentUpon>FormAddProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddTask.resx">
       <DependentUpon>FormAddTask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAddTaskFromProject.resx">
-      <DependentUpon>FormAddTaskFromProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddRequest.resx">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
@@ -294,32 +307,32 @@
     <EmbeddedResource Include="View\FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCHome.resx">
-      <DependentUpon>UCHome.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcHome.resx">
+      <DependentUpon>UcHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCLeaveRequest.resx">
-      <DependentUpon>UCLeaveRequest.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcLeaveRequest.resx">
+      <DependentUpon>UcLeaveRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCProjects.resx">
-      <DependentUpon>UCProjects.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcProject.resx">
+      <DependentUpon>UcProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCSalary.resx">
-      <DependentUpon>UCSalary.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcSalary.resx">
+      <DependentUpon>UcSalary.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCTask.resx">
-      <DependentUpon>UCTask.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcTask.resx">
+      <DependentUpon>UcTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCTeam.resx">
-      <DependentUpon>UCTeam.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcTeam.resx">
+      <DependentUpon>UcTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCTimeKeeping.resx">
-      <DependentUpon>UCTimeKeeping.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcTimeKeeping.resx">
+      <DependentUpon>UcTimeKeeping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCUpdateInfo.resx">
-      <DependentUpon>UCUpdateInfo.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcUpdateCPInfo.resx">
+      <DependentUpon>UcUpdateCPInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UC\UCUser.resx">
-      <DependentUpon>UCUser.cs</DependentUpon>
+    <EmbeddedResource Include="View\UC\UcUser.resx">
+      <DependentUpon>UcUser.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

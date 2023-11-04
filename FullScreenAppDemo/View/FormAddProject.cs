@@ -22,12 +22,18 @@ namespace FullScreenAppDemo
 
         void Load()
         {
-            LoadCB();
+            LoadTeamToCombobox(cb_AssigneeTeam);
         }
-        void LoadCB()
+        public void LoadTeamToCombobox(ComboBox comboBox)
         {
-            ProjectDAO.Instance.LoadTeamToCombobox(cb_AssigneeTeam);
+            List<team> list = TeamDAO.Instance.GetAllTeams();
+
+            comboBox.DataSource = list;
+            comboBox.DisplayMember = "name";
+            comboBox.ValueMember = "id";
+            comboBox.SelectedIndex = 0;
         }
+
         private void ClearFields()
         {
             tb_projectName.Clear();

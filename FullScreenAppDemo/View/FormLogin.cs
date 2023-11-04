@@ -1,4 +1,5 @@
 ﻿
+using company_management.View;
 using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using System;
@@ -65,7 +66,10 @@ namespace FullScreenAppDemo
 
                     FormMain main = new FormMain();
                     this.Hide();
-                    main.Show();
+                    main.ShowDialog();
+                    
+                    this.Show();
+                    
                 }
                 else
                 {

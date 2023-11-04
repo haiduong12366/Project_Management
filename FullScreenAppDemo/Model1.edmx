@@ -11,10 +11,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUser" Type="int" Nullable="false" />
-          <Property Name="checkinTime" Type="datetime2" Precision="0" Nullable="false" />
-          <Property Name="checkoutTime" Type="datetime2" Precision="0" />
+          <Property Name="checkinTime" Type="datetime" Nullable="false" />
+          <Property Name="checkoutTime" Type="datetime" />
           <Property Name="totalHours" Type="float" />
-          <Property Name="date" Type="datetime2" Precision="0" />
+          <Property Name="date" Type="datetime" />
         </EntityType>
         <EntityType Name="leaveRequest">
           <Key>
@@ -67,15 +67,15 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUser" Type="int" />
-          <Property Name="basicSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="basicSalary" Type="float" />
           <Property Name="totalHours" Type="float" />
           <Property Name="overtimeHours" Type="float" />
           <Property Name="leaveHours" Type="float" />
-          <Property Name="bonus" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="allowance" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="tax" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="insurance" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="finalSalary" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="bonus" Type="float" />
+          <Property Name="allowance" Type="float" />
+          <Property Name="tax" Type="float" />
+          <Property Name="insurance" Type="float" />
+          <Property Name="finalSalary" Type="float" />
           <Property Name="fromDate" Type="datetime" />
           <Property Name="toDate" Type="datetime" />
         </EntityType>
@@ -91,7 +91,7 @@
           <Property Name="deadline" Type="datetime" />
           <Property Name="progress" Type="int" />
           <Property Name="idTeam" Type="int" />
-          <Property Name="bonus" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="bonus" Type="float" />
           <Property Name="idProject" Type="int" />
         </EntityType>
         <EntityType Name="teams">
@@ -102,7 +102,7 @@
           <Property Name="name" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="nvarchar" MaxLength="1000" />
           <Property Name="idLeader" Type="int" />
-          <Property Name="avatar" Type="varbinary(max)" />
+          <Property Name="avatar" Type="image" />
         </EntityType>
         <EntityType Name="user_salary">
           <Key>
@@ -110,10 +110,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUser" Type="int" Nullable="false" />
-          <Property Name="basicSalary" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="allowance" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="tax" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="insurance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="basicSalary" Type="float" Nullable="false" />
+          <Property Name="allowance" Type="float" />
+          <Property Name="tax" Type="float" />
+          <Property Name="insurance" Type="float" />
         </EntityType>
         <EntityType Name="user_team">
           <Key>
@@ -134,7 +134,7 @@
           <Property Name="email" Type="nvarchar" MaxLength="50" />
           <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
           <Property Name="address" Type="nvarchar" MaxLength="50" />
-          <Property Name="avatar" Type="varbinary(max)" />
+          <Property Name="avatar" Type="image" />
           <Property Name="idRole" Type="int" />
           <Property Name="idPosition" Type="int" />
         </EntityType>
@@ -445,10 +445,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUser" Type="Int32" Nullable="false" />
-          <Property Name="checkinTime" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="checkoutTime" Type="DateTime" Precision="0" />
+          <Property Name="checkinTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="checkoutTime" Type="DateTime" Precision="3" />
           <Property Name="totalHours" Type="Double" />
-          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="user" Relationship="Self.FK_UserCiCo" FromRole="checkin_checkout" ToRole="users" />
         </EntityType>
         <EntityType Name="leaveRequest">
@@ -510,15 +510,15 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUser" Type="Int32" />
-          <Property Name="basicSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="basicSalary" Type="Double" />
           <Property Name="totalHours" Type="Double" />
           <Property Name="overtimeHours" Type="Double" />
           <Property Name="leaveHours" Type="Double" />
-          <Property Name="bonus" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="allowance" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="tax" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="insurance" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="finalSalary" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="bonus" Type="Double" />
+          <Property Name="allowance" Type="Double" />
+          <Property Name="tax" Type="Double" />
+          <Property Name="insurance" Type="Double" />
+          <Property Name="finalSalary" Type="Double" />
           <Property Name="fromDate" Type="DateTime" Precision="3" />
           <Property Name="toDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="user" Relationship="Self.FK_salary_users" FromRole="salary" ToRole="users" />
@@ -535,7 +535,7 @@
           <Property Name="deadline" Type="DateTime" Precision="3" />
           <Property Name="progress" Type="Int32" />
           <Property Name="idTeam" Type="Int32" />
-          <Property Name="bonus" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="bonus" Type="Double" />
           <Property Name="idProject" Type="Int32" />
           <NavigationProperty Name="project" Relationship="Self.FK_task_project" FromRole="task" ToRole="project" />
           <NavigationProperty Name="user" Relationship="Self.FK_tasks_assignee" FromRole="task" ToRole="users" />
@@ -562,10 +562,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUser" Type="Int32" Nullable="false" />
-          <Property Name="basicSalary" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="allowance" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="tax" Type="Decimal" Precision="10" Scale="2" />
-          <Property Name="insurance" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="basicSalary" Type="Double" Nullable="false" />
+          <Property Name="allowance" Type="Double" />
+          <Property Name="tax" Type="Double" />
+          <Property Name="insurance" Type="Double" />
           <NavigationProperty Name="user" Relationship="Self.FK_user_salary_users" FromRole="user_salary" ToRole="users" />
         </EntityType>
         <EntityType Name="user_team">

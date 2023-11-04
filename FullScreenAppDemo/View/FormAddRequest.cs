@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FullScreenAppDemo.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,37 @@ namespace FullScreenAppDemo
         public FormAddRequest()
         {
             InitializeComponent();
+            LoadTimeNow();
+        }
+
+        private void ClearFields()
+        {
+            txtbox_content.Clear();
+        }
+        private bool CheckDataInput()
+        {
+            if (string.IsNullOrEmpty(txtbox_content.Text))
+            {
+                MessageBox.Show("Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
+                return false;
+            }
+            return true;
+        }
+        private void LoadTimeNow()
+        {
+            datetime_startDate.Value = DateTime.Now.Date;
+            datetime_requestDate.Value = DateTime.Now.Date;
+            datetime_endDate.Value = DateTime.Now.AddDays(1);
+        }
+
+        private void button_apply_Click(object sender, EventArgs e)
+        {
+            if (CheckDataInput())
+            {
+                if(RequestDAO.Instance.AddRequest(datetime_startDate.Value, datetime_endDate.Value, datetime_requestDate.Value, txtbox_content.Text))
+                    ClearFields();
+            }
+            
         }
     }
 }

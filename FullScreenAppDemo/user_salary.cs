@@ -16,10 +16,10 @@ namespace FullScreenAppDemo
     {
         public int id { get; set; }
         public int idUser { get; set; }
-        public decimal basicSalary { get; set; }
-        public Nullable<decimal> allowance { get; set; }
-        public Nullable<decimal> tax { get; set; }
-        public Nullable<decimal> insurance { get; set; }
+        public double basicSalary { get; set; }
+        public Nullable<double> allowance { get; set; }
+        public Nullable<double> tax { get; set; }
+        public Nullable<double> insurance { get; set; }
     
         public virtual user user { get; set; }
     }

@@ -1,7 +1,10 @@
 ﻿
+using FullScreenAppDemo.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +23,10 @@ namespace FullScreenAppDemo.DAO
 
         private ProjectDAO() { }
 
-
+        public List<project> GetALlProject()
+        {
+            return entity.projects.ToList<project>();
+        }
         public void AddProject(int idCreator, int idAssignee, string name, string description,
             DateTime startDate, DateTime endDate, int progress, int idTeam, float bonus)
         {
@@ -43,14 +49,14 @@ namespace FullScreenAppDemo.DAO
             catch { MessageBox.Show("Thêm thất bại"); }
 
         }
-        public void LoadTeamToCombobox(ComboBox comboBox)
-        {
-            List<team> list = entity.teams.ToList();
 
-            comboBox.DataSource = list;
-            comboBox.DisplayMember = "name";
-            comboBox.ValueMember = "id";
-            comboBox.SelectedIndex = 0;
+        public List<project> GetProjectByTeam(int id)
+        {
+            var query = from item in entity.projects where item.idTeam == id select item;
+            return query.ToList<project>();
         }
+
+
+
     }
 }

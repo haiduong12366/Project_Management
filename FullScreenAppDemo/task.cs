@@ -22,7 +22,7 @@ namespace FullScreenAppDemo
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<int> progress { get; set; }
         public Nullable<int> idTeam { get; set; }
-        public Nullable<decimal> bonus { get; set; }
+        public Nullable<double> bonus { get; set; }
         public Nullable<int> idProject { get; set; }
     
         public virtual project project { get; set; }

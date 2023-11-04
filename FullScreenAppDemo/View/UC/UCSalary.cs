@@ -1,20 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo.View.UC
+// ReSharper disable All
+
+namespace company_management.View.UC
 {
-    public partial class UCSalary : Form
+    public partial class UcSalary : UserControl
     {
-        public UCSalary()
+
+
+        public UcSalary()
         {
             InitializeComponent();
+            
+        }
+
+
+
+
+
+
+
+
+
+        private void UCSalary_Load(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private void btn_caculateSalary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
