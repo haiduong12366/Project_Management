@@ -207,7 +207,7 @@
             // PbAvatar
             // 
             this.PbAvatar.FillColor = System.Drawing.Color.Transparent;
-            this.PbAvatar.Image = global::FullScreenAppDemo.Properties.Resources.team2;
+            this.PbAvatar.Image = global::Project_Management.Properties.Resources.team2;
             this.PbAvatar.ImageRotate = 0F;
             this.PbAvatar.Location = new System.Drawing.Point(546, 132);
             this.PbAvatar.Margin = new System.Windows.Forms.Padding(2);

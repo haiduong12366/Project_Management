@@ -197,7 +197,7 @@ namespace company_management.View
             // picturebox_writer
             // 
             this.picturebox_writer.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_writer.Image = global::FullScreenAppDemo.Properties.Resources.user1;
+            this.picturebox_writer.Image = global::Project_Management.Properties.Resources.user1;
             this.picturebox_writer.ImageRotate = 0F;
             this.picturebox_writer.Location = new System.Drawing.Point(17, 99);
             this.picturebox_writer.Name = "picturebox_writer";
@@ -223,7 +223,7 @@ namespace company_management.View
             // picturebox_approver
             // 
             this.picturebox_approver.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_approver.Image = global::FullScreenAppDemo.Properties.Resources.user1;
+            this.picturebox_approver.Image = global::Project_Management.Properties.Resources.user1;
             this.picturebox_approver.ImageRotate = 0F;
             this.picturebox_approver.Location = new System.Drawing.Point(17, 185);
             this.picturebox_approver.Name = "picturebox_approver";

@@ -1,6 +1,7 @@
 ﻿using company_management.View.UC;
 using FullScreenAppDemo;
 using FullScreenAppDemo.DTO;
+using FullScreenAppDemo.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace company_management.View
+namespace Project_Management.View
 {
     public partial class FormMain : Form
     {
@@ -27,8 +28,10 @@ namespace company_management.View
         private void AddUc(UserControl uc)
         {
             uc.Dock = DockStyle.Fill;
+
             pn_main.Controls.Clear();
             pn_main.Controls.Add(uc);
+
             uc.BringToFront();
         }
 
@@ -67,22 +70,6 @@ namespace company_management.View
             AddUc(userManagementUC);
         }
 
-
-        private void picboxProfile_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void combobox_profile_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pn_main_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         public void LoadUserControl()
         {
             this.lb_menu_active.Location = new Point(btnUser.Location.X, btnUser.Location.Y);
@@ -112,11 +99,7 @@ namespace company_management.View
             AddUc(uC_Project);
         }
 
-        private void Form_Main_Load(object sender, EventArgs e)
-        {
-            UcHome uCHome = new UcHome();
-            AddUc(uCHome);
-        }
+
 
         private void combobox_user_action_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -124,11 +107,9 @@ namespace company_management.View
             switch (selectedIndex)
             {
                 case 0:
-
-                    FormViewOrUpdateUser formUser = new FormViewOrUpdateUser();
-                    formUser.ShowDialog();
+                    FormViewProfile viewProfile = new FormViewProfile();
+                    viewProfile.ShowDialog();
                     break;
-
                 case 1:
                    
                     break;
@@ -136,10 +117,19 @@ namespace company_management.View
                    
                     break;
                 case 3:
+                    this.Hide();
+                    FormLogin login = new FormLogin();
+                    login.Show();
+                    
                     UserSession.LogoutUser();
-                    this.Close();
                     break;
             }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            UcHome uCHome = new UcHome();
+            AddUc(uCHome);
         }
     }
 }

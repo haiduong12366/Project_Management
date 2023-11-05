@@ -1,4 +1,5 @@
 ﻿using FullScreenAppDemo.DTO;
+using Project_Management;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,6 +47,13 @@ namespace FullScreenAppDemo.DAO
             }
 
             return teams;
+        }
+
+        public string idTeamToString(int id)
+        {
+            var team = from t in entity.teams where t.id == id select t.name;
+            string name = team.ToString();
+            return name;
         }
     }
 }

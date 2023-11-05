@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     using System;
     

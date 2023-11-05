@@ -6,12 +6,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BAE01541-BC61-44C5-93A0-CC64731CE3EF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FullScreenAppDemo</RootNamespace>
-    <AssemblyName>FullScreenAppDemo</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>Project_Management</RootNamespace>
+    <AssemblyName>Project_Management</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,8 +40,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -156,6 +157,12 @@
     <Compile Include="user_team.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormAddTeam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,23 +187,23 @@
     <Compile Include="View\FormAddRequest.Designer.cs">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormForgotPassword.Designer.cs">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormAddUser.cs">
+    <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormAddUser.Designer.cs">
-      <DependentUpon>FormAddUser.cs</DependentUpon>
+    <Compile Include="View\FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormUpdateTeam.cs">
       <SubType>Form</SubType>
@@ -222,20 +229,19 @@
     <Compile Include="View\FormViewOrUpdateTask.Designer.cs">
       <DependentUpon>FormViewOrUpdateTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormLogin.cs">
-      <SubType>Form</SubType>
-      <CustomToolNamespace>FullScreenAppDemo</CustomToolNamespace>
-    </Compile>
-    <Compile Include="View\FormLogin.designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormViewOrUpdateUser.cs">
+    <Compile Include="View\FormAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormViewOrUpdateUser.Designer.cs">
-      <DependentUpon>FormViewOrUpdateUser.cs</DependentUpon>
+    <Compile Include="View\FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormViewProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormViewProfile.Designer.cs">
+      <DependentUpon>FormViewProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UC\UcHome.cs">
       <SubType>UserControl</SubType>
@@ -285,6 +291,9 @@
     <Compile Include="View\UC\UcUser.Designer.cs">
       <DependentUpon>UcUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddTeam.resx">
       <DependentUpon>FormAddTeam.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,14 +306,14 @@
     <EmbeddedResource Include="View\FormAddRequest.resx">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAddUser.resx">
-      <DependentUpon>FormAddUser.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormUpdateTeam.resx">
       <DependentUpon>FormUpdateTeam.cs</DependentUpon>
@@ -318,9 +327,6 @@
     <EmbeddedResource Include="View\FormViewOrUpdateTask.resx">
       <DependentUpon>FormViewOrUpdateTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -331,8 +337,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\FormViewOrUpdateUser.resx">
-      <DependentUpon>FormViewOrUpdateUser.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormViewProfile.resx">
+      <DependentUpon>FormViewProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UC\UcHome.resx">
       <DependentUpon>UcHome.cs</DependentUpon>
