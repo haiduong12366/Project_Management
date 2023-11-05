@@ -260,6 +260,7 @@ namespace company_management.View.UC
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            //hello
             string keyword = txtSearch.Text;
 
             List<user> listUser = UserDAO.Instance.SearchUsers(keyword);
