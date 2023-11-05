@@ -29,49 +29,20 @@ namespace company_management.View.UC
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcTeam));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView_Team = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.txtbox_Desciption = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_teamName = new System.Windows.Forms.Label();
-            this.picturebox_teamAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,16 +55,18 @@ namespace company_management.View.UC
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label = new System.Windows.Forms.Label();
             this.label_todoTask = new System.Windows.Forms.Label();
+            this.picturebox_teamAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).BeginInit();
             this.panelFields.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelData
@@ -104,13 +77,11 @@ namespace company_management.View.UC
             this.panelData.BorderThickness = 1;
             this.panelData.Controls.Add(this.btnRefresh);
             this.panelData.Controls.Add(this.dataGridView_Team);
-            this.panelData.CustomizableEdges = customizableEdges3;
             this.panelData.FillColor = System.Drawing.Color.White;
             this.panelData.Location = new System.Drawing.Point(17, 314);
             this.panelData.Name = "panelData";
             this.panelData.ShadowDecoration.BorderRadius = 25;
             this.panelData.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelData.ShadowDecoration.CustomizableEdges = customizableEdges4;
             this.panelData.ShadowDecoration.Enabled = true;
             this.panelData.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelData.Size = new System.Drawing.Size(1258, 455);
@@ -119,7 +90,6 @@ namespace company_management.View.UC
             // btnRefresh
             // 
             this.btnRefresh.BorderRadius = 15;
-            this.btnRefresh.CustomizableEdges = customizableEdges1;
             this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -129,7 +99,6 @@ namespace company_management.View.UC
             this.btnRefresh.ForeColor = System.Drawing.Color.Black;
             this.btnRefresh.Location = new System.Drawing.Point(1117, 19);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.btnRefresh.Size = new System.Drawing.Size(122, 40);
             this.btnRefresh.TabIndex = 124;
             this.btnRefresh.Text = "Refresh";
@@ -204,7 +173,6 @@ namespace company_management.View.UC
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.BorderRadius = 10;
-            this.btnAdd.CustomizableEdges = customizableEdges5;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -216,37 +184,15 @@ namespace company_management.View.UC
             this.btnAdd.Location = new System.Drawing.Point(1039, 268);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAdd.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.btnAdd.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(10);
             this.btnAdd.Size = new System.Drawing.Size(139, 37);
             this.btnAdd.TabIndex = 115;
             this.btnAdd.Text = "New team";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.BorderRadius = 10;
-            this.btnEdit.CustomizableEdges = customizableEdges7;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
-            this.btnEdit.ImageSize = new System.Drawing.Size(24, 24);
-            this.btnEdit.Location = new System.Drawing.Point(1192, 271);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnEdit.Size = new System.Drawing.Size(36, 37);
-            this.btnEdit.TabIndex = 116;
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
             this.btnDelete.BorderRadius = 10;
-            this.btnDelete.CustomizableEdges = customizableEdges9;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -256,10 +202,10 @@ namespace company_management.View.UC
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDelete.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::Project_Management.Properties.Resources.trash;
             this.btnDelete.ImageSize = new System.Drawing.Size(24, 24);
             this.btnDelete.Location = new System.Drawing.Point(1234, 268);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.CustomizableEdges = customizableEdges10;
             this.btnDelete.Size = new System.Drawing.Size(41, 37);
             this.btnDelete.TabIndex = 117;
             // 
@@ -272,13 +218,11 @@ namespace company_management.View.UC
             this.panelFields.Controls.Add(this.txtbox_Desciption);
             this.panelFields.Controls.Add(this.label_teamName);
             this.panelFields.Controls.Add(this.picturebox_teamAvatar);
-            this.panelFields.CustomizableEdges = customizableEdges14;
             this.panelFields.FillColor = System.Drawing.Color.White;
             this.panelFields.Location = new System.Drawing.Point(17, 20);
             this.panelFields.Name = "panelFields";
             this.panelFields.ShadowDecoration.BorderRadius = 25;
             this.panelFields.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.panelFields.ShadowDecoration.CustomizableEdges = customizableEdges15;
             this.panelFields.ShadowDecoration.Enabled = true;
             this.panelFields.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.panelFields.Size = new System.Drawing.Size(557, 188);
@@ -289,7 +233,6 @@ namespace company_management.View.UC
             this.txtbox_Desciption.BorderColor = System.Drawing.Color.Black;
             this.txtbox_Desciption.BorderRadius = 5;
             this.txtbox_Desciption.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtbox_Desciption.CustomizableEdges = customizableEdges11;
             this.txtbox_Desciption.DefaultText = "";
             this.txtbox_Desciption.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtbox_Desciption.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -307,7 +250,6 @@ namespace company_management.View.UC
             this.txtbox_Desciption.PlaceholderText = "Mô tả nhóm";
             this.txtbox_Desciption.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtbox_Desciption.SelectedText = "";
-            this.txtbox_Desciption.ShadowDecoration.CustomizableEdges = customizableEdges12;
             this.txtbox_Desciption.Size = new System.Drawing.Size(384, 106);
             this.txtbox_Desciption.TabIndex = 198;
             // 
@@ -323,20 +265,6 @@ namespace company_management.View.UC
             this.label_teamName.Text = "Team";
             this.label_teamName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // picturebox_teamAvatar
-            // 
-            this.picturebox_teamAvatar.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_teamAvatar.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_teamAvatar.Image")));
-            this.picturebox_teamAvatar.ImageRotate = 0F;
-            this.picturebox_teamAvatar.Location = new System.Drawing.Point(20, 37);
-            this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
-            this.picturebox_teamAvatar.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picturebox_teamAvatar.Size = new System.Drawing.Size(120, 115);
-            this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_teamAvatar.TabIndex = 196;
-            this.picturebox_teamAvatar.TabStop = false;
-            // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
@@ -345,13 +273,11 @@ namespace company_management.View.UC
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.guna2GradientPanel3);
             this.guna2Panel2.Controls.Add(this.label5);
-            this.guna2Panel2.CustomizableEdges = customizableEdges18;
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(1079, 17);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges19;
             this.guna2Panel2.ShadowDecoration.Enabled = true;
             this.guna2Panel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel2.Size = new System.Drawing.Size(196, 191);
@@ -362,14 +288,12 @@ namespace company_management.View.UC
             this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel3.BorderRadius = 20;
             this.guna2GradientPanel3.Controls.Add(this.label4);
-            this.guna2GradientPanel3.CustomizableEdges = customizableEdges16;
             this.guna2GradientPanel3.FillColor = System.Drawing.Color.Olive;
             this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2GradientPanel3.Location = new System.Drawing.Point(0, 3);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
             this.guna2GradientPanel3.ShadowDecoration.BorderRadius = 25;
             this.guna2GradientPanel3.ShadowDecoration.Color = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges17;
             this.guna2GradientPanel3.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2GradientPanel3.Size = new System.Drawing.Size(194, 51);
@@ -406,13 +330,11 @@ namespace company_management.View.UC
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.CustomizableEdges = customizableEdges22;
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(844, 20);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges23;
             this.guna2Panel1.ShadowDecoration.Enabled = true;
             this.guna2Panel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel1.Size = new System.Drawing.Size(196, 188);
@@ -423,14 +345,12 @@ namespace company_management.View.UC
             this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel2.BorderRadius = 20;
             this.guna2GradientPanel2.Controls.Add(this.label2);
-            this.guna2GradientPanel2.CustomizableEdges = customizableEdges20;
             this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 3);
             this.guna2GradientPanel2.Name = "guna2GradientPanel2";
             this.guna2GradientPanel2.ShadowDecoration.BorderRadius = 25;
             this.guna2GradientPanel2.ShadowDecoration.Color = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges21;
             this.guna2GradientPanel2.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2GradientPanel2.Size = new System.Drawing.Size(194, 51);
@@ -468,13 +388,11 @@ namespace company_management.View.UC
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.guna2GradientPanel1);
             this.guna2Panel3.Controls.Add(this.label_todoTask);
-            this.guna2Panel3.CustomizableEdges = customizableEdges26;
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(612, 17);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.BorderRadius = 25;
             this.guna2Panel3.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges27;
             this.guna2Panel3.ShadowDecoration.Enabled = true;
             this.guna2Panel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2Panel3.Size = new System.Drawing.Size(196, 191);
@@ -485,14 +403,12 @@ namespace company_management.View.UC
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel1.BorderRadius = 20;
             this.guna2GradientPanel1.Controls.Add(this.label);
-            this.guna2GradientPanel1.CustomizableEdges = customizableEdges24;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.Yellow;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 3);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.BorderRadius = 25;
             this.guna2GradientPanel1.ShadowDecoration.Color = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges25;
             this.guna2GradientPanel1.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(7);
             this.guna2GradientPanel1.Size = new System.Drawing.Size(194, 51);
@@ -521,6 +437,38 @@ namespace company_management.View.UC
             this.label_todoTask.Text = "44";
             this.label_todoTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picturebox_teamAvatar
+            // 
+            this.picturebox_teamAvatar.FillColor = System.Drawing.Color.Transparent;
+            this.picturebox_teamAvatar.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_teamAvatar.Image")));
+            this.picturebox_teamAvatar.ImageRotate = 0F;
+            this.picturebox_teamAvatar.Location = new System.Drawing.Point(20, 37);
+            this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
+            this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picturebox_teamAvatar.Size = new System.Drawing.Size(120, 115);
+            this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_teamAvatar.TabIndex = 196;
+            this.picturebox_teamAvatar.TabStop = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BorderRadius = 10;
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
+            this.btnEdit.Image = global::Project_Management.Properties.Resources.plus;
+            this.btnEdit.ImageSize = new System.Drawing.Size(24, 24);
+            this.btnEdit.Location = new System.Drawing.Point(1192, 271);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(36, 37);
+            this.btnEdit.TabIndex = 116;
+            // 
             // UcTeam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -541,14 +489,15 @@ namespace company_management.View.UC
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).EndInit();
             this.panelFields.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         private Guna.UI2.WinForms.Guna2TextBox txtbox_Desciption;

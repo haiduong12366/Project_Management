@@ -1,5 +1,6 @@
 ﻿
 using FullScreenAppDemo.DTO;
+using Project_Management;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -13,6 +14,7 @@ namespace FullScreenAppDemo.DAO
 {
     internal class ProjectDAO
     {
+        
         company_management_Entities entity = new company_management_Entities();
         private static ProjectDAO instance;
         public static ProjectDAO Instance

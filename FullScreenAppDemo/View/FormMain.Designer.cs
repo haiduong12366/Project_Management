@@ -1,4 +1,4 @@
-﻿namespace company_management.View
+﻿namespace Project_Management.View
 {
     partial class FormMain
     {
@@ -395,7 +395,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
-            this.Load += new System.EventHandler(this.Form_Main_Load);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_avatar)).EndInit();

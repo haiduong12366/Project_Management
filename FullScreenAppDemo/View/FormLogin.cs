@@ -1,7 +1,8 @@
 ﻿
-using company_management.View;
 using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
+using Project_Management;
+using Project_Management.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,23 +53,16 @@ namespace FullScreenAppDemo
                 if (ValidateLogin(username, password))
                 {
                     user loginUser;
-
-                    // Lấy thông tin người dùng đăng nhập
-                    //loginUser = _userDao.GetUserByUsername("edalziell2"); // manager
-                    //loginUser = _userDao.GetUserByUsername("chhinhua"); // manager
-
-
-                    // Human Resources
                     loginUser = UserDAO.Instance.GetUserByUserName(username);
 
 
                     UserSession.LoginUser(loginUser);
 
-                    FormAddRequest main = new FormAddRequest();
+                    FormMain main = new FormMain();
                     this.Hide();
                     main.ShowDialog();
-                    
                     this.Show();
+
                     
                 }
                 else

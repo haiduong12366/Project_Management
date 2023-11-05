@@ -468,7 +468,7 @@ namespace FullScreenAppDemo
             // picturebox_teamAvatar
             // 
             this.picturebox_teamAvatar.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_teamAvatar.Image = global::FullScreenAppDemo.Properties.Resources.team;
+            this.picturebox_teamAvatar.Image = global::Project_Management.Properties.Resources.team;
             this.picturebox_teamAvatar.ImageRotate = 0F;
             this.picturebox_teamAvatar.Location = new System.Drawing.Point(460, 125);
             this.picturebox_teamAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -482,7 +482,7 @@ namespace FullScreenAppDemo
             // picturebox_userAvatar
             // 
             this.picturebox_userAvatar.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_userAvatar.Image = global::FullScreenAppDemo.Properties.Resources.user;
+            this.picturebox_userAvatar.Image = global::Project_Management.Properties.Resources.user;
             this.picturebox_userAvatar.ImageRotate = 0F;
             this.picturebox_userAvatar.Location = new System.Drawing.Point(460, 54);
             this.picturebox_userAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
