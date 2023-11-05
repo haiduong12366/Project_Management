@@ -111,10 +111,11 @@ namespace FullScreenAppDemo.DAO
                         entity.users.Remove(user);
                         entity.SaveChanges();
                     }
-                }catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    MessageBox.Show("Delete user fail","Message");
+                    MessageBox.Show("Delete user fail", "Message");
                 }
 
             }
@@ -196,8 +197,9 @@ namespace FullScreenAppDemo.DAO
         {
             using (company_management_Entities entity = new company_management_Entities())
             {
-                try { 
-                entity.Entry(user).State = EntityState.Modified;
+                try
+                {
+                    entity.Entry(user).State = EntityState.Modified;
                     entity.SaveChanges();
                 }
                 catch (Exception ex)
@@ -212,9 +214,10 @@ namespace FullScreenAppDemo.DAO
         {
             using (company_management_Entities entity = new company_management_Entities())
             {
-                try { 
-                entity.users.Add(user);
-                entity.SaveChanges();
+                try
+                {
+                    entity.users.Add(user);
+                    entity.SaveChanges();
                 }
                 catch (Exception ex)
                 {
@@ -223,7 +226,7 @@ namespace FullScreenAppDemo.DAO
                 }
             }
         }
-        
+
         public List<user> SearchUsers(string keyword)
         {
             using (company_management_Entities entity = new company_management_Entities())
@@ -235,6 +238,6 @@ namespace FullScreenAppDemo.DAO
                 return userList;
             }
         }
-        
+
     }
 }

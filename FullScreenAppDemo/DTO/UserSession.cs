@@ -15,12 +15,10 @@ namespace FullScreenAppDemo.DTO
         {
             return LoggedInUser != null;
         }
-
         public static void LoginUser(user user)
         {
             LoggedInUser = user;
         }
-
         public static void LogoutUser()
         {
             LoggedInUser = null;

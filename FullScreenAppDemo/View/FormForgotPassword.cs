@@ -6,12 +6,14 @@ using System.Net.Mail;
 using System.Windows.Forms;
 using System.Linq;
 using Project_Management;
+using FullScreenAppDemo.DTO;
+using Project_Management.View;
 
 namespace company_management.View
 {
     public partial class FormForgotPassword : Form
     {
-        company_management_Entities entity = new company_management_Entities();
+
         private int _otp;
         readonly Random _random = new Random();
         public FormForgotPassword()
@@ -21,24 +23,38 @@ namespace company_management.View
         }
         private bool ValidateEmail()
         {
-            if (!string.IsNullOrEmpty(tbEmail.Text))
+            using (company_management_Entities entity = new company_management_Entities())
             {
-                user user = entity.users.SingleOrDefault(u => u.email.Equals(tbEmail.Text));
-                if (user != null)
+                if (!string.IsNullOrEmpty(tbEmail.Text))
                 {
-                    return true;
+                    user user = entity.users.SingleOrDefault(u => u.email.Equals(tbEmail.Text));
+                    UserSession.LoggedInUser = user;
+                    if (user != null)
+                    {
+                        return true;
+                    }
+                    MessageBox.Show(@"Not found mail!");
                 }
-                MessageBox.Show(@"Không tìm thấy địa chỉ email!");
+                else
+                {
+                    MessageBox.Show(@"Email not empty!");
+                }
+                return false;
             }
-            else
-            {
-                MessageBox.Show(@"Email không được để trống!");
-            }
-            return false;
         }
         private void btnContinue_Click(object sender, EventArgs e)
         {
-
+            if (tbOtp.Text == _otp.ToString())
+            {
+                FormChangePasswordByEmail passwordChange = new FormChangePasswordByEmail();
+                this.Hide();
+                passwordChange.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("OTP not correct!");
+            }
         }
 
 
@@ -51,9 +67,9 @@ namespace company_management.View
                 {
                     _otp = _random.Next(100000, 1000000);
 
-                    var fromAddress = new MailAddress("phamtrungnghia232@gmail.com");
+                    var fromAddress = new MailAddress("hdun1236@gmail.com");
                     var toAddress = new MailAddress(tbEmail.Text);
-                    const string frompass = "mkfedlsgytikzfou";//mở xác thực 2 bước
+                    const string frompass = "gnck pran fpxq anch";//mở xác thực 2 bước
                     const string subject = "OTP code";
                     string body = _otp.ToString();
 
@@ -76,7 +92,7 @@ namespace company_management.View
                     {
                         smtp.Send(message);
                     }
-                    MessageBox.Show("OPT đã được gửi qua mail");
+                    MessageBox.Show("OPT sent via mail");
                 }
                 catch (Exception ex)
                 {

@@ -18,11 +18,9 @@ namespace Project_Management.View
     public partial class FormMain : Form
     {
 
-
         public FormMain()
         {
             InitializeComponent();
-
         }
 
         private void AddUc(UserControl uc)
@@ -109,6 +107,11 @@ namespace Project_Management.View
                 case 0:
                     FormViewProfile viewProfile = new FormViewProfile();
                     viewProfile.ShowDialog();
+                    if (!UserSession.IsUserLoggedIn())
+                    {
+                        MessageBox.Show("Login session expired!", "Message");
+                        this.Close();
+                    }
                     break;
                 case 1:
                    
@@ -117,11 +120,7 @@ namespace Project_Management.View
                    
                     break;
                 case 3:
-                    this.Hide();
-                    FormLogin login = new FormLogin();
-                    login.Show();
-                    
-                    UserSession.LogoutUser();
+                    this.Close();
                     break;
             }
         }

@@ -96,6 +96,7 @@ namespace FullScreenAppDemo
             this.lbForgotPass.Size = new System.Drawing.Size(94, 13);
             this.lbForgotPass.TabIndex = 5;
             this.lbForgotPass.Text = "Forgot Password";
+            this.lbForgotPass.Click += new System.EventHandler(this.lbForgotPass_Click);
             // 
             // label1
             // 

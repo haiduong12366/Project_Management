@@ -1,4 +1,5 @@
 ﻿
+using company_management.View;
 using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using Project_Management;
@@ -72,6 +73,14 @@ namespace FullScreenAppDemo
                 }
             }
 
+        }
+
+        private void lbForgotPass_Click(object sender, EventArgs e)
+        {
+            FormForgotPassword formForgotPassword = new FormForgotPassword();
+            this.Hide();
+            formForgotPassword.ShowDialog();
+            this.Show();
         }
     }
 }

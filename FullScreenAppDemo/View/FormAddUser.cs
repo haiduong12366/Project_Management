@@ -78,52 +78,82 @@ namespace FullScreenAppDemo
 
             return true;
         }
+        private bool CheckEmailExisted()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                user user = entity.users.SingleOrDefault(u => u.email.Equals(tbEmail));
+                if (user == null)
+                {
+
+                    return true;
+                }
+                MessageBox.Show("Email used!", "Message");
+                return false;
+            }
+        }
+        private bool CheckUsernameExisted()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                user user = entity.users.SingleOrDefault(u => u.username.Equals(tbUsername));
+                if (user == null)
+                {
+
+                    return true;
+                }
+                MessageBox.Show("Username used!", "Message");
+                return false;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (CheckDataInput())
             {
-                if (tbRePassword.Text != tbPassword.Text)
-                    MessageBox.Show("Repassword not equal password");
-                else
+                if (CheckUsernameExisted() && CheckEmailExisted())
                 {
-                    user user = new user();
-                    user.username = tbUsername.Text;
-                    user.email = tbEmail.Text;
-                    user.address = tbAddress.Text;
-                    user.fullName = tbFullname.Text;
-                    user.phoneNumber = tbPhone.Text;
-                    user.avatar = pic;
-                    user.password = tbPassword.Text;
-                    user.idPosition = (cbRole.SelectedItem as position).id;
-                    if (user.idPosition == 1)
-                    {
-                        UserDAO.Instance.AddUser(user);
-                        MessageBox.Show("Add manager success", "Message");
-                    }
-                    else if (user.idPosition == 4)
-                    {
-                        UserDAO.Instance.AddUser(user);
-                        MessageBox.Show("Add HR success", "Message");
-                    }
-                    else if (user.idPosition == 3)
-                    {
-                        int idteam = (cb_team.SelectedItem as team).id;
-
-                        UserDAO.Instance.AddUser(user);
-                        User_teamDAO.Instance.AddUser_Team(user.username, idteam);
-
-                        MessageBox.Show("Add employee success", "Message");
-                    }
+                    if (tbRePassword.Text != tbPassword.Text)
+                        MessageBox.Show("Repassword not equal password");
                     else
                     {
-                        int idteam = (cb_team.SelectedItem as team).id;
+                        user user = new user();
+                        user.username = tbUsername.Text;
+                        user.email = tbEmail.Text;
+                        user.address = tbAddress.Text;
+                        user.fullName = tbFullname.Text;
+                        user.phoneNumber = tbPhone.Text;
+                        user.avatar = pic;
+                        user.password = tbPassword.Text;
+                        user.idPosition = (cbRole.SelectedItem as position).id;
+                        if (user.idPosition == 1)
+                        {
+                            UserDAO.Instance.AddUser(user);
+                            MessageBox.Show("Add manager success", "Message");
+                        }
+                        else if (user.idPosition == 4)
+                        {
+                            UserDAO.Instance.AddUser(user);
+                            MessageBox.Show("Add HR success", "Message");
+                        }
+                        else if (user.idPosition == 3)
+                        {
+                            int idteam = (cb_team.SelectedItem as team).id;
 
-                        UserDAO.Instance.AddUser(user);
-                        User_teamDAO.Instance.AddUser_Team(user.username, idteam);
-                        TeamDAO.Instance.UpdateLeader(idteam, user.username);
-                        MessageBox.Show("Add leader success", "Message");
+                            UserDAO.Instance.AddUser(user);
+                            User_teamDAO.Instance.AddUser_Team(user.username, idteam);
+
+                            MessageBox.Show("Add employee success", "Message");
+                        }
+                        else
+                        {
+                            int idteam = (cb_team.SelectedItem as team).id;
+
+                            UserDAO.Instance.AddUser(user);
+                            User_teamDAO.Instance.AddUser_Team(user.username, idteam);
+                            TeamDAO.Instance.UpdateLeader(idteam, user.username);
+                            MessageBox.Show("Add leader success", "Message");
+                        }
                     }
-
                 }
             }
 

@@ -1,4 +1,5 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using company_management.View;
+using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using Project_Management;
 using Project_Management.DAO;
@@ -57,7 +58,8 @@ namespace FullScreenAppDemo.View
                 }
             }
             pic = UserSession.LoggedInUser.avatar;
-            PbAvatar.Image = ByteArrayToImage(pic);
+            if(pic != null)
+                PbAvatar.Image = ByteArrayToImage(pic);
         }
 
         private void btnUpdateAvatar_Click(object sender, EventArgs e)
@@ -74,7 +76,7 @@ namespace FullScreenAppDemo.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            user user = UserDAO.Instance.GetUserByIdAndPassWord(tbPassword.Text);
+            user user = UserDAO.Instance.GetUserByUserName(UserSession.LoggedInUser.username);
             if (user != null)
             {
                 user.email = tbEmail.Text;
@@ -82,33 +84,22 @@ namespace FullScreenAppDemo.View
                 user.fullName = tbFullname.Text;
                 user.phoneNumber = tbPhone.Text;
                 user.avatar = pic;
-                if (string.IsNullOrEmpty(tbRePassword.Text))
-                {
-                    UserDAO.Instance.UpdateUser(user);
-                    MessageBox.Show("Save success");
-                    Load();
-                }
-                else
-                {
-                    if (tbRePassword.Text != tbPassword.Text)
-                        MessageBox.Show("Repassword not equal password");
-                    else
-                    {
-                        user.password = tbPassword.Text;
-                        UserDAO.Instance.UpdateUser(user);
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Wrong Password");
+                UserDAO.Instance.UpdateUser(user);
+                MessageBox.Show("Update user success", "Message");
 
             }
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            FormPasswordChange formPasswordChange = new FormPasswordChange();
+            formPasswordChange.ShowDialog();
         }
     }
 }
