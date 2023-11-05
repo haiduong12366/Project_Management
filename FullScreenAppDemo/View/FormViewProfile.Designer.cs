@@ -67,13 +67,13 @@
             this.tbRePassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRePassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbRePassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRePassword.Location = new System.Drawing.Point(439, 396);
-            this.tbRePassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbRePassword.Location = new System.Drawing.Point(376, 319);
+            this.tbRePassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbRePassword.Name = "tbRePassword";
             this.tbRePassword.PasswordChar = '\0';
             this.tbRePassword.PlaceholderText = "";
             this.tbRePassword.SelectedText = "";
-            this.tbRePassword.Size = new System.Drawing.Size(355, 30);
+            this.tbRePassword.Size = new System.Drawing.Size(266, 24);
             this.tbRePassword.TabIndex = 142;
             // 
             // tbPassword
@@ -90,13 +90,13 @@
             this.tbPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPassword.ForeColor = System.Drawing.Color.Black;
             this.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPassword.Location = new System.Drawing.Point(439, 342);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbPassword.Location = new System.Drawing.Point(376, 275);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '\0';
             this.tbPassword.PlaceholderText = "";
             this.tbPassword.SelectedText = "";
-            this.tbPassword.Size = new System.Drawing.Size(355, 30);
+            this.tbPassword.Size = new System.Drawing.Size(266, 24);
             this.tbPassword.TabIndex = 141;
             // 
             // btnUpdateAvatar
@@ -108,10 +108,10 @@
             this.btnUpdateAvatar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUpdateAvatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateAvatar.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateAvatar.Location = new System.Drawing.Point(53, 248);
-            this.btnUpdateAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateAvatar.Location = new System.Drawing.Point(65, 202);
+            this.btnUpdateAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdateAvatar.Name = "btnUpdateAvatar";
-            this.btnUpdateAvatar.Size = new System.Drawing.Size(165, 37);
+            this.btnUpdateAvatar.Size = new System.Drawing.Size(124, 30);
             this.btnUpdateAvatar.TabIndex = 140;
             this.btnUpdateAvatar.Text = "Update avatar";
             this.btnUpdateAvatar.Click += new System.EventHandler(this.btnUpdateAvatar_Click);
@@ -122,9 +122,10 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(271, 396);
+            this.label1.Location = new System.Drawing.Point(250, 319);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 139;
             this.label1.Text = "RePasswod:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,11 +135,11 @@
             this.PbAvatar.FillColor = System.Drawing.Color.Transparent;
             this.PbAvatar.Image = global::Project_Management.Properties.Resources.user;
             this.PbAvatar.ImageRotate = 0F;
-            this.PbAvatar.Location = new System.Drawing.Point(29, 24);
-            this.PbAvatar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PbAvatar.Location = new System.Drawing.Point(47, 20);
+            this.PbAvatar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PbAvatar.Name = "PbAvatar";
             this.PbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.PbAvatar.Size = new System.Drawing.Size(213, 188);
+            this.PbAvatar.Size = new System.Drawing.Size(160, 153);
             this.PbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbAvatar.TabIndex = 127;
             this.PbAvatar.TabStop = false;
@@ -156,13 +157,13 @@
             this.tbPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbPhone.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPhone.Location = new System.Drawing.Point(439, 196);
-            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbPhone.Location = new System.Drawing.Point(376, 156);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.PasswordChar = '\0';
             this.tbPhone.PlaceholderText = "";
             this.tbPhone.SelectedText = "";
-            this.tbPhone.Size = new System.Drawing.Size(355, 30);
+            this.tbPhone.Size = new System.Drawing.Size(266, 24);
             this.tbPhone.TabIndex = 138;
             // 
             // label8
@@ -171,9 +172,10 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(316, 198);
+            this.label8.Location = new System.Drawing.Point(284, 158);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 24);
+            this.label8.Size = new System.Drawing.Size(55, 18);
             this.label8.TabIndex = 137;
             this.label8.Text = "Phone:";
             // 
@@ -183,9 +185,10 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(285, 28);
+            this.label2.Location = new System.Drawing.Point(261, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 24);
+            this.label2.Size = new System.Drawing.Size(81, 18);
             this.label2.TabIndex = 128;
             this.label2.Text = "Username:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,9 +199,10 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(289, 342);
+            this.label3.Location = new System.Drawing.Point(264, 275);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.Size = new System.Drawing.Size(79, 18);
             this.label3.TabIndex = 129;
             this.label3.Text = "Password:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,9 +213,10 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(285, 143);
+            this.label4.Location = new System.Drawing.Point(261, 113);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 24);
+            this.label4.Size = new System.Drawing.Size(79, 18);
             this.label4.TabIndex = 130;
             this.label4.Text = "Full Name:";
             // 
@@ -229,14 +234,14 @@
             this.tbAddress.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbAddress.ForeColor = System.Drawing.Color.Black;
             this.tbAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbAddress.Location = new System.Drawing.Point(439, 248);
-            this.tbAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbAddress.Location = new System.Drawing.Point(376, 199);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbAddress.Multiline = true;
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.PasswordChar = '\0';
             this.tbAddress.PlaceholderText = "";
             this.tbAddress.SelectedText = "";
-            this.tbAddress.Size = new System.Drawing.Size(355, 74);
+            this.tbAddress.Size = new System.Drawing.Size(266, 60);
             this.tbAddress.TabIndex = 136;
             // 
             // label5
@@ -245,9 +250,10 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(325, 84);
+            this.label5.Location = new System.Drawing.Point(291, 65);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 24);
+            this.label5.Size = new System.Drawing.Size(49, 18);
             this.label5.TabIndex = 131;
             this.label5.Text = "Email:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -266,13 +272,13 @@
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbEmail.ForeColor = System.Drawing.Color.Black;
             this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.Location = new System.Drawing.Point(439, 83);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbEmail.Location = new System.Drawing.Point(376, 64);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "";
             this.tbEmail.SelectedText = "";
-            this.tbEmail.Size = new System.Drawing.Size(355, 30);
+            this.tbEmail.Size = new System.Drawing.Size(266, 24);
             this.tbEmail.TabIndex = 135;
             // 
             // label6
@@ -281,9 +287,10 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(303, 250);
+            this.label6.Location = new System.Drawing.Point(274, 200);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 24);
+            this.label6.Size = new System.Drawing.Size(66, 18);
             this.label6.TabIndex = 132;
             this.label6.Text = "Address:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -302,13 +309,13 @@
             this.tbFullname.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbFullname.ForeColor = System.Drawing.Color.Black;
             this.tbFullname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbFullname.Location = new System.Drawing.Point(439, 142);
-            this.tbFullname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbFullname.Location = new System.Drawing.Point(376, 112);
+            this.tbFullname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbFullname.Name = "tbFullname";
             this.tbFullname.PasswordChar = '\0';
             this.tbFullname.PlaceholderText = "";
             this.tbFullname.SelectedText = "";
-            this.tbFullname.Size = new System.Drawing.Size(355, 30);
+            this.tbFullname.Size = new System.Drawing.Size(266, 24);
             this.tbFullname.TabIndex = 134;
             // 
             // tbUsername
@@ -325,14 +332,14 @@
             this.tbUsername.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbUsername.ForeColor = System.Drawing.Color.Black;
             this.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbUsername.Location = new System.Drawing.Point(439, 28);
-            this.tbUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbUsername.Location = new System.Drawing.Point(376, 20);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.PasswordChar = '\0';
             this.tbUsername.PlaceholderText = "";
             this.tbUsername.ReadOnly = true;
             this.tbUsername.SelectedText = "";
-            this.tbUsername.Size = new System.Drawing.Size(355, 30);
+            this.tbUsername.Size = new System.Drawing.Size(266, 24);
             this.tbUsername.TabIndex = 133;
             // 
             // btnCancel
@@ -344,10 +351,10 @@
             this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(641, 605);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancel.Location = new System.Drawing.Point(497, 477);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(131, 37);
+            this.btnCancel.Size = new System.Drawing.Size(98, 30);
             this.btnCancel.TabIndex = 144;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -361,10 +368,10 @@
             this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(470, 605);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSave.Location = new System.Drawing.Point(356, 477);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(131, 37);
+            this.btnSave.Size = new System.Drawing.Size(98, 30);
             this.btnSave.TabIndex = 143;
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -375,9 +382,10 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Location = new System.Drawing.Point(332, 464);
+            this.label9.Location = new System.Drawing.Point(296, 374);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 24);
+            this.label9.Size = new System.Drawing.Size(43, 18);
             this.label9.TabIndex = 147;
             this.label9.Text = "Role:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -388,9 +396,10 @@
             this.lbTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTeam.ForeColor = System.Drawing.Color.Black;
             this.lbTeam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbTeam.Location = new System.Drawing.Point(325, 523);
+            this.lbTeam.Location = new System.Drawing.Point(291, 422);
+            this.lbTeam.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTeam.Name = "lbTeam";
-            this.lbTeam.Size = new System.Drawing.Size(64, 24);
+            this.lbTeam.Size = new System.Drawing.Size(50, 18);
             this.lbTeam.TabIndex = 145;
             this.lbTeam.Text = "Team:";
             this.lbTeam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -408,14 +417,14 @@
             this.tbRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbRole.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbRole.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbRole.Location = new System.Drawing.Point(439, 464);
-            this.tbRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbRole.Location = new System.Drawing.Point(376, 374);
+            this.tbRole.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbRole.Name = "tbRole";
             this.tbRole.PasswordChar = '\0';
             this.tbRole.PlaceholderText = "";
             this.tbRole.ReadOnly = true;
             this.tbRole.SelectedText = "";
-            this.tbRole.Size = new System.Drawing.Size(355, 30);
+            this.tbRole.Size = new System.Drawing.Size(266, 24);
             this.tbRole.TabIndex = 148;
             // 
             // tbTeam
@@ -431,14 +440,14 @@
             this.tbTeam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTeam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tbTeam.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTeam.Location = new System.Drawing.Point(439, 517);
-            this.tbTeam.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbTeam.Location = new System.Drawing.Point(376, 417);
+            this.tbTeam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTeam.Name = "tbTeam";
             this.tbTeam.PasswordChar = '\0';
             this.tbTeam.PlaceholderText = "";
             this.tbTeam.ReadOnly = true;
             this.tbTeam.SelectedText = "";
-            this.tbTeam.Size = new System.Drawing.Size(355, 30);
+            this.tbTeam.Size = new System.Drawing.Size(266, 24);
             this.tbTeam.TabIndex = 149;
             // 
             // ODL
@@ -447,9 +456,9 @@
             // 
             // FormViewProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 679);
+            this.ClientSize = new System.Drawing.Size(694, 518);
             this.Controls.Add(this.tbTeam);
             this.Controls.Add(this.tbRole);
             this.Controls.Add(this.label9);
@@ -472,6 +481,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.tbFullname);
             this.Controls.Add(this.tbUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormViewProfile";
             this.Text = "FormViewProfile";
             ((System.ComponentModel.ISupportInitialize)(this.PbAvatar)).EndInit();

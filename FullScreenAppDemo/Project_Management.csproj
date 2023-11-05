@@ -104,6 +104,7 @@
     <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DAO\TeamDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DAO\User_teamDAO.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DTO\UserSession.cs" />
     <Compile Include="leaveRequest.cs">
@@ -157,12 +158,7 @@
     <Compile Include="user_team.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Utils\Util.cs" />
     <Compile Include="View\FormAddTeam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +182,12 @@
     </Compile>
     <Compile Include="View\FormAddRequest.Designer.cs">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormCalculateSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormCalculateSalary.designer.cs">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormForgotPassword.cs">
       <SubType>Form</SubType>
@@ -291,9 +293,6 @@
     <Compile Include="View\UC\UcUser.Designer.cs">
       <DependentUpon>UcUser.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddTeam.resx">
       <DependentUpon>FormAddTeam.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddRequest.resx">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormCalculateSalary.resx">
+      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>

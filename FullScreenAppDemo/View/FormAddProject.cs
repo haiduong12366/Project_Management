@@ -54,15 +54,13 @@ namespace FullScreenAppDemo
         {
             if (CheckDataInput())
             {
-                int idCreator = 1;
-                //int idCreator = UserSession.LoggedInUser.Id;
                 int IdAssignee = (int)(cb_AssigneeTeam.SelectedItem as team).idLeader;
                 string name = tb_projectName.Text;
                 string desc = tb_Desciption.Text;
                 int progress = 0;
                 int idteam = (cb_AssigneeTeam.SelectedItem as team).id;
                 float bonus = (float)Convert.ToInt32(tb_Bonus.Text);
-                ProjectDAO.Instance.AddProject(idCreator, IdAssignee, name, desc, dt_startDate.Value, dt_endDate.Value, progress, idteam, bonus);
+                ProjectDAO.Instance.AddProject(IdAssignee, name, desc, dt_startDate.Value, dt_endDate.Value, progress, idteam, bonus);
                 ClearFields();
 
 

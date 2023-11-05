@@ -329,7 +329,7 @@ namespace FullScreenAppDemo
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 41);
             this.btnSave.TabIndex = 115;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Add";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormAddTask

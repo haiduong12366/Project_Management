@@ -183,7 +183,7 @@ namespace FullScreenAppDemo
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(95, 41);
             this.btn_Save.TabIndex = 116;
-            this.btn_Save.Text = "Save";
+            this.btn_Save.Text = "Add";
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // cb_AssigneeTeam
@@ -284,7 +284,7 @@ namespace FullScreenAppDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 477);
+            this.ClientSize = new System.Drawing.Size(782, 450);
             this.Controls.Add(this.dt_endDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dt_startDate);

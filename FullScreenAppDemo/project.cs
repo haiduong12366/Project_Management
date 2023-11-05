@@ -21,7 +21,6 @@ namespace Project_Management
         }
     
         public int id { get; set; }
-        public int idCreator { get; set; }
         public Nullable<int> idAssignee { get; set; }
         public string name { get; set; }
         public string description { get; set; }
@@ -32,7 +31,6 @@ namespace Project_Management
         public Nullable<double> bonus { get; set; }
     
         public virtual user user { get; set; }
-        public virtual user user1 { get; set; }
         public virtual team team { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<task> tasks { get; set; }

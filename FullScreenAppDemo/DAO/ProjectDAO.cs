@@ -29,26 +29,27 @@ namespace FullScreenAppDemo.DAO
         {
             return entity.projects.ToList<project>();
         }
-        public void AddProject(int idCreator, int idAssignee, string name, string description,
+        public void AddProject(int idAssignee, string name, string description,
             DateTime startDate, DateTime endDate, int progress, int idTeam, float bonus)
         {
-            project pj = new project();
-            pj.idCreator = idCreator;
-            pj.idAssignee = idAssignee;
-            pj.name = name;
-            pj.description = description;
-            pj.startDate = startDate;
-            pj.endDate = endDate;
-            pj.progress = progress;
-            pj.idTeam = idTeam;
-            pj.bonus = bonus;
+            
+            
             try
             {
+                project pj = new project();
+                pj.idAssignee = idAssignee;
+                pj.name = name;
+                pj.description = description;
+                pj.startDate = startDate;
+                pj.endDate = endDate;
+                pj.progress = progress;
+                pj.idTeam = idTeam;
+                pj.bonus = bonus;
                 entity.projects.Add(pj);
                 entity.SaveChanges();
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Add project success","Message");
             }
-            catch { MessageBox.Show("Thêm thất bại"); }
+            catch { MessageBox.Show("Add project fail", "Message"); }
 
         }
 

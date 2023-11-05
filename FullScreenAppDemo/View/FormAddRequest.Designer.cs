@@ -48,7 +48,7 @@ namespace FullScreenAppDemo
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(204, 337);
+            this.label5.Location = new System.Drawing.Point(120, 344);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(260, 31);
@@ -59,7 +59,7 @@ namespace FullScreenAppDemo
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 370);
+            this.label1.Location = new System.Drawing.Point(81, 377);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 19);
@@ -75,7 +75,7 @@ namespace FullScreenAppDemo
             this.datetime_startDate.FillColor = System.Drawing.Color.White;
             this.datetime_startDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datetime_startDate.Location = new System.Drawing.Point(162, 392);
+            this.datetime_startDate.Location = new System.Drawing.Point(78, 399);
             this.datetime_startDate.Margin = new System.Windows.Forms.Padding(2);
             this.datetime_startDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_startDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -87,7 +87,7 @@ namespace FullScreenAppDemo
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(160, 60);
+            this.label4.Location = new System.Drawing.Point(76, 67);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 19);
@@ -103,7 +103,7 @@ namespace FullScreenAppDemo
             this.datetime_requestDate.FillColor = System.Drawing.Color.White;
             this.datetime_requestDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_requestDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datetime_requestDate.Location = new System.Drawing.Point(162, 81);
+            this.datetime_requestDate.Location = new System.Drawing.Point(78, 88);
             this.datetime_requestDate.Margin = new System.Windows.Forms.Padding(2);
             this.datetime_requestDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_requestDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -115,7 +115,7 @@ namespace FullScreenAppDemo
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(162, 15);
+            this.label3.Location = new System.Drawing.Point(78, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 34);
@@ -136,7 +136,7 @@ namespace FullScreenAppDemo
             this.txtbox_content.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtbox_content.ForeColor = System.Drawing.Color.Black;
             this.txtbox_content.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_content.Location = new System.Drawing.Point(163, 137);
+            this.txtbox_content.Location = new System.Drawing.Point(79, 144);
             this.txtbox_content.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtbox_content.Multiline = true;
             this.txtbox_content.Name = "txtbox_content";
@@ -150,7 +150,7 @@ namespace FullScreenAppDemo
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(325, 15);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(241, 22);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(28, 34);
@@ -161,7 +161,7 @@ namespace FullScreenAppDemo
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(165, 454);
+            this.label2.Location = new System.Drawing.Point(81, 461);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 19);
@@ -177,7 +177,7 @@ namespace FullScreenAppDemo
             this.datetime_endDate.FillColor = System.Drawing.Color.White;
             this.datetime_endDate.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datetime_endDate.Location = new System.Drawing.Point(165, 475);
+            this.datetime_endDate.Location = new System.Drawing.Point(81, 482);
             this.datetime_endDate.Margin = new System.Windows.Forms.Padding(2);
             this.datetime_endDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datetime_endDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -196,7 +196,7 @@ namespace FullScreenAppDemo
             this.button_apply.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_apply.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_apply.ForeColor = System.Drawing.Color.White;
-            this.button_apply.Location = new System.Drawing.Point(164, 559);
+            this.button_apply.Location = new System.Drawing.Point(80, 566);
             this.button_apply.Margin = new System.Windows.Forms.Padding(2);
             this.button_apply.Name = "button_apply";
             this.button_apply.Size = new System.Drawing.Size(350, 41);
@@ -208,7 +208,7 @@ namespace FullScreenAppDemo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 645);
+            this.ClientSize = new System.Drawing.Size(538, 645);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.datetime_endDate);
             this.Controls.Add(this.button_apply);

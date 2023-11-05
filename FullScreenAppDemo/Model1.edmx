@@ -43,7 +43,6 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idCreator" Type="int" Nullable="false" />
           <Property Name="idAssignee" Type="int" />
           <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="1000" />
@@ -55,10 +54,9 @@
         </EntityType>
         <EntityType Name="salary">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idUser" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idUser" Type="int" />
+          <Property Name="idUser" Type="int" Nullable="false" />
           <Property Name="basicSalary" Type="float" />
           <Property Name="totalHours" Type="float" />
           <Property Name="overtimeHours" Type="float" />
@@ -86,7 +84,6 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idCreator" Type="int" Nullable="false" />
           <Property Name="idAssignee" Type="int" />
           <Property Name="taskName" Type="nvarchar" MaxLength="100" />
           <Property Name="description" Type="nvarchar" MaxLength="1000" />
@@ -175,18 +172,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_project_creator">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="project" Type="Self.project" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="project">
-              <PropertyRef Name="idCreator" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_project_teams">
           <End Role="teams" Type="Self.teams" Multiplicity="0..1" />
           <End Role="project" Type="Self.project" Multiplicity="*" />
@@ -200,8 +185,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_salary_users">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="salary" Type="Self.salary" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
@@ -232,18 +217,6 @@
             </Principal>
             <Dependent Role="task">
               <PropertyRef Name="idAssignee" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tasks_creator">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="task" Type="Self.task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="task">
-              <PropertyRef Name="idCreator" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -397,10 +370,6 @@
             <End Role="users" EntitySet="users" />
             <End Role="project" EntitySet="project" />
           </AssociationSet>
-          <AssociationSet Name="FK_project_creator" Association="Self.FK_project_creator">
-            <End Role="users" EntitySet="users" />
-            <End Role="project" EntitySet="project" />
-          </AssociationSet>
           <AssociationSet Name="FK_project_teams" Association="Self.FK_project_teams">
             <End Role="teams" EntitySet="teams" />
             <End Role="project" EntitySet="project" />
@@ -414,10 +383,6 @@
             <End Role="task" EntitySet="task" />
           </AssociationSet>
           <AssociationSet Name="FK_tasks_assignee" Association="Self.FK_tasks_assignee">
-            <End Role="users" EntitySet="users" />
-            <End Role="task" EntitySet="task" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tasks_creator" Association="Self.FK_tasks_creator">
             <End Role="users" EntitySet="users" />
             <End Role="task" EntitySet="task" />
           </AssociationSet>
@@ -497,7 +462,6 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idCreator" Type="Int32" Nullable="false" />
           <Property Name="idAssignee" Type="Int32" />
           <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
@@ -507,16 +471,14 @@
           <Property Name="idTeam" Type="Int32" />
           <Property Name="bonus" Type="Double" />
           <NavigationProperty Name="user" Relationship="Self.FK_project_assignee" FromRole="project" ToRole="users" />
-          <NavigationProperty Name="user1" Relationship="Self.FK_project_creator" FromRole="project" ToRole="users" />
           <NavigationProperty Name="team" Relationship="Self.FK_project_teams" FromRole="project" ToRole="teams" />
           <NavigationProperty Name="tasks" Relationship="Self.FK_task_project" FromRole="project" ToRole="task" />
         </EntityType>
         <EntityType Name="salary">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="idUser" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idUser" Type="Int32" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
           <Property Name="basicSalary" Type="Double" />
           <Property Name="totalHours" Type="Double" />
           <Property Name="overtimeHours" Type="Double" />
@@ -545,7 +507,6 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idCreator" Type="Int32" Nullable="false" />
           <Property Name="idAssignee" Type="Int32" />
           <Property Name="taskName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
@@ -556,7 +517,6 @@
           <Property Name="idProject" Type="Int32" />
           <NavigationProperty Name="project" Relationship="Self.FK_task_project" FromRole="task" ToRole="project" />
           <NavigationProperty Name="user" Relationship="Self.FK_tasks_assignee" FromRole="task" ToRole="users" />
-          <NavigationProperty Name="user1" Relationship="Self.FK_tasks_creator" FromRole="task" ToRole="users" />
           <NavigationProperty Name="team" Relationship="Self.FK_tasks_teams" FromRole="task" ToRole="teams" />
         </EntityType>
         <EntityType Name="team">
@@ -613,10 +573,8 @@
           <NavigationProperty Name="leaveRequests1" Relationship="Self.FK_leaveRequest_users" FromRole="users" ToRole="leaveRequest" />
           <NavigationProperty Name="position" Relationship="Self.FK_users_position" FromRole="users" ToRole="position" />
           <NavigationProperty Name="projects" Relationship="Self.FK_project_assignee" FromRole="users" ToRole="project" />
-          <NavigationProperty Name="projects1" Relationship="Self.FK_project_creator" FromRole="users" ToRole="project" />
-          <NavigationProperty Name="salaries" Relationship="Self.FK_salary_users" FromRole="users" ToRole="salary" />
+          <NavigationProperty Name="salary" Relationship="Self.FK_salary_users" FromRole="users" ToRole="salary" />
           <NavigationProperty Name="tasks" Relationship="Self.FK_tasks_assignee" FromRole="users" ToRole="task" />
-          <NavigationProperty Name="tasks1" Relationship="Self.FK_tasks_creator" FromRole="users" ToRole="task" />
           <NavigationProperty Name="teams" Relationship="Self.FK_teams_leader" FromRole="users" ToRole="teams" />
           <NavigationProperty Name="user_salary" Relationship="Self.FK_user_salary_users" FromRole="users" ToRole="user_salary" />
           <NavigationProperty Name="user_team" Relationship="Self.FK_user_team_users" FromRole="users" ToRole="user_team" />
@@ -681,18 +639,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_project_creator">
-          <End Role="users" Type="Self.user" Multiplicity="1" />
-          <End Role="project" Type="Self.project" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="project">
-              <PropertyRef Name="idCreator" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_project_teams">
           <End Role="teams" Type="Self.team" Multiplicity="0..1" />
           <End Role="project" Type="Self.project" Multiplicity="*" />
@@ -718,8 +664,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_salary_users">
-          <End Role="users" Type="Self.user" Multiplicity="0..1" />
-          <End Role="salary" Type="Self.salary" Multiplicity="*" />
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
@@ -738,18 +684,6 @@
             </Principal>
             <Dependent Role="task">
               <PropertyRef Name="idAssignee" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tasks_creator">
-          <End Role="users" Type="Self.user" Multiplicity="1" />
-          <End Role="task" Type="Self.task" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="task">
-              <PropertyRef Name="idCreator" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -845,10 +779,6 @@
             <End Role="users" EntitySet="users" />
             <End Role="project" EntitySet="projects" />
           </AssociationSet>
-          <AssociationSet Name="FK_project_creator" Association="Self.FK_project_creator">
-            <End Role="users" EntitySet="users" />
-            <End Role="project" EntitySet="projects" />
-          </AssociationSet>
           <AssociationSet Name="FK_project_teams" Association="Self.FK_project_teams">
             <End Role="teams" EntitySet="teams" />
             <End Role="project" EntitySet="projects" />
@@ -862,10 +792,6 @@
             <End Role="salary" EntitySet="salaries" />
           </AssociationSet>
           <AssociationSet Name="FK_tasks_assignee" Association="Self.FK_tasks_assignee">
-            <End Role="users" EntitySet="users" />
-            <End Role="task" EntitySet="tasks" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tasks_creator" Association="Self.FK_tasks_creator">
             <End Role="users" EntitySet="users" />
             <End Role="task" EntitySet="tasks" />
           </AssociationSet>
@@ -988,7 +914,6 @@
             <EntityTypeMapping TypeName="company_managementModel.project">
               <MappingFragment StoreEntitySet="project">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idCreator" ColumnName="idCreator" />
                 <ScalarProperty Name="idAssignee" ColumnName="idAssignee" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="description" ColumnName="description" />
@@ -1003,7 +928,6 @@
           <EntitySetMapping Name="salaries">
             <EntityTypeMapping TypeName="company_managementModel.salary">
               <MappingFragment StoreEntitySet="salary">
-                <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="basicSalary" ColumnName="basicSalary" />
                 <ScalarProperty Name="totalHours" ColumnName="totalHours" />
@@ -1034,7 +958,6 @@
             <EntityTypeMapping TypeName="company_managementModel.task">
               <MappingFragment StoreEntitySet="task">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="idCreator" ColumnName="idCreator" />
                 <ScalarProperty Name="idAssignee" ColumnName="idAssignee" />
                 <ScalarProperty Name="taskName" ColumnName="taskName" />
                 <ScalarProperty Name="description" ColumnName="description" />

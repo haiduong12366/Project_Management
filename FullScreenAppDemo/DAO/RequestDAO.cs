@@ -34,13 +34,13 @@ namespace FullScreenAppDemo.DAO
             {
                 entity.leaveRequests.Add(lr);
                 entity.SaveChanges();
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Add request success", "Message");
                 return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
-                MessageBox.Show("Thêm thất bại");
+                MessageBox.Show("Add request fail", "Message");
                 return false;
             }
         }

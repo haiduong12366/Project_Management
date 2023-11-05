@@ -3,9 +3,11 @@ using Project_Management;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FullScreenAppDemo.DAO
 {
@@ -21,7 +23,8 @@ namespace FullScreenAppDemo.DAO
 
         private TeamDAO() { }
 
-        public List<team> GetAllTeams() { 
+        public List<team> GetAllTeams()
+        {
             List<team> list = entity.teams.ToList<team>();
             return list;
         }
@@ -54,6 +57,22 @@ namespace FullScreenAppDemo.DAO
             var team = from t in entity.teams where t.id == id select t.name;
             string name = team.ToString();
             return name;
+        }
+
+        public void UpdateLeader(int id, string username)
+        {
+            try
+            {
+                team team = entity.teams.SingleOrDefault(t => t.id == id);
+                user user = UserDAO.Instance.GetUserByUserName(username);
+                team.idLeader = user.id;
+                entity.Entry(team).State = EntityState.Modified;
+                entity.SaveChanges();
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("Update leader fail","Message");
+            }
         }
     }
 }

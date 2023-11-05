@@ -1,8 +1,10 @@
 ﻿using FullScreenAppDemo;
 using FullScreenAppDemo.DAO;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
 
 
@@ -40,13 +42,13 @@ namespace company_management.View.UC
         private void LoadDataGridview()
         {
             dataGridView_User.ColumnCount = 6;
-            dataGridView_User.Columns[0].Name = "Mã";
+            dataGridView_User.Columns[0].Name = "ID";
             dataGridView_User.Columns[0].Visible = false;
-            dataGridView_User.Columns[1].Name = "Tên tài khoản";
-            dataGridView_User.Columns[2].Name = "Họ và tên";
+            dataGridView_User.Columns[1].Name = "Username";
+            dataGridView_User.Columns[2].Name = "Full Name";
             dataGridView_User.Columns[3].Name = "Email";
-            dataGridView_User.Columns[4].Name = "Số điện thoại";
-            dataGridView_User.Columns[5].Name = "Địa chỉ";
+            dataGridView_User.Columns[4].Name = "PhoneNumber";
+            dataGridView_User.Columns[5].Name = "Address";
             dataGridView_User.Rows.Clear();
             List<user> users = UserDAO.Instance.GetALlUser();
             foreach (var x in users)
@@ -154,8 +156,6 @@ namespace company_management.View.UC
         {
             if (e.RowIndex != -1)
             {
-                
-
                 DataGridViewRow selectedRow = dataGridView_User.Rows[e.RowIndex];
                 _selectedUserId = (int)selectedRow.Cells[0].Value;
                 _user = UserDAO.Instance.GetUserByID(_selectedUserId);
@@ -173,6 +173,108 @@ namespace company_management.View.UC
                     txtbox_phoneNumber.Text = row.Cells[4].Value.ToString();
                     txtbox_address.Text = row.Cells[5].Value.ToString();
                 }
+            }
+        }
+        private bool CheckDataInput()
+        {
+            if (CheckEmptyInput())
+            {
+
+                if (Util.Instance.IsValidEmail(txtbox_email.Text))
+                {
+                    if (Util.Instance.IsPhoneNumber(txtbox_phoneNumber.Text))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show(@"Invalid phone number!", @"Message");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(@"Invalid email!", @"Message");
+                }
+            }
+            else
+            {
+                MessageBox.Show(@"Required fields Empty. Please fill in all fields!", @"Message");
+            }
+
+            return false;
+        }
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+
+            user user = UserDAO.Instance.GetUserByUserName(txtbox_username.Text);
+            if (user != null)
+            {
+                if (CheckDataInput())
+                {
+                    user.email = txtbox_email.Text;
+                    user.address = txtbox_address.Text;
+                    user.fullName = txtbox_fullname.Text;
+                    user.phoneNumber = txtbox_phoneNumber.Text;
+
+                    try
+                    {
+                        UserDAO.Instance.UpdateUser(user);
+                        MessageBox.Show("Save user success", @"Message");
+                        LoadData();
+                    }
+                    catch
+                    {
+
+                        MessageBox.Show("Save user fail", @"Message");
+
+                    }
+                }
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FormAddUser formAddUser = new FormAddUser();
+            formAddUser.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedUserId != 0)
+            {
+                if (MessageBox.Show(@"Delete user?", @"Confirm", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    user user = UserDAO.Instance.GetUserByUserName(txtbox_username.Text);
+                    if (user != null)
+                    {
+                        UserDAO.Instance.DeleteUser(user);
+                        MessageBox.Show(@"Delete user success", @"Message");
+                        LoadData();
+                    }
+                    
+                }
+            }
+            else MessageBox.Show(@"User not selected!", @"Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            List<user> listUser = UserDAO.Instance.SearchUsers(keyword);
+            dataGridView_User.ColumnCount = 6;
+            dataGridView_User.Columns[0].Name = "ID";
+            dataGridView_User.Columns[0].Visible = false;
+            dataGridView_User.Columns[1].Name = "Username";
+            dataGridView_User.Columns[2].Name = "Full Name";
+            dataGridView_User.Columns[3].Name = "Email";
+            dataGridView_User.Columns[4].Name = "PhoneNumber";
+            dataGridView_User.Columns[5].Name = "Address";
+            dataGridView_User.Rows.Clear();
+            foreach (var x in listUser)
+            {
+                dataGridView_User.Rows.Add(x.id, x.username, x.fullName, x.email, x.phoneNumber, x.address);
             }
         }
     }

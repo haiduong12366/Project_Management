@@ -14,8 +14,7 @@ namespace Project_Management
     
     public partial class salary
     {
-        public int id { get; set; }
-        public Nullable<int> idUser { get; set; }
+        public int idUser { get; set; }
         public Nullable<double> basicSalary { get; set; }
         public Nullable<double> totalHours { get; set; }
         public Nullable<double> overtimeHours { get; set; }

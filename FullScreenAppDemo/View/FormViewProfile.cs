@@ -1,6 +1,7 @@
 ﻿using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +50,7 @@ namespace FullScreenAppDemo.View
             }
             else
             {
-                List<user_team> list = UserDAO.Instance.GetTeamByID(UserSession.LoggedInUser.id);
+                List<user_team> list = User_teamDAO.Instance.GetTeamByID(UserSession.LoggedInUser.id);
                 foreach (user_team team in list)
                 {
                     tbTeam.Text = tbTeam.Text + TeamDAO.Instance.idTeamToString((int)team.idTeam);
@@ -73,9 +74,6 @@ namespace FullScreenAppDemo.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-
-
             user user = UserDAO.Instance.GetUserByIdAndPassWord(tbPassword.Text);
             if (user != null)
             {
@@ -92,7 +90,7 @@ namespace FullScreenAppDemo.View
                 }
                 else
                 {
-                    if (tbRePassword != tbPassword)
+                    if (tbRePassword.Text != tbPassword.Text)
                         MessageBox.Show("Repassword not equal password");
                     else
                     {

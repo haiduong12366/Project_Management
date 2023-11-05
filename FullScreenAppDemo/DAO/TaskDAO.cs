@@ -29,8 +29,8 @@ namespace FullScreenAppDemo.DAO
         public void AddTask(string taskName, string description, DateTime deadline,
             int idAssignee, int idProject, float bonus)
         {
+            try { 
             task task = new task();
-            task.idCreator = UserSession.LoggedInUser.id;
             task.taskName = taskName;
             task.description = description;
             task.deadline = deadline;
@@ -38,11 +38,14 @@ namespace FullScreenAppDemo.DAO
             task.idProject = idProject;
             task.bonus = bonus;
             task.progress = 0;
-            
-                entity.tasks.Add(task);
-                entity.SaveChanges();
-                MessageBox.Show("Thêm thành công");
-            
+
+            entity.tasks.Add(task);
+            entity.SaveChanges();
+            MessageBox.Show("Add task success", "Message");}catch (Exception ex)
+            {
+                MessageBox.Show("Add task fail", "Message");
+            }
+
 
         }
     }

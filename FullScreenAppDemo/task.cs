@@ -15,7 +15,6 @@ namespace Project_Management
     public partial class task
     {
         public int id { get; set; }
-        public int idCreator { get; set; }
         public Nullable<int> idAssignee { get; set; }
         public string taskName { get; set; }
         public string description { get; set; }
@@ -27,7 +26,6 @@ namespace Project_Management
     
         public virtual project project { get; set; }
         public virtual user user { get; set; }
-        public virtual user user1 { get; set; }
         public virtual team team { get; set; }
     }
 }
