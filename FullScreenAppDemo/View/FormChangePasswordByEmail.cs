@@ -1,5 +1,7 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using company_management.View;
+using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +45,7 @@ namespace Project_Management.View
                 {
                     user.password = tbNewpass.Text;
                     UserDAO.Instance.UpdateUser(user);
-                    MessageBox.Show("Change password success");
+                    Util.Instance.Alert("Change password success", FormAlert.enmType.Success);
                     UserSession.LogoutUser();
                     this.Close();
                 }

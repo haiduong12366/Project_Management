@@ -1,12 +1,16 @@
-﻿using company_management.View.UC;
+﻿using company_management.View;
+using company_management.View.UC;
 using FullScreenAppDemo;
+using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using FullScreenAppDemo.View;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,7 +113,7 @@ namespace Project_Management.View
                     viewProfile.ShowDialog();
                     if (!UserSession.IsUserLoggedIn())
                     {
-                        MessageBox.Show("Login session expired!", "Message");
+                        Util.Instance.Alert("Login session expired!", FormAlert.enmType.Warning);
                         this.Close();
                     }
                     break;
@@ -124,11 +128,17 @@ namespace Project_Management.View
                     break;
             }
         }
-
+        Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
         private void FormMain_Load(object sender, EventArgs e)
         {
             UcHome uCHome = new UcHome();
             AddUc(uCHome);
+            user user = UserDAO.Instance.GetUserByID(UserSession.LoggedInUser.id);
+            picturebox_avatar.Image = ByteArrayToImage(user.avatar);
         }
     }
 }

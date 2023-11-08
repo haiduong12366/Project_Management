@@ -1,6 +1,8 @@
 ﻿
+using company_management.View;
 using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -14,7 +16,7 @@ namespace FullScreenAppDemo.DAO
 {
     internal class ProjectDAO
     {
-        
+
         company_management_Entities entity = new company_management_Entities();
         private static ProjectDAO instance;
         public static ProjectDAO Instance
@@ -32,8 +34,8 @@ namespace FullScreenAppDemo.DAO
         public void AddProject(int idAssignee, string name, string description,
             DateTime startDate, DateTime endDate, int progress, int idTeam, float bonus)
         {
-            
-            
+
+
             try
             {
                 project pj = new project();
@@ -47,9 +49,10 @@ namespace FullScreenAppDemo.DAO
                 pj.bonus = bonus;
                 entity.projects.Add(pj);
                 entity.SaveChanges();
-                MessageBox.Show("Add project success","Message");
+                Util.Instance.Alert("Add project success", FormAlert.enmType.Success);
+
             }
-            catch { MessageBox.Show("Add project fail", "Message"); }
+            catch { Util.Instance.Alert("Add project fail", FormAlert.enmType.Error); }
 
         }
 

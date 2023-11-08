@@ -1,7 +1,9 @@
-﻿using FullScreenAppDemo.DTO;
+﻿using company_management.View;
+using FullScreenAppDemo.DTO;
 using Guna.UI2.WinForms;
 using LiveCharts.Configurations;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -111,11 +113,12 @@ namespace FullScreenAppDemo.DAO
                         entity.users.Remove(user);
                         entity.SaveChanges();
                     }
+                    Util.Instance.Alert("Delete user success", FormAlert.enmType.Error);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    MessageBox.Show("Delete user fail", "Message");
+                    Util.Instance.Alert("Delete user fail", FormAlert.enmType.Error);
                 }
 
             }
@@ -131,10 +134,18 @@ namespace FullScreenAppDemo.DAO
         }
         public user GetUserByID(int id)
         {
+
             using (company_management_Entities entity = new company_management_Entities())
             {
-                user user = entity.users.SingleOrDefault(u => u.id.Equals(id));
-                return user;
+                try
+                {
+                    user user = entity.users.SingleOrDefault(u => u.id.Equals(id));
+                    return user;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
             }
         }
         public void CheckEmployeeIsReadOnlyStatus(Guna2TextBox txt)
@@ -205,7 +216,8 @@ namespace FullScreenAppDemo.DAO
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    MessageBox.Show("Update user fail", "Message");
+
+                    Util.Instance.Alert("Update user fail", FormAlert.enmType.Error);
                 }
             }
         }
@@ -218,11 +230,12 @@ namespace FullScreenAppDemo.DAO
                 {
                     entity.users.Add(user);
                     entity.SaveChanges();
+                    Util.Instance.Alert("Add user success", FormAlert.enmType.Success);
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.ToString());
-                    MessageBox.Show("Add user fail", "Message");
+                    Util.Instance.Alert("Add user fail", FormAlert.enmType.Error);
                 }
             }
         }

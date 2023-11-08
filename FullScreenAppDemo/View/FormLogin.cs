@@ -26,7 +26,7 @@ namespace FullScreenAppDemo
         {
             if (string.IsNullOrEmpty(txtPassword.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show(@"Tên đăng nhập hoặc mật khẩu không được để trống!");
+                MessageBox.Show(@"Username and password not allow empty!");
                 return false;
             }
             return true;
@@ -68,7 +68,7 @@ namespace FullScreenAppDemo
                 }
                 else
                 {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!");
+                    MessageBox.Show("Incorrect username!");
 
                 }
             }

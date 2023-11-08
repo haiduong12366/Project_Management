@@ -1,4 +1,5 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using company_management.View;
+using FullScreenAppDemo.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +36,11 @@ namespace Project_Management.Utils
                 return Regex.IsMatch(number, @"^\d{10,11}$");
             }
         }
-
+        public void Alert(string msg, FormAlert.enmType type)
+        {
+            FormAlert frm = new FormAlert();
+            frm.showAlert(msg, type);
+        }
         public bool IsValidEmail(string email)
         {
             try

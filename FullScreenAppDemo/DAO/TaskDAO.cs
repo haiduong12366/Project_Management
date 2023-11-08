@@ -1,5 +1,7 @@
-﻿using FullScreenAppDemo.DTO;
+﻿using company_management.View;
+using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,21 +31,25 @@ namespace FullScreenAppDemo.DAO
         public void AddTask(string taskName, string description, DateTime deadline,
             int idAssignee, int idProject, float bonus)
         {
-            try { 
-            task task = new task();
-            task.taskName = taskName;
-            task.description = description;
-            task.deadline = deadline;
-            task.idAssignee = idAssignee;
-            task.idProject = idProject;
-            task.bonus = bonus;
-            task.progress = 0;
-
-            entity.tasks.Add(task);
-            entity.SaveChanges();
-            MessageBox.Show("Add task success", "Message");}catch (Exception ex)
+            try
             {
-                MessageBox.Show("Add task fail", "Message");
+                task task = new task();
+                task.taskName = taskName;
+                task.description = description;
+                task.deadline = deadline;
+                task.idAssignee = idAssignee;
+                task.idProject = idProject;
+                task.bonus = bonus;
+                task.progress = 0;
+
+                entity.tasks.Add(task);
+                entity.SaveChanges();
+                Util.Instance.Alert("Add task success", FormAlert.enmType.Success);
+            }
+            catch (Exception ex)
+            {
+
+                Util.Instance.Alert("Add task fail", FormAlert.enmType.Error);
             }
 
 

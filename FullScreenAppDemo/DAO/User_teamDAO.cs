@@ -1,4 +1,6 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using company_management.View;
+using FullScreenAppDemo.DAO;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -32,11 +34,11 @@ namespace Project_Management.DAO
                     ut.idTeam = idteam;
                     entity.user_team.Add(ut);
                     entity.SaveChanges();
-                    MessageBox.Show("Add User of team success", "Message");
+                    Util.Instance.Alert("Add User of team success", FormAlert.enmType.Success);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Add User of team fail", "Message");
+                    Util.Instance.Alert("Add User of team fail", FormAlert.enmType.Error);
                 }
             }
         }

@@ -1,6 +1,7 @@
 ﻿using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Windows.Forms;
 // ReSharper disable All
@@ -38,7 +39,7 @@ namespace company_management.View
                 {
                     user.password = tbNewpass.Text;
                     UserDAO.Instance.UpdateUser(user);
-                    MessageBox.Show("Change password success");
+                    Util.Instance.Alert("Change password success", FormAlert.enmType.Success);
                     UserSession.LogoutUser();
                     this.Close();
                 }

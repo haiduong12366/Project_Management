@@ -53,7 +53,7 @@ namespace FullScreenAppDemo
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(260, 31);
             this.label5.TabIndex = 199;
-            this.label5.Text = "Thời gian nghỉ";
+            this.label5.Text = "Total Time Off";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -62,9 +62,9 @@ namespace FullScreenAppDemo
             this.label1.Location = new System.Drawing.Point(81, 377);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 19);
+            this.label1.Size = new System.Drawing.Size(46, 19);
             this.label1.TabIndex = 198;
-            this.label1.Text = "Từ:";
+            this.label1.Text = "From:";
             // 
             // datetime_startDate
             // 
@@ -90,9 +90,9 @@ namespace FullScreenAppDemo
             this.label4.Location = new System.Drawing.Point(76, 67);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 19);
+            this.label4.Size = new System.Drawing.Size(140, 19);
             this.label4.TabIndex = 196;
-            this.label4.Text = "Ngày viết đơn";
+            this.label4.Text = "Date of application";
             // 
             // datetime_requestDate
             // 
@@ -118,9 +118,9 @@ namespace FullScreenAppDemo
             this.label3.Location = new System.Drawing.Point(78, 22);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 34);
+            this.label3.Size = new System.Drawing.Size(272, 34);
             this.label3.TabIndex = 194;
-            this.label3.Text = "Tạo đơn xin phép";
+            this.label3.Text = "Create a leave application";
             // 
             // txtbox_content
             // 
@@ -150,7 +150,7 @@ namespace FullScreenAppDemo
             // 
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(241, 22);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(402, 22);
             this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(28, 34);
@@ -166,7 +166,7 @@ namespace FullScreenAppDemo
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 19);
             this.label2.TabIndex = 203;
-            this.label2.Text = "Đến:";
+            this.label2.Text = "To:";
             // 
             // datetime_endDate
             // 

@@ -1,5 +1,10 @@
-﻿using System;
+﻿using FullScreenAppDemo;
+using FullScreenAppDemo.DAO;
+using Project_Management;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Data;
 using System.Windows.Forms;
 
 
@@ -7,84 +12,160 @@ namespace company_management.View.UC
 {
     public partial class UcLeaveRequest : UserControl
     {
-
-
+        private int _selectedId;
+        private int selectedIndex;
         public UcLeaveRequest()
         {
 
             InitializeComponent();
-        }
-        
-
-        
-        private void CheckControlStatus()
-        {
+            Check();
+            LoadCB();
+            Load();
 
         }
-        
-        private void datagridview_leaveRequest_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        void Load()
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            LoadRequestsStatistics();
+            LoadDataGridview();
+        }
+        void Check()
+        {
+            if(UserDAO.Instance.IsEmployee() || UserDAO.Instance.IsLeader())
             {
-                var approveColumn = datagridview_leaveRequest.Columns["Duyệt"];
-                var rejectColumn = datagridview_leaveRequest.Columns["Từ chối"];
+                buttonRemove.Visible = false;
+            }
+        }
+        private void LoadCB()
+        {
+            combobox_requestStatusFilter.Items.Add("All");
+            combobox_requestStatusFilter.Items.Add("Approved");
+            combobox_requestStatusFilter.Items.Add("Pending");
+            combobox_requestStatusFilter.Items.Add("Refused");
+            combobox_requestStatusFilter.Items.Add("Cancelled");
+            combobox_requestStatusFilter.SelectedIndex = 0;
+            _selectedId = 0;
 
-                if (datagridview_leaveRequest.Columns[e.ColumnIndex] == rejectColumn)
-                {
-                    var result = MessageBox.Show("Lưu thay đổi", "Từ chối yêu cầu xin nghỉ!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (result == DialogResult.Yes)
-                    {
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Duyệt"].Value = false;
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = true;
-                    }
-                    else
-                    {
-                        datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
-                    }
-                }
-                else if (datagridview_leaveRequest.Columns[e.ColumnIndex] == approveColumn)
-                {
-                    datagridview_leaveRequest.Rows[e.RowIndex].Cells["Từ chối"].Value = false;
-                }
+        }
+        private void LoadRequestsStatistics()
+        {
+            label_allCount.Text = RequestDAO.Instance.GetALlRequestByPosition().Count.ToString();
+            label_approved.Text = RequestDAO.Instance.GetALlApproved().Count.ToString();
+            label_rejected.Text = RequestDAO.Instance.GetALlRefuse().Count.ToString();
+            label_pending.Text = RequestDAO.Instance.GetALlPending().Count.ToString();
+            label_cancelled.Text = RequestDAO.Instance.GetALlCancelled().Count.ToString();
+        }
+        private void LoadDataGridview()
+        {
+            List<leaveRequest> lr = new List<leaveRequest>();
+            switch (selectedIndex)
+            {
+                case 0:
+                    lr = RequestDAO.Instance.GetALlRequestByPosition();
+                    break;
+                case 1:
+                    lr = RequestDAO.Instance.GetALlApproved();
+                    break;
+                case 2:
+                    lr = RequestDAO.Instance.GetALlPending();
+                    break;
+                case 3:
+                    lr = RequestDAO.Instance.GetALlRefuse();
+                    break;
+                case 4:
+                    lr = RequestDAO.Instance.GetALlCancelled();
+                    break;
+                default:
+                    lr = null;
+                    break;
             }
 
-        }   
+            datagridview_leaveRequest.ColumnCount = 8;
+            datagridview_leaveRequest.Columns[0].Name = "Id";
+            datagridview_leaveRequest.Columns[0].Visible = false;
+            datagridview_leaveRequest.Columns[1].Name = "Fullname";
+            datagridview_leaveRequest.Columns[2].Name = "Day create";
+            datagridview_leaveRequest.Columns[3].Name = "From day";
+            datagridview_leaveRequest.Columns[4].Name = "To day";
+            datagridview_leaveRequest.Columns[5].Name = "Total Day";
+            datagridview_leaveRequest.Columns[6].Name = "Status";
+            datagridview_leaveRequest.Columns[7].Name = "Approver";
+            datagridview_leaveRequest.Rows.Clear();
 
 
+            foreach (leaveRequest rq in lr)
+            {
+                String approver;
+                try
+                {
+                    user user = UserDAO.Instance.GetUserByID((int)rq.idApprover);
+                    approver = user.fullName;
+                }
+                catch
+                {
+                    approver = "N/A";
+                }
 
+                String writer = UserDAO.Instance.GetUserByID((int)rq.idUser).fullName;
+                datagridview_leaveRequest.Rows.Add(rq.id, writer, ((DateTime)rq.requestDate).ToString("d/M/yyyy"),
+                   ((DateTime)rq.startDate).ToString("d/M/yyyy"), ((DateTime)rq.endDate).ToString("d/M/yyyy"), rq.numberDay, rq.status,
+                   approver);
+            }
+        }
 
-        
-
-
-        private void btnViewOrUpdate_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
-            
+            FormAddRequest requestForm = new FormAddRequest();
+            requestForm.ShowDialog();
+            Load();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                FormViewOrUpdateRequest formRequest = new FormViewOrUpdateRequest(_selectedId);
+                formRequest.ShowDialog();
+                Load();
+            }
+            else MessageBox.Show("Choose 1 to edit", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void datagridview_leaveRequest_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void buttonRemove_Click(object sender, EventArgs e)
-        {
-            
+            if (e.RowIndex != -1)
+            {
+                object value = datagridview_leaveRequest.Rows[e.RowIndex].Cells[0].Value;
+                if (value != DBNull.Value)
+                {
+                    _selectedId = Convert.ToInt32(value);
+                }
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            
+            Load();
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            if (_selectedId != 0)
+            {
+                if (MessageBox.Show(@"Do you want to delete this application?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    RequestDAO.Instance.DeleteRequest(_selectedId);
+                    Load();
+                }
+            }
+            else MessageBox.Show(@"Please, choose 1 to delete", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void combobox_requestStatusFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-        }
-
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
+            selectedIndex = combobox_requestStatusFilter.SelectedIndex;
             
-
+            LoadDataGridview();
         }
     }
 }

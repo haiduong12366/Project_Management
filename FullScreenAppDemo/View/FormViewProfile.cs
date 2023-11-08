@@ -3,6 +3,7 @@ using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
 using Project_Management;
 using Project_Management.DAO;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +86,7 @@ namespace FullScreenAppDemo.View
                 user.phoneNumber = tbPhone.Text;
                 user.avatar = pic;
                 UserDAO.Instance.UpdateUser(user);
-                MessageBox.Show("Update user success", "Message");
+                Util.Instance.Alert("Update user success", FormAlert.enmType.Success);
 
             }
 

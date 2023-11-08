@@ -27,7 +27,7 @@ namespace FullScreenAppDemo
         {
             if (string.IsNullOrEmpty(txtbox_content.Text))
             {
-                MessageBox.Show("Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Please fill out all text!");
                 return false;
             }
             return true;
@@ -48,5 +48,7 @@ namespace FullScreenAppDemo
             }
             
         }
+
+
     }
 }

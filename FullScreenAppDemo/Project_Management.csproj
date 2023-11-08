@@ -198,6 +198,12 @@
     <Compile Include="View\FormAddRequest.Designer.cs">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAlert.designer.cs">
+      <DependentUpon>FormAlert.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormCalculateSalary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddRequest.resx">
       <DependentUpon>FormAddRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormAlert.resx">
+      <DependentUpon>FormAlert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormCalculateSalary.resx">
       <DependentUpon>FormCalculateSalary.cs</DependentUpon>

@@ -1,5 +1,7 @@
-﻿using FullScreenAppDemo.DTO;
+﻿using company_management.View;
+using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -68,10 +70,12 @@ namespace FullScreenAppDemo.DAO
                 team.idLeader = user.id;
                 entity.Entry(team).State = EntityState.Modified;
                 entity.SaveChanges();
-            }catch (Exception ex)
+                Util.Instance.Alert("Update leader success", FormAlert.enmType.Success);
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                MessageBox.Show("Update leader fail","Message");
+                Util.Instance.Alert("Update leader fail", FormAlert.enmType.Error);
             }
         }
     }

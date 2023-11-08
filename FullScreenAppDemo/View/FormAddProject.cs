@@ -45,7 +45,7 @@ namespace FullScreenAppDemo
         {
             if (string.IsNullOrEmpty(tb_projectName.Text) || string.IsNullOrEmpty(tb_Desciption.Text))
             {
-                MessageBox.Show("Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show("Please fill out all text!");
                 return false;
             }
             return true;

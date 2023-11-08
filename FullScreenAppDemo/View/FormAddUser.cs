@@ -141,7 +141,6 @@ namespace FullScreenAppDemo
 
                             UserDAO.Instance.AddUser(user);
                             User_teamDAO.Instance.AddUser_Team(user.username, idteam);
-
                             MessageBox.Show("Add employee success", "Message");
                         }
                         else
