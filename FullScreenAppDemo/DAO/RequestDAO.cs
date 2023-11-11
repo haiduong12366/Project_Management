@@ -1,6 +1,6 @@
-﻿using company_management.View;
-using company_management.View.UC;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View;
+using Project_Management.View.UC;
+using Project_Management.DTO;
 using LiveCharts.Configurations;
 using Project_Management;
 using Project_Management.Utils;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class RequestDAO
     {
@@ -23,7 +23,7 @@ namespace FullScreenAppDemo.DAO
             private set => RequestDAO.instance = value;
         }
 
-        private RequestDAO() { }
+        public RequestDAO() { }
 
 
 

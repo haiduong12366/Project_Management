@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace company_management.View
+namespace Project_Management.View
 {
     partial class FormViewOrUpdateRequest
     {

@@ -1,5 +1,5 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DAO;
+﻿using Project_Management.View;
+using Project_Management.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,8 +1,7 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-using Project_Management;
+﻿using Project_Management.View;
 using Project_Management.DAO;
+using Project_Management.DTO;
+using Project_Management;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo.View
+namespace Project_Management.View
 {
     public partial class FormViewProfile : Form
     {

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace company_management.View
+namespace Project_Management.View
 {
     public partial class FormAlert : Form
     {

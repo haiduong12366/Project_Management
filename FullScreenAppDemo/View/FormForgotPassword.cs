@@ -1,15 +1,14 @@
-﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo;
+﻿using Project_Management.DAO;
 using System;
 using System.Net;
 using System.Net.Mail;
 using System.Windows.Forms;
 using System.Linq;
 using Project_Management;
-using FullScreenAppDemo.DTO;
+using Project_Management.DTO;
 using Project_Management.View;
 
-namespace company_management.View
+namespace Project_Management.View
 {
     public partial class FormForgotPassword : Form
     {

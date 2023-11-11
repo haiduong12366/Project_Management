@@ -1,5 +1,5 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View;
+using Project_Management.DTO;
 using Guna.UI2.WinForms;
 using LiveCharts.Configurations;
 using Project_Management;
@@ -16,7 +16,7 @@ using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class UserDAO
     {
@@ -28,9 +28,9 @@ namespace FullScreenAppDemo.DAO
             private set => UserDAO.instance = value;
         }
 
-        private UserDAO() { }
+        public UserDAO() { }
 
-        public List<user> GetALlUser()
+        public List<user> GetAllUser()
         {
             using (company_management_Entities entity = new company_management_Entities())
             {

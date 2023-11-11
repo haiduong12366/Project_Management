@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_Management.View
 {
-    public partial class FormUpdateTeam : Form
+    public partial class FormViewOrUpdateTask : Form
     {
-        public FormUpdateTeam()
+        public FormViewOrUpdateTask()
         {
             InitializeComponent();
         }

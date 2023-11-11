@@ -1,5 +1,4 @@
-﻿using FullScreenAppDemo;
-using FullScreenAppDemo.DAO;
+﻿using Project_Management.DAO;
 using Project_Management;
 using Project_Management.Utils;
 using System;
@@ -8,7 +7,7 @@ using System.Net;
 using System.Windows.Forms;
 
 
-namespace company_management.View.UC
+namespace Project_Management.View.UC
 {
     public partial class UcUser : UserControl
     {
@@ -50,7 +49,7 @@ namespace company_management.View.UC
             dataGridView_User.Columns[4].Name = "PhoneNumber";
             dataGridView_User.Columns[5].Name = "Address";
             dataGridView_User.Rows.Clear();
-            List<user> users = UserDAO.Instance.GetALlUser();
+            List<user> users = UserDAO.Instance.GetAllUser();
             foreach (var x in users)
             {
                 dataGridView_User.Rows.Add(x.id, x.username, x.fullName, x.email, x.phoneNumber, x.address);

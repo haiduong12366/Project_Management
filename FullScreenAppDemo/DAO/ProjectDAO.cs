@@ -1,6 +1,6 @@
 ﻿
-using company_management.View;
-using FullScreenAppDemo.DTO;
+using Project_Management.View;
+using Project_Management.DTO;
 using Project_Management;
 using Project_Management.Utils;
 using System;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class ProjectDAO
     {
@@ -25,12 +25,19 @@ namespace FullScreenAppDemo.DAO
             private set => ProjectDAO.instance = value;
         }
 
-        private ProjectDAO() { }
+        public ProjectDAO() { }
 
-        public List<project> GetALlProject()
+        public List<project> GetAllProject()
         {
             return entity.projects.ToList<project>();
         }
+
+        public String GetNameProjectByID(int idProject)
+        {
+            var result = entity.projects.Find(idProject);
+            return result.name;
+        }
+
         public void AddProject(int idAssignee, string name, string description,
             DateTime startDate, DateTime endDate, int progress, int idTeam, float bonus)
         {

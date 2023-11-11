@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Project_Management.View
+namespace Project_Management.View.UC
 {
-    public partial class FormUpdateTeam : Form
+    public partial class Temp : UserControl
     {
-        public FormUpdateTeam()
+        public Temp()
         {
             InitializeComponent();
         }

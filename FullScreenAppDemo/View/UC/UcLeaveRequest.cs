@@ -1,5 +1,4 @@
-﻿using FullScreenAppDemo;
-using FullScreenAppDemo.DAO;
+﻿using Project_Management.DAO;
 using Project_Management;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Windows.Data;
 using System.Windows.Forms;
 
 
-namespace company_management.View.UC
+namespace Project_Management.View.UC
 {
     public partial class UcLeaveRequest : UserControl
     {

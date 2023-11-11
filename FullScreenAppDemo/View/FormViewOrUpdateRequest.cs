@@ -1,6 +1,6 @@
-﻿using company_management.View.UC;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View.UC;
+using Project_Management.DAO;
+using Project_Management.DTO;
 using Project_Management;
 using System;
 using System.Drawing;
@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 // ReSharper disable All
 
-namespace company_management.View
+namespace Project_Management.View
 {
     public partial class FormViewOrUpdateRequest : Form
     {

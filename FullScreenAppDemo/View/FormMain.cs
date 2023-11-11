@@ -1,9 +1,7 @@
-﻿using company_management.View;
-using company_management.View.UC;
-using FullScreenAppDemo;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-using FullScreenAppDemo.View;
+﻿using Project_Management.View;
+using Project_Management.View.UC;
+using Project_Management.DAO;
+using Project_Management.DTO;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -21,10 +19,15 @@ namespace Project_Management.View
 {
     public partial class FormMain : Form
     {
+        private ChildFormOrUC childForm;
+        internal ChildFormOrUC ChildForm { get => childForm; set => childForm = value; }
+
 
         public FormMain()
         {
             InitializeComponent();
+            childForm = new ChildFormOrUC(pn_main);
+            StackForm.FormMain = this;
         }
 
         private void AddUc(UserControl uc)
@@ -118,7 +121,8 @@ namespace Project_Management.View
                     }
                     break;
                 case 1:
-                   
+                    UcTask uCTask = new UcTask();
+                    AddUc(uCTask);
                     break;
                 case 2:
                    
@@ -138,7 +142,10 @@ namespace Project_Management.View
             UcHome uCHome = new UcHome();
             AddUc(uCHome);
             user user = UserDAO.Instance.GetUserByID(UserSession.LoggedInUser.id);
-            picturebox_avatar.Image = ByteArrayToImage(user.avatar);
+            if(user.avatar != null)
+            {
+                picturebox_avatar.Image = ByteArrayToImage(user.avatar);
+            }
         }
     }
 }

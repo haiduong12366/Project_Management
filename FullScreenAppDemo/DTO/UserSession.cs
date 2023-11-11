@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FullScreenAppDemo.DTO
+namespace Project_Management.DTO
 {
     internal class UserSession
     {

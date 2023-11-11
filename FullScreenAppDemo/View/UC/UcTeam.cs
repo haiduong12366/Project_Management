@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 
-namespace company_management.View.UC
+namespace Project_Management.View.UC
 {
     public partial class UcTeam : UserControl
     {

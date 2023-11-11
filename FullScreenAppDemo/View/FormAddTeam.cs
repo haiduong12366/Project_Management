@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo.View
+namespace Project_Management.View
 {
     public partial class FormAddTeam : Form
     {

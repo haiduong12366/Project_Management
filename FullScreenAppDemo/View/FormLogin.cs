@@ -1,9 +1,8 @@
 ﻿
-using company_management.View;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-using Project_Management;
 using Project_Management.View;
+using Project_Management.DAO;
+using Project_Management.DTO;
+using Project_Management;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     public partial class FormLogin : Form
     {

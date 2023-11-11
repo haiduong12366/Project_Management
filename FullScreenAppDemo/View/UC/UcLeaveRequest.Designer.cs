@@ -1,4 +1,4 @@
-﻿namespace company_management.View.UC
+﻿namespace Project_Management.View.UC
 {
     partial class UcLeaveRequest
     {

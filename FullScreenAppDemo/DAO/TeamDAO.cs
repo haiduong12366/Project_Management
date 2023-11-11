@@ -1,5 +1,5 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View;
+using Project_Management.DTO;
 using Project_Management;
 using Project_Management.Utils;
 using System;
@@ -10,8 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography.Xml;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class TeamDAO
     {
@@ -23,7 +24,7 @@ namespace FullScreenAppDemo.DAO
             private set => TeamDAO.instance = value;
         }
 
-        private TeamDAO() { }
+        public TeamDAO() { }
 
         public List<team> GetAllTeams()
         {
@@ -31,9 +32,9 @@ namespace FullScreenAppDemo.DAO
             return list;
         }
 
-        public List<team> GetTeamByLeader(int idteam)
+        public List<team> GetTeamByLeader(int idLeader)
         {
-            var query = from item in entity.teams where item.id == idteam select item;
+            var query = from item in entity.teams where item.idLeader == idLeader select item;
             return query.ToList<team>();
 
         }
@@ -52,6 +53,42 @@ namespace FullScreenAppDemo.DAO
             }
 
             return teams;
+        }
+
+        public team GetTeamByID(int idTeam)
+        {
+            var team = entity.teams.Where(t => t.id == idTeam).FirstOrDefault();
+            return team;
+        }
+
+        public int GetLeaderIDByTeamID(int teamID)
+        {
+            var idLeader = entity.teams.Where(t => t.id == teamID).Select(t => t.idLeader).FirstOrDefault();
+            if (idLeader != null)
+            {
+                return (int)idLeader;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        public int GetIDTeamByUserID(int userId)
+        {
+            var result = (from user in entity.users
+                          join userTeam in entity.user_team on user.id equals userTeam.idUser
+                          join team in entity.teams on userTeam.idTeam equals team.id
+                          where user.id == userId
+                          select team.id).SingleOrDefault();
+
+            return result;
+        }
+
+        public String GetNameTeamByID(int idteam)
+        {
+            var result = entity.teams.Find(idteam);
+            return result.name;
         }
 
         public string idTeamToString(int id)
