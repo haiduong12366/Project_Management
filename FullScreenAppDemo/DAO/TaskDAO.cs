@@ -1,4 +1,5 @@
-﻿using company_management.View;
+﻿using company_management.DTO;
+using company_management.View;
 using FullScreenAppDemo.DTO;
 using Project_Management;
 using Project_Management.Utils;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
 
 namespace FullScreenAppDemo.DAO
@@ -53,6 +55,50 @@ namespace FullScreenAppDemo.DAO
             }
 
 
+        }
+
+        internal void DeleteTasksByProject(int projectId)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                try
+                {
+                    var tasksToDelete = entity.tasks.Where(t => t.idProject == projectId);
+                    if (tasksToDelete.Any())
+                    {
+                        entity.tasks.RemoveRange(tasksToDelete);
+                        entity.SaveChanges();
+                        Util.Instance.Alert("Delete task success", FormAlert.enmType.Success);
+                    }
+                    else
+                    {
+                        Util.Instance.Alert("Not found task!", FormAlert.enmType.Warning);
+                    }
+                }
+                catch (Exception)
+                {
+                    Util.Instance.Alert("Delete task fail!", FormAlert.enmType.Error);
+                }
+            }
+        }
+
+        internal TaskStatusPercentage GetTaskStatusPercentage(List<task> taskList)
+        {
+            TaskStatusPercentage taskStatus = new TaskStatusPercentage(0, 0, 0);
+
+            if (taskList.Count > 0)
+            {
+                double totalTasks = taskList.Count;
+                double todoCount = taskList.Count(task => task.progress == 0);
+                double inprogressCount = taskList.Count(task => task.progress > 0 && task.progress < 100);
+                double doneCount = taskList.Count(task => task.progress == 100);
+
+                taskStatus.TodoPercent = (todoCount / totalTasks) * 100;
+                taskStatus.InprogressPercent = (inprogressCount / totalTasks) * 100;
+                taskStatus.DonePercent = (doneCount / totalTasks) * 100;
+            }
+
+            return taskStatus;
         }
     }
 }

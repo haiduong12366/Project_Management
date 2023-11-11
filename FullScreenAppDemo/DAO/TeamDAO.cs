@@ -1,6 +1,7 @@
 ﻿using company_management.View;
 using FullScreenAppDemo.DTO;
 using Project_Management;
+using Project_Management.DAO;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -31,26 +32,37 @@ namespace FullScreenAppDemo.DAO
             return list;
         }
 
-        public List<team> GetTeamByLeader(int idteam)
+        public List<team> GetTeamByLeader(int id)
         {
-            var query = from item in entity.teams where item.id == idteam select item;
+            var query = from item in entity.teams where item.idLeader == id select item;
             return query.ToList<team>();
 
         }
-        public List<team> GetTeamByID()
+
+        public List<team> GetTeamByManagerOrLeader()
         {
             List<team> teams = new List<team>();
-
-
             if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
             {
-                teams = TeamDAO.instance.GetAllTeams();
+                teams = TeamDAO.Instance.GetAllTeams();
             }
-            else if (UserDAO.Instance.IsLeader())
+            else if(UserDAO.Instance.IsLeader())
             {
-                teams = TeamDAO.instance.GetTeamByLeader(UserSession.LoggedInUser.id);
+                teams = GetTeamByLeader(UserSession.LoggedInUser.id);
             }
-
+            return teams;
+        }
+        public List<team> GetTeamByIDUser()
+        {
+            List<team> teams = new List<team>();
+            if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+            {
+                teams = TeamDAO.Instance.GetAllTeams();
+            }
+            else
+            {
+                teams = User_teamDAO.Instance.GetTeamByID();
+            }
             return teams;
         }
 
@@ -78,5 +90,16 @@ namespace FullScreenAppDemo.DAO
                 Util.Instance.Alert("Update leader fail", FormAlert.enmType.Error);
             }
         }
+
+        internal team GetTeamByIdTeam(int id)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                team team = entity.teams.SingleOrDefault(u => u.id == id);
+                return team;
+            }
+        }
+
+
     }
 }

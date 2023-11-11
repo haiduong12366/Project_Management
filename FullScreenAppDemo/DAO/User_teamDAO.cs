@@ -1,5 +1,6 @@
 ﻿using company_management.View;
 using FullScreenAppDemo.DAO;
+using FullScreenAppDemo.DTO;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,21 @@ namespace Project_Management.DAO
             {
                 var team = from t in entity.user_team where t.idUser == id select t;
                 return team.ToList<user_team>();
+            }
+        }
+
+        public List<team> GetTeamByID()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                List<team> teams = new List<team>();
+                var team = from t in entity.user_team where t.idUser == UserSession.LoggedInUser.id select t;
+                foreach (var t in team)
+                {
+                    team team1 = TeamDAO.Instance.GetTeamByIdTeam((int)t.idTeam);
+                    teams.Add(team1);
+                }    
+                return teams;
             }
         }
     }

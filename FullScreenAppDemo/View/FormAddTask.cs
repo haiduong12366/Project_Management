@@ -39,12 +39,10 @@ namespace FullScreenAppDemo
         
         private void GetDataToCombobox(ComboBox assignees)
         {
-            List<team> list = TeamDAO.Instance.GetTeamByID();
+            List<team> list = TeamDAO.Instance.GetTeamByManagerOrLeader();
             assignees.DataSource = list;
             assignees.DisplayMember = "name";
             assignees.SelectedIndex = 0;
-
-            
         }
 
         private void CheckControlStatusForEmployee()
@@ -53,7 +51,6 @@ namespace FullScreenAppDemo
         }
         private void Load()
         {
-            txtBox_cretor.Text = UserSession.LoggedInUser.fullName;
             GetDataToCombobox(combbox_Assignee);
             CheckControlStatusForEmployee();
         }
