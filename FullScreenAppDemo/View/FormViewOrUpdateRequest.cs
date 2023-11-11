@@ -43,6 +43,9 @@ namespace company_management.View
                     label_approved.Visible = false;
                     combobox_status.Visible = false;
                     button_save.Text = "Exit";
+                    datetime_endDate.Enabled = false;
+                    datetime_startDate.Enabled = false;
+                    datetime_requestDate.Enabled = false;
                     if (_leaveRequest.status == "Cancelled")
                         button_Cancel.Visible = false;
                 }
@@ -56,7 +59,7 @@ namespace company_management.View
                 else
                     button_save.Text = "Exit";
                 button_Cancel.Visible = false;
-                txtbox_content.ReadOnly = false;
+                datetime_requestDate.Enabled = false;
             }
         }
 
@@ -105,6 +108,7 @@ namespace company_management.View
             }
             else if(button_save.Text == "Update")
             {
+                _leaveRequest.requestDate = DateTime.Now;
                 _leaveRequest.startDate = datetime_startDate.Value;
                 _leaveRequest.endDate = datetime_endDate.Value;
                 _leaveRequest.content = txtbox_content.Text;

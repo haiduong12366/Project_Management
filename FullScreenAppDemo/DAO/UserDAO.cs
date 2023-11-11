@@ -137,15 +137,8 @@ namespace FullScreenAppDemo.DAO
 
             using (company_management_Entities entity = new company_management_Entities())
             {
-                try
-                {
                     user user = entity.users.SingleOrDefault(u => u.id.Equals(id));
                     return user;
-                }
-                catch (Exception e)
-                {
-                    return null;
-                }
             }
         }
         public void CheckEmployeeIsReadOnlyStatus(Guna2TextBox txt)

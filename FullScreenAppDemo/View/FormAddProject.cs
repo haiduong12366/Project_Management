@@ -27,8 +27,7 @@ namespace FullScreenAppDemo
         }
         public void LoadTeamToCombobox(ComboBox comboBox)
         {
-            List<team> list = TeamDAO.Instance.GetAllTeams();
-
+            List<team> list = TeamDAO.Instance.GetTeamByIDUser();
             comboBox.DataSource = list;
             comboBox.DisplayMember = "name";
             comboBox.ValueMember = "id";
@@ -62,8 +61,6 @@ namespace FullScreenAppDemo
                 float bonus = (float)Convert.ToInt32(tb_Bonus.Text);
                 ProjectDAO.Instance.AddProject(IdAssignee, name, desc, dt_startDate.Value, dt_endDate.Value, progress, idteam, bonus);
                 ClearFields();
-
-
             }
         }
 

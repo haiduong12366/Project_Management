@@ -121,6 +121,7 @@
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="DAO\User_teamDAO.cs" />
     <Compile Include="DBConnection.cs" />
+    <Compile Include="DTO\TaskStatusPercentage.cs" />
     <Compile Include="DTO\UserSession.cs" />
     <Compile Include="leaveRequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>

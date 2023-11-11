@@ -30,8 +30,6 @@ namespace FullScreenAppDemo
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddTask));
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBox_cretor = new Guna.UI2.WinForms.Guna2TextBox();
             this.combbox_Project = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,45 +46,6 @@ namespace FullScreenAppDemo
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(478, 24);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
-            this.label5.TabIndex = 123;
-            this.label5.Text = "Creator";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBox_cretor
-            // 
-            this.txtBox_cretor.BorderColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.BorderRadius = 5;
-            this.txtBox_cretor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_cretor.DefaultText = "";
-            this.txtBox_cretor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_cretor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_cretor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_cretor.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Location = new System.Drawing.Point(481, 44);
-            this.txtBox_cretor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBox_cretor.Name = "txtBox_cretor";
-            this.txtBox_cretor.PasswordChar = '\0';
-            this.txtBox_cretor.PlaceholderText = "";
-            this.txtBox_cretor.ReadOnly = true;
-            this.txtBox_cretor.SelectedText = "";
-            this.txtBox_cretor.Size = new System.Drawing.Size(225, 26);
-            this.txtBox_cretor.TabIndex = 124;
-            // 
             // combbox_Project
             // 
             this.combbox_Project.BackColor = System.Drawing.Color.Transparent;
@@ -98,10 +57,10 @@ namespace FullScreenAppDemo
             this.combbox_Project.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.combbox_Project.ForeColor = System.Drawing.Color.Black;
             this.combbox_Project.ItemHeight = 30;
-            this.combbox_Project.Location = new System.Drawing.Point(481, 179);
-            this.combbox_Project.Margin = new System.Windows.Forms.Padding(2);
+            this.combbox_Project.Location = new System.Drawing.Point(641, 155);
+            this.combbox_Project.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combbox_Project.Name = "combbox_Project";
-            this.combbox_Project.Size = new System.Drawing.Size(226, 36);
+            this.combbox_Project.Size = new System.Drawing.Size(300, 36);
             this.combbox_Project.TabIndex = 122;
             // 
             // label4
@@ -111,10 +70,9 @@ namespace FullScreenAppDemo
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(478, 157);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(637, 128);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 18);
+            this.label4.Size = new System.Drawing.Size(68, 24);
             this.label4.TabIndex = 121;
             this.label4.Text = "Project";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,10 +84,9 @@ namespace FullScreenAppDemo
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(478, 298);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(637, 367);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 18);
+            this.label1.Size = new System.Drawing.Size(91, 24);
             this.label1.TabIndex = 119;
             this.label1.Text = "Bonus ($)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -148,22 +105,22 @@ namespace FullScreenAppDemo
             this.textBox_Bonus.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.textBox_Bonus.ForeColor = System.Drawing.Color.Black;
             this.textBox_Bonus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Bonus.Location = new System.Drawing.Point(481, 318);
-            this.textBox_Bonus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Bonus.Location = new System.Drawing.Point(641, 391);
+            this.textBox_Bonus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBox_Bonus.Name = "textBox_Bonus";
             this.textBox_Bonus.PasswordChar = '\0';
             this.textBox_Bonus.PlaceholderText = "Exp: 200 $";
             this.textBox_Bonus.SelectedText = "";
-            this.textBox_Bonus.Size = new System.Drawing.Size(225, 26);
+            this.textBox_Bonus.Size = new System.Drawing.Size(300, 32);
             this.textBox_Bonus.TabIndex = 120;
             // 
             // dateTime_deadline
             // 
             this.dateTime_deadline.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTime_deadline.Location = new System.Drawing.Point(481, 253);
-            this.dateTime_deadline.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTime_deadline.Location = new System.Drawing.Point(641, 259);
+            this.dateTime_deadline.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTime_deadline.Name = "dateTime_deadline";
-            this.dateTime_deadline.Size = new System.Drawing.Size(226, 26);
+            this.dateTime_deadline.Size = new System.Drawing.Size(300, 30);
             this.dateTime_deadline.TabIndex = 118;
             // 
             // label2
@@ -173,10 +130,9 @@ namespace FullScreenAppDemo
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(7, 89);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(9, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 18);
+            this.label2.Size = new System.Drawing.Size(104, 24);
             this.label2.TabIndex = 117;
             this.label2.Text = "Description";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -192,10 +148,10 @@ namespace FullScreenAppDemo
             this.combbox_Assignee.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combbox_Assignee.ForeColor = System.Drawing.Color.Black;
             this.combbox_Assignee.ItemHeight = 30;
-            this.combbox_Assignee.Location = new System.Drawing.Point(481, 111);
-            this.combbox_Assignee.Margin = new System.Windows.Forms.Padding(2);
+            this.combbox_Assignee.Location = new System.Drawing.Point(641, 54);
+            this.combbox_Assignee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.combbox_Assignee.Name = "combbox_Assignee";
-            this.combbox_Assignee.Size = new System.Drawing.Size(226, 36);
+            this.combbox_Assignee.Size = new System.Drawing.Size(300, 36);
             this.combbox_Assignee.TabIndex = 114;
             this.combbox_Assignee.SelectedIndexChanged += new System.EventHandler(this.combbox_Assignee_SelectedIndexChanged);
             // 
@@ -206,10 +162,9 @@ namespace FullScreenAppDemo
             this.label_taskName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_taskName.ForeColor = System.Drawing.Color.Black;
             this.label_taskName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_taskName.Location = new System.Drawing.Point(7, 21);
-            this.label_taskName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_taskName.Location = new System.Drawing.Point(9, 26);
             this.label_taskName.Name = "label_taskName";
-            this.label_taskName.Size = new System.Drawing.Size(82, 18);
+            this.label_taskName.Size = new System.Drawing.Size(103, 24);
             this.label_taskName.TabIndex = 109;
             this.label_taskName.Text = "Task name";
             this.label_taskName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -221,10 +176,9 @@ namespace FullScreenAppDemo
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(478, 231);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(637, 232);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 18);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 110;
             this.label3.Text = "Due date";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -236,10 +190,9 @@ namespace FullScreenAppDemo
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(478, 89);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(637, 27);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 18);
+            this.label7.Size = new System.Drawing.Size(98, 24);
             this.label7.TabIndex = 113;
             this.label7.Text = "Assignees";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -258,14 +211,14 @@ namespace FullScreenAppDemo
             this.txtbox_Desciption.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtbox_Desciption.ForeColor = System.Drawing.Color.Black;
             this.txtbox_Desciption.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_Desciption.Location = new System.Drawing.Point(10, 111);
-            this.txtbox_Desciption.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_Desciption.Location = new System.Drawing.Point(13, 137);
+            this.txtbox_Desciption.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_Desciption.Multiline = true;
             this.txtbox_Desciption.Name = "txtbox_Desciption";
             this.txtbox_Desciption.PasswordChar = '\0';
             this.txtbox_Desciption.PlaceholderText = "";
             this.txtbox_Desciption.SelectedText = "";
-            this.txtbox_Desciption.Size = new System.Drawing.Size(438, 233);
+            this.txtbox_Desciption.Size = new System.Drawing.Size(584, 287);
             this.txtbox_Desciption.TabIndex = 112;
             // 
             // txtbox_taskName
@@ -282,20 +235,20 @@ namespace FullScreenAppDemo
             this.txtbox_taskName.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.txtbox_taskName.ForeColor = System.Drawing.Color.Black;
             this.txtbox_taskName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtbox_taskName.Location = new System.Drawing.Point(10, 44);
-            this.txtbox_taskName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtbox_taskName.Location = new System.Drawing.Point(13, 54);
+            this.txtbox_taskName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtbox_taskName.Name = "txtbox_taskName";
             this.txtbox_taskName.PasswordChar = '\0';
             this.txtbox_taskName.PlaceholderText = "This is title";
             this.txtbox_taskName.SelectedText = "";
-            this.txtbox_taskName.Size = new System.Drawing.Size(438, 26);
+            this.txtbox_taskName.Size = new System.Drawing.Size(584, 32);
             this.txtbox_taskName.TabIndex = 111;
             // 
             // btnCancel
             // 
             this.btnCancel.AutoRoundedCorners = true;
             this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BorderRadius = 19;
+            this.btnCancel.BorderRadius = 24;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -305,10 +258,10 @@ namespace FullScreenAppDemo
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.HoverState.FillColor = System.Drawing.Color.Red;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.Location = new System.Drawing.Point(10, 410);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Location = new System.Drawing.Point(13, 505);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(108, 41);
+            this.btnCancel.Size = new System.Drawing.Size(144, 50);
             this.btnCancel.TabIndex = 116;
             this.btnCancel.Text = "Refresh";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -324,21 +277,19 @@ namespace FullScreenAppDemo
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(610, 410);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSave.Location = new System.Drawing.Point(813, 505);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 41);
+            this.btnSave.Size = new System.Drawing.Size(127, 50);
             this.btnSave.TabIndex = 115;
             this.btnSave.Text = "Add";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormAddTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 496);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtBox_cretor);
+            this.ClientSize = new System.Drawing.Size(975, 610);
             this.Controls.Add(this.combbox_Project);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -353,7 +304,7 @@ namespace FullScreenAppDemo
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtbox_Desciption);
             this.Controls.Add(this.txtbox_taskName);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormAddTask";
             this.Text = "FormAddTask";
             this.ResumeLayout(false);
@@ -362,9 +313,6 @@ namespace FullScreenAppDemo
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtBox_cretor;
         private Guna.UI2.WinForms.Guna2ComboBox combbox_Project;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
