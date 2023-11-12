@@ -16,7 +16,6 @@ namespace company_management.View.UC
         private int selectindex;
         checkin_checkout cico;
         private int selectindexthang;
-        private List<checkin_checkout> listCiCo = new List<checkin_checkout>();
 
         public Color DeepSkyBlue { get; private set; }
 
@@ -43,6 +42,7 @@ namespace company_management.View.UC
 
         void LoadTimeWorking()
         {
+            List<checkin_checkout> listCiCo = CheckIn_CheckOutDAO.Instance.GetCICOByIDUser(UserSession.LoggedInUser.id, selectindexthang);
             label_totalDate.Text = listCiCo.Count.ToString();
             float totaltime = 0;
             float timeleave = 0;
@@ -88,7 +88,7 @@ namespace company_management.View.UC
         void LoadData()
         {
 
-            
+            List<checkin_checkout> listCiCo = new List<checkin_checkout>();
             if (UserDAO.Instance.IsHumanResources())
             {
                 switch (selectindex)
@@ -103,7 +103,6 @@ namespace company_management.View.UC
             }
             else
             {
-                buttonAdd.Visible = false;
                 buttonRemove.Visible = false;
                 cb_changeUser.Visible = false;
                 listCiCo = CheckIn_CheckOutDAO.Instance.GetCICOByIDUser(UserSession.LoggedInUser.id, selectindexthang);
@@ -207,5 +206,6 @@ namespace company_management.View.UC
             selectindexthang = CbThang.SelectedIndex + 1;
             Load();
         }
+
     }
 }

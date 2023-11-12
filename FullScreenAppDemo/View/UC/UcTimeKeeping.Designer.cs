@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.txtBox_totalHours = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -59,7 +59,6 @@
             this.label_leaveHours = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.buttonRemove = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnCheckIn = new Guna.UI2.WinForms.Guna2Button();
             this.cb_changeUser = new Guna.UI2.WinForms.Guna2ComboBox();
             this.CbThang = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -276,35 +275,35 @@
             // 
             // datagridview_timeKeeping
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagridview_timeKeeping.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.datagridview_timeKeeping.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.datagridview_timeKeeping.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview_timeKeeping.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview_timeKeeping.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.datagridview_timeKeeping.ColumnHeadersHeight = 30;
             this.datagridview_timeKeeping.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview_timeKeeping.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview_timeKeeping.DefaultCellStyle = dataGridViewCellStyle11;
             this.datagridview_timeKeeping.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.datagridview_timeKeeping.Location = new System.Drawing.Point(17, 25);
             this.datagridview_timeKeeping.Name = "datagridview_timeKeeping";
             this.datagridview_timeKeeping.RowHeadersVisible = false;
             this.datagridview_timeKeeping.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.datagridview_timeKeeping.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.datagridview_timeKeeping.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.datagridview_timeKeeping.RowTemplate.Height = 24;
             this.datagridview_timeKeeping.Size = new System.Drawing.Size(1222, 386);
             this.datagridview_timeKeeping.TabIndex = 0;
@@ -527,25 +526,6 @@
             this.buttonRemove.TabIndex = 96;
             this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.AutoRoundedCorners = true;
-            this.buttonAdd.BackColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.BorderRadius = 20;
-            this.buttonAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonAdd.FillColor = System.Drawing.Color.Transparent;
-            this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Image = global::Project_Management.Properties.Resources.edit;
-            this.buttonAdd.ImageSize = new System.Drawing.Size(24, 24);
-            this.buttonAdd.Location = new System.Drawing.Point(730, 290);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(46, 42);
-            this.buttonAdd.TabIndex = 94;
-            // 
             // btnCheckIn
             // 
             this.btnCheckIn.BorderRadius = 10;
@@ -622,7 +602,6 @@
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonRemove);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.panelData);
             this.Controls.Add(this.panelFields);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -650,7 +629,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button buttonRemove;
-        private Guna.UI2.WinForms.Guna2Button buttonAdd;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2TextBox txtBox_fullName;
         private System.Windows.Forms.Label label5;
