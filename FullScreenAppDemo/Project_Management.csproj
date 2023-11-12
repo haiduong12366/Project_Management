@@ -114,6 +114,7 @@
     <Compile Include="checkin_checkout.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAO\CheckIn_CheckOutDAO.cs" />
     <Compile Include="DAO\ProjectDAO.cs" />
     <Compile Include="DAO\RequestDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
