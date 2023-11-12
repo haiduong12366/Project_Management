@@ -7,10 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace FullScreenAppDemo.DAO
 {
@@ -18,6 +21,7 @@ namespace FullScreenAppDemo.DAO
     {
         company_management_Entities entity = new company_management_Entities();
         private static TeamDAO instance;
+        public event Action TeamDataChanged; // Event to notify changes
         public static TeamDAO Instance
         {
             get { if (instance == null) instance = new TeamDAO(); return TeamDAO.instance; }
@@ -99,7 +103,89 @@ namespace FullScreenAppDemo.DAO
                 return team;
             }
         }
+        public void AddTeam(string name, string description, int idLeader, byte[] avatar)
+        {
+            try
+            {
+                // Determine the next available ID
+                int nextId = entity.teams.Any() ? entity.teams.Max(t => t.id) + 1 : 1;
 
+                // Create a new team with the next available ID
+                team newTeam = new team
+                {
+                    id = nextId,
+                    name = name,
+                    description = description,
+                    idLeader = idLeader,
+                    avatar = avatar
+                };
+                // Add the new team to the entity
+                entity.teams.Add(newTeam);
 
+                // Save changes to the database
+                entity.SaveChanges();
+
+                // Notify subscribers about the change
+                TeamDataChanged?.Invoke();
+
+                Util.Instance.Alert("Add team success", FormAlert.enmType.Success);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Util.Instance.Alert("Add team fail", FormAlert.enmType.Error);
+            }
+        }
+        public void UpdateTeam(int id, string name, string description, int idLeader, byte[] avatar)
+        {
+            try
+            {
+                team existingTeam = entity.teams.SingleOrDefault(t => t.id == id);
+
+                if (existingTeam != null)
+                {
+                    existingTeam.name = name;
+                    existingTeam.description = description;
+                    existingTeam.idLeader = idLeader;
+                    existingTeam.avatar = avatar;
+
+                    entity.Entry(existingTeam).State = EntityState.Modified;
+                    entity.SaveChanges();
+                    Util.Instance.Alert("Update team success", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    Util.Instance.Alert("Team not found", FormAlert.enmType.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Util.Instance.Alert("Update team fail", FormAlert.enmType.Error);
+            }
+        }
+        public void DeleteTeam(int id)
+        {
+            try
+            {
+                team teamToDelete = entity.teams.SingleOrDefault(t => t.id == id);
+
+                if (teamToDelete != null)
+                {
+                    entity.teams.Remove(teamToDelete);
+                    entity.SaveChanges();
+                    Util.Instance.Alert("Delete team success", FormAlert.enmType.Success);
+                }
+                else
+                {
+                    Util.Instance.Alert("Team not found", FormAlert.enmType.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                Util.Instance.Alert("Delete team fail", FormAlert.enmType.Error);
+            }
+        }
     }
 }

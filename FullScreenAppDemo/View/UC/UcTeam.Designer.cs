@@ -43,6 +43,7 @@ namespace company_management.View.UC
             this.panelFields = new Guna.UI2.WinForms.Guna2Panel();
             this.txtbox_Desciption = new Guna.UI2.WinForms.Guna2TextBox();
             this.label_teamName = new System.Windows.Forms.Label();
+            this.picturebox_teamAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,18 +56,17 @@ namespace company_management.View.UC
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label = new System.Windows.Forms.Label();
             this.label_todoTask = new System.Windows.Forms.Label();
-            this.picturebox_teamAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).BeginInit();
             this.panelFields.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelData
@@ -188,6 +188,7 @@ namespace company_management.View.UC
             this.btnAdd.Size = new System.Drawing.Size(139, 37);
             this.btnAdd.TabIndex = 115;
             this.btnAdd.Text = "New team";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // btnDelete
             // 
@@ -208,6 +209,7 @@ namespace company_management.View.UC
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(41, 37);
             this.btnDelete.TabIndex = 117;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // panelFields
             // 
@@ -264,6 +266,19 @@ namespace company_management.View.UC
             this.label_teamName.TabIndex = 197;
             this.label_teamName.Text = "Team";
             this.label_teamName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picturebox_teamAvatar
+            // 
+            this.picturebox_teamAvatar.FillColor = System.Drawing.Color.Transparent;
+            this.picturebox_teamAvatar.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_teamAvatar.Image")));
+            this.picturebox_teamAvatar.ImageRotate = 0F;
+            this.picturebox_teamAvatar.Location = new System.Drawing.Point(20, 37);
+            this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
+            this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picturebox_teamAvatar.Size = new System.Drawing.Size(120, 115);
+            this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturebox_teamAvatar.TabIndex = 196;
+            this.picturebox_teamAvatar.TabStop = false;
             // 
             // guna2Panel2
             // 
@@ -437,19 +452,6 @@ namespace company_management.View.UC
             this.label_todoTask.Text = "44";
             this.label_todoTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // picturebox_teamAvatar
-            // 
-            this.picturebox_teamAvatar.FillColor = System.Drawing.Color.Transparent;
-            this.picturebox_teamAvatar.Image = ((System.Drawing.Image)(resources.GetObject("picturebox_teamAvatar.Image")));
-            this.picturebox_teamAvatar.ImageRotate = 0F;
-            this.picturebox_teamAvatar.Location = new System.Drawing.Point(20, 37);
-            this.picturebox_teamAvatar.Name = "picturebox_teamAvatar";
-            this.picturebox_teamAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picturebox_teamAvatar.Size = new System.Drawing.Size(120, 115);
-            this.picturebox_teamAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picturebox_teamAvatar.TabIndex = 196;
-            this.picturebox_teamAvatar.TabStop = false;
-            // 
             // btnEdit
             // 
             this.btnEdit.BackColor = System.Drawing.Color.Transparent;
@@ -468,6 +470,7 @@ namespace company_management.View.UC
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(36, 37);
             this.btnEdit.TabIndex = 116;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click_1);
             // 
             // UcTeam
             // 
@@ -485,17 +488,16 @@ namespace company_management.View.UC
             this.Controls.Add(this.btnDelete);
             this.Name = "UcTeam";
             this.Size = new System.Drawing.Size(1292, 788);
-            this.Load += new System.EventHandler(this.UC_Team_Load);
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).EndInit();
             this.panelFields.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             this.ResumeLayout(false);
 
         }

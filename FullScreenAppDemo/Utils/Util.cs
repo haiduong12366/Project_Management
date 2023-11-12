@@ -4,6 +4,7 @@ using FullScreenAppDemo.DAO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -102,6 +103,27 @@ namespace Project_Management.Utils
             todo.Text = todoPercentFormatted + @"%";
             inprogress.Text = inprogressPercentFormatted + @"%";
             done.Text = donePercentFormatted + @"%";
+        }
+        public byte[] ImageToByteArray(Image image)
+        {
+            if (image == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
+            }
+        }
+        public Image ByteArrayToImage(byte[] byteArray)
+        {
+            if (byteArray == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
         }
     }
 }
