@@ -235,12 +235,23 @@ namespace FullScreenAppDemo.DAO
                 return -1;
             }
         }
-        internal int GetTotalTeamCount()
+        public int CountTotalTeams()
         {
-            using (company_management_Entities entity = new company_management_Entities())
+            if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
             {
-                return entity.teams.Count();
+                return GetAllTeams().Count;
             }
+            else if (UserDAO.Instance.IsLeader())
+            {
+                return GetTeamByLeader(UserSession.LoggedInUser.id).Count;
+            }
+            else if (UserDAO.Instance.IsEmployee())
+            {
+                return GetTeamByIDUser().Count;
+            }
+
+            return 0;
         }
+
     }
 }

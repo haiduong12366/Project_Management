@@ -13,20 +13,33 @@ namespace company_management.View.UC
         {
             InitializeComponent();
             LoadData();
+           
         }
         private void LoadData()
         {
-            // Assuming you have DAO methods to get counts
-            int projectCount = ProjectDAO.Instance.GetTotalProjectCount();
-            int teamCount = TeamDAO.Instance.GetTotalTeamCount();
-            int taskCount = TaskDAO.Instance.GetTotalTaskCount();
-            int leaveRequestCount = RequestDAO.Instance.GetTotalRequestCount();
+            DisplayTotalCounts();
+        }
+        private void DisplayTotalCounts()
+        {
+            try
+            {
+                int totalProjects = UserDAO.Instance.CountTotalProjects();
+                int totalTasks = UserDAO.Instance.CountTotalTasks();
+                int totalTeams = UserDAO.Instance.CountTotalTeams();
+                int totalRequests = UserDAO.Instance.CountTotalRequests();
 
-            // Update labels with the counts
-            label_project.Text = $"{projectCount}";
-            label_team.Text = $"{teamCount}";
-            label_task.Text = $"{taskCount}";
-            label_request.Text = $"{leaveRequestCount}";
+                // Hiển thị số lượng tổng trong các Label hoặc các điều khiển khác tùy thuộc vào cách bạn thiết kế giao diện
+                label_project.Text = $"{totalProjects}";
+                label_task.Text = $"{totalTasks}";
+                label_team.Text = $"{totalTeams}";
+                label_request.Text = $"{totalRequests}";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Xử lý nếu có lỗi khi lấy dữ liệu
+                MessageBox.Show("Error loading data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

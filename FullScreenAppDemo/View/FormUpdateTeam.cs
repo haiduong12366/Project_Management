@@ -18,6 +18,7 @@ namespace FullScreenAppDemo.View
     public partial class FormUpdateTeam : Form
     {
         private int teamId; // To store the ID of the team being updated
+        private string currentImagePath;  // Add a class-level variable to store the current image path
         public FormUpdateTeam()
         {
             InitializeComponent();
@@ -60,8 +61,20 @@ namespace FullScreenAppDemo.View
             string name = tb_teamName.Text;
             string description = tb_Desciption.Text;
             int idLeader = Convert.ToInt32(cb_Leader.SelectedValue);
-            // Assuming you have a method to convert image to byte array in Util
-            byte[] avatar = Util.Instance.ImageToByteArray(PbAvatar.Image);
+
+            byte[] avatar;
+
+            // Check if a new image is selected
+            if (!string.IsNullOrEmpty(currentImagePath))
+            {
+                // If a new image is selected, convert and update the avatar
+                avatar = Util.Instance.ImageToByteArray(PbAvatar.Image);
+            }
+            else
+            {
+                // If no new image is selected, keep the original avatar
+                avatar = Util.Instance.ImageToByteArray((Image)PbAvatar.Image.Clone());
+            }
 
             // Update the team using the TeamDAO method
             TeamDAO.Instance.UpdateTeam(teamId, name, description, idLeader, avatar);
@@ -77,11 +90,11 @@ namespace FullScreenAppDemo.View
 
         private void btnUpdateAvatar_Click(object sender, EventArgs e)
         {
-            // Allow the user to browse for an image and display it in the PictureBox
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-               PbAvatar.Image = Image.FromFile(openFileDialog1.FileName);
+                PbAvatar.Image = Image.FromFile(openFileDialog1.FileName);
+                currentImagePath = openFileDialog1.FileName;  // Save the current image path
             }
         }
     }

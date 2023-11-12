@@ -1,7 +1,9 @@
 ﻿using FullScreenAppDemo.DAO;
+using FullScreenAppDemo.DTO;
 using FullScreenAppDemo.View;
 using Guna.UI2.WinForms.Suite;
 using Project_Management;
+using Project_Management.DAO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -62,7 +64,24 @@ namespace company_management.View.UC
             dataGridView_Team.Columns.Add(avatarColumn);
 
             // Populate data
-            List<team> teams = TeamDAO.Instance.GetAllTeams();
+            List<team> teams;
+
+            if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+            {
+                // Nếu là Human Resources hoặc Manager, hiển thị toàn bộ danh sách
+                teams = TeamDAO.Instance.GetAllTeams();
+            }
+            else if (UserDAO.Instance.IsLeader())
+            {
+                // Nếu là Leader, hiển thị danh sách team của Leader
+                teams = TeamDAO.Instance.GetTeamByLeader(UserSession.LoggedInUser.id);
+            }
+            else
+            {
+                // Nếu là Employee, hiển thị danh sách team của Employee
+                teams = TeamDAO.Instance.GetTeamByIDUser();
+            }
+
             foreach (var t in teams)
             {
                 // Convert the byte array to an Image
@@ -91,8 +110,16 @@ namespace company_management.View.UC
         }
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            FormAddTeam addTeam = new FormAddTeam();
-            addTeam.ShowDialog();
+            // Check if the user is Manager or Human Resources
+            if (UserDAO.Instance.IsManager() || UserDAO.Instance.IsHumanResources())
+            {
+                FormAddTeam addTeam = new FormAddTeam();
+                addTeam.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You do not have permission to add a team.", "Permission Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnEdit_Click_1(object sender, EventArgs e)
@@ -103,13 +130,21 @@ namespace company_management.View.UC
                 // Get the ID of the selected team from the DataGridView
                 int selectedTeamId = Convert.ToInt32(dataGridView_Team.SelectedRows[0].Cells[0].Value);
 
-                // Open the FormUpdateTeam with the selected team ID
-                FormUpdateTeam updateForm = new FormUpdateTeam();
-                updateForm.TeamId = selectedTeamId;
-                updateForm.ShowDialog();
+                // Check if the user is Manager or Human Resources
+                if (UserDAO.Instance.IsManager() || UserDAO.Instance.IsHumanResources())
+                {
+                    // Open the FormUpdateTeam with the selected team ID
+                    FormUpdateTeam updateForm = new FormUpdateTeam();
+                    updateForm.TeamId = selectedTeamId;
+                    updateForm.ShowDialog();
 
-                // Optionally, you can reload the data after the update form is closed
-                LoadTeamData();
+                    // Optionally, you can reload the data after the update form is closed
+                    LoadTeamData();
+                }
+                else
+                {
+                    MessageBox.Show("You do not have permission to edit this team.", "Permission Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -126,16 +161,24 @@ namespace company_management.View.UC
                 // Get the selected team's ID from the DataGridView
                 int selectedTeamId = (int)dataGridView_Team.SelectedRows[0].Cells[0].Value;
 
-                // Display a confirmation dialog before deleting
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this team?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                // Check if the user is Manager or Human Resources
+                if (UserDAO.Instance.IsManager() || UserDAO.Instance.IsHumanResources())
                 {
-                    // Call the delete method in TeamDAO to delete the team
-                    TeamDAO.Instance.DeleteTeam(selectedTeamId);
+                    // Display a confirmation dialog before deleting
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this team?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    // Refresh the data after deletion
-                    LoadTeamData();
+                    if (result == DialogResult.Yes)
+                    {
+                        // Call the delete method in TeamDAO to delete the team
+                        TeamDAO.Instance.DeleteTeam(selectedTeamId);
+
+                        // Refresh the data after deletion
+                        LoadTeamData();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You do not have permission to delete this team.", "Permission Denied", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else

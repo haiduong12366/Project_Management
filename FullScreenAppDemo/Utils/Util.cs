@@ -111,10 +111,11 @@ namespace Project_Management.Utils
 
             using (MemoryStream ms = new MemoryStream())
             {
-                image.Save(ms, image.RawFormat);
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 return ms.ToArray();
             }
         }
+
         public Image ByteArrayToImage(byte[] byteArray)
         {
             if (byteArray == null)
@@ -125,5 +126,7 @@ namespace Project_Management.Utils
                 return Image.FromStream(ms);
             }
         }
+
+
     }
 }

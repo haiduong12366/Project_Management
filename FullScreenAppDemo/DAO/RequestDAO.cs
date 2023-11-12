@@ -156,12 +156,20 @@ namespace FullScreenAppDemo.DAO
                 }
             }
         }
-        internal int GetTotalRequestCount()
+        public int CountTotalRequests()
         {
             using (company_management_Entities entity = new company_management_Entities())
             {
-                return entity.leaveRequests.Count();
+                if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+                {
+                    return GetALlRequest().Count;
+                }
+                else
+                {
+                    return GetMyLeaveRequests().Count;
+                }
             }
         }
+
     }
 }
