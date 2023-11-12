@@ -12,24 +12,34 @@ namespace company_management.View.UC
         public UcHome()
         {
             InitializeComponent();
+            LoadData();
+           
         }
-
         private void LoadData()
         {
-            LoadHomeStatistics();
+            DisplayTotalCounts();
         }
-
-        private void LoadHomeStatistics()
+        private void DisplayTotalCounts()
         {
-            using (company_management_Entities entity = new company_management_Entities())
+            try
             {
+                int totalProjects = UserDAO.Instance.CountTotalProjects();
+                int totalTasks = UserDAO.Instance.CountTotalTasks();
+                int totalTeams = UserDAO.Instance.CountTotalTeams();
+                int totalRequests = UserDAO.Instance.CountTotalRequests();
 
+                // Hiển thị số lượng tổng trong các Label hoặc các điều khiển khác tùy thuộc vào cách bạn thiết kế giao diện
+                label_project.Text = $"{totalProjects}";
+                label_task.Text = $"{totalTasks}";
+                label_team.Text = $"{totalTeams}";
+                label_request.Text = $"{totalRequests}";
             }
-        }
-
-        private void UcHome_Load(object sender, EventArgs e)
-        {
-            LoadData();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Xử lý nếu có lỗi khi lấy dữ liệu
+                MessageBox.Show("Error loading data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

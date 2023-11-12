@@ -191,5 +191,22 @@ namespace FullScreenAppDemo.DAO
 
             return projectStatus;
         }
+        public int CountTotalProjects()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+                {
+                    return GetALlProject().Count;
+                }
+                else
+                {
+                    List<team> teams = TeamDAO.Instance.GetTeamByIDUser();
+                    return teams.Sum(team => GetProjectByTeam(team.id).Count);
+                }
+            }
+        }
+
+
     }
 }

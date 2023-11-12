@@ -100,5 +100,28 @@ namespace FullScreenAppDemo.DAO
 
             return taskStatus;
         }
+
+        private List<task> GetTaskByIdUser(int id)
+        {
+            return entity.tasks.Where(t => t.idAssignee == id).ToList<task>();
+        }
+        public int CountTotalTasks()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+                {
+                    return GetALlTask().Count;
+                }
+                else
+                {
+                    return GetTaskByIdUser(UserSession.LoggedInUser.id).Count;
+                }
+
+
+                return 0;
+            }
+        }
+
     }
 }
