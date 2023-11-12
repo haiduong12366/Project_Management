@@ -203,19 +203,24 @@ namespace company_management.View.UC
             // Check if any row is selected
             if (dataGridView_Team.SelectedRows.Count > 0)
             {
-                // Get the ID of the selected team from the DataGridView
-                int selectedTeamId = Convert.ToInt32(dataGridView_Team.SelectedRows[0].Cells[0].Value);
+                if (dataGridView_Team.SelectedRows[0].Cells[2].Value != null)
+                {
+                    // Get the ID of the selected team from the DataGridView
+                    int selectedTeamId = Convert.ToInt32(dataGridView_Team.SelectedRows[0].Cells[0].Value);
 
-                // Update labels with information based on the selected team
-                UpdateLabelsBasedOnSelectedTeam(selectedTeamId);
+                    // Update labels with information based on the selected team
+                    UpdateLabelsBasedOnSelectedTeam(selectedTeamId);
 
-                // Get the description of the selected team from the DataGridView
-                string selectedDescription = dataGridView_Team.SelectedRows[0].Cells[2].Value.ToString();
+                    // Get the description of the selected team from the DataGridView
+                    string selectedDescription = dataGridView_Team.SelectedRows[0].Cells[2].Value.ToString();
 
-                // Update the TextBox with the description
-                txtbox_Desciption.Text = selectedDescription;
-            }   
+                    // Update the TextBox with the description
+                    txtbox_Desciption.Text = selectedDescription;
+                }
+
+
+            }
         }
-        
+
     }
 }
