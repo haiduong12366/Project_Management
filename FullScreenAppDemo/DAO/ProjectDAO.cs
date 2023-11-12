@@ -191,5 +191,12 @@ namespace FullScreenAppDemo.DAO
 
             return projectStatus;
         }
+        internal int GetTotalProjectCount()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                return entity.projects.Count();
+            }
+        }
     }
 }

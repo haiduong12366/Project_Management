@@ -187,5 +187,60 @@ namespace FullScreenAppDemo.DAO
                 Util.Instance.Alert("Delete team fail", FormAlert.enmType.Error);
             }
         }
+        public int GetTeamMemberCount(int teamId)
+        {
+            try
+            {
+                // Retrieve the team members using the teamId
+                var teamMembersCount = entity.user_team.Where(ut => ut.idTeam == teamId).Count();
+
+                return teamMembersCount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Handle exception (you may want to throw or return a default value)
+                return -1;
+            }
+        }
+        public int GetTeamProjectCount(int teamId)
+        {
+            try
+            {
+                // Retrieve the project count using the teamId
+                var projectCount = entity.projects.Where(p => p.idTeam == teamId).Count();
+
+                return projectCount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Handle exception (you may want to throw or return a default value)
+                return -1;
+            }
+        }
+        public int GetTeamTaskCount(int teamId)
+        {
+            try
+            {
+                // Retrieve the task count using the teamId
+                var taskCount = entity.tasks.Where(t => t.idTeam == teamId).Count();
+
+                return taskCount;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Handle exception (you may want to throw or return a default value)
+                return -1;
+            }
+        }
+        internal int GetTotalTeamCount()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                return entity.teams.Count();
+            }
+        }
     }
 }

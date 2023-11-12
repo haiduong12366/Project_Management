@@ -100,5 +100,12 @@ namespace FullScreenAppDemo.DAO
 
             return taskStatus;
         }
+        internal int GetTotalTaskCount()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                return entity.tasks.Count();
+            }
+        }
     }
 }

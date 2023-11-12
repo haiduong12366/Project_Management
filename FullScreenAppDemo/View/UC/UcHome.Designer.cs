@@ -428,7 +428,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UcHome";
             this.Size = new System.Drawing.Size(1292, 788);
-            this.Load += new System.EventHandler(this.UcHome_Load);
+     
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);

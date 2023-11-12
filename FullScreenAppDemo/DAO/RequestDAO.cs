@@ -156,5 +156,12 @@ namespace FullScreenAppDemo.DAO
                 }
             }
         }
+        internal int GetTotalRequestCount()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                return entity.leaveRequests.Count();
+            }
+        }
     }
 }

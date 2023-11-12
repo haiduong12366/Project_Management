@@ -21,16 +21,6 @@ namespace company_management.View.UC
             TeamDAO.Instance.TeamDataChanged += LoadTeamData;
             LoadTeamData();
         }
-        private void LoadTeamData1()
-        {
-            // Get the list of teams from the DAO
-            var teams = TeamDAO.Instance.GetAllTeams();
-
-            // Bind the list to the DataGridView
-            dataGridView_Team.DataSource = teams;
-
-            // Optionally, you can customize the DataGridView appearance or handle other UI logic here.
-        }
         private void LoadTeamData()
         {
             // Clear existing columns and rows
@@ -49,20 +39,20 @@ namespace company_management.View.UC
 
             // Team Name column
             DataGridViewTextBoxColumn nameColumn = new DataGridViewTextBoxColumn();
-            nameColumn.DataPropertyName = "Tên nhóm";
-            nameColumn.HeaderText = "Tên nhóm";
+            nameColumn.DataPropertyName = "Team Name";
+            nameColumn.HeaderText = "Team Name";
             dataGridView_Team.Columns.Add(nameColumn);
 
             // Description column
             DataGridViewTextBoxColumn descriptionColumn = new DataGridViewTextBoxColumn();
-            descriptionColumn.DataPropertyName = "Mô tả nhóm";
-            descriptionColumn.HeaderText = "Mô tả nhóm";
+            descriptionColumn.DataPropertyName = "Description";
+            descriptionColumn.HeaderText = "Description";
             dataGridView_Team.Columns.Add(descriptionColumn);
 
             // ID Leader column
             DataGridViewTextBoxColumn idLeaderColumn = new DataGridViewTextBoxColumn();
-            idLeaderColumn.DataPropertyName = "ID trưởng nhóm";
-            idLeaderColumn.HeaderText = "ID trưởng nhóm";
+            idLeaderColumn.DataPropertyName = "ID Leader";
+            idLeaderColumn.HeaderText = "ID Leader";
             dataGridView_Team.Columns.Add(idLeaderColumn);
 
             // Avatar column (assuming it contains byte array data)
@@ -153,7 +143,36 @@ namespace company_management.View.UC
                 MessageBox.Show("Please select a team to delete.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        private void UpdateLabelsBasedOnSelectedTeam(int selectedTeamId)
+        {
+            // Get the member count, project count, and task count for the selected team
+            int memberCount = TeamDAO.Instance.GetTeamMemberCount(selectedTeamId);
+            int projectCount = TeamDAO.Instance.GetTeamProjectCount(selectedTeamId);
+            int taskCount = TeamDAO.Instance.GetTeamTaskCount(selectedTeamId);
 
-     
+            // Set the count in the labels
+            label_member.Text = $"{memberCount}";
+            label_project.Text = $"{projectCount}";
+            label_task.Text = $"{taskCount}";
+        }
+        private void dataGridView_Team_SelectionChanged(object sender, EventArgs e)
+        {
+            // Check if any row is selected
+            if (dataGridView_Team.SelectedRows.Count > 0)
+            {
+                // Get the ID of the selected team from the DataGridView
+                int selectedTeamId = Convert.ToInt32(dataGridView_Team.SelectedRows[0].Cells[0].Value);
+
+                // Update labels with information based on the selected team
+                UpdateLabelsBasedOnSelectedTeam(selectedTeamId);
+
+                // Get the description of the selected team from the DataGridView
+                string selectedDescription = dataGridView_Team.SelectedRows[0].Cells[2].Value.ToString();
+
+                // Update the TextBox with the description
+                txtbox_Desciption.Text = selectedDescription;
+            }   
+        }
+        
     }
 }

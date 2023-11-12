@@ -47,15 +47,15 @@ namespace company_management.View.UC
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label_task = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_project = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label = new System.Windows.Forms.Label();
-            this.label_todoTask = new System.Windows.Forms.Label();
+            this.label_member = new System.Windows.Forms.Label();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Team)).BeginInit();
@@ -158,6 +158,7 @@ namespace company_management.View.UC
             this.dataGridView_Team.ThemeStyle.RowsStyle.Height = 30;
             this.dataGridView_Team.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridView_Team.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView_Team.SelectionChanged += new System.EventHandler(this.dataGridView_Team_SelectionChanged);
             // 
             // label1
             // 
@@ -287,7 +288,7 @@ namespace company_management.View.UC
             this.guna2Panel2.BorderRadius = 20;
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.guna2GradientPanel3);
-            this.guna2Panel2.Controls.Add(this.label5);
+            this.guna2Panel2.Controls.Add(this.label_task);
             this.guna2Panel2.FillColor = System.Drawing.Color.White;
             this.guna2Panel2.Location = new System.Drawing.Point(1079, 17);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -325,17 +326,17 @@ namespace company_management.View.UC
             this.label4.Text = "Task";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // label_task
             // 
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(2, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 42);
-            this.label5.TabIndex = 97;
-            this.label5.Text = "44";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_task.BackColor = System.Drawing.Color.Transparent;
+            this.label_task.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_task.ForeColor = System.Drawing.Color.Black;
+            this.label_task.Location = new System.Drawing.Point(2, 90);
+            this.label_task.Name = "label_task";
+            this.label_task.Size = new System.Drawing.Size(191, 42);
+            this.label_task.TabIndex = 97;
+            this.label_task.Text = "44";
+            this.label_task.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel1
             // 
@@ -344,7 +345,7 @@ namespace company_management.View.UC
             this.guna2Panel1.BorderRadius = 20;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.guna2GradientPanel2);
-            this.guna2Panel1.Controls.Add(this.label3);
+            this.guna2Panel1.Controls.Add(this.label_project);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(844, 20);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -383,17 +384,17 @@ namespace company_management.View.UC
             this.label2.Text = "Project";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // label_project
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(3, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 42);
-            this.label3.TabIndex = 97;
-            this.label3.Text = "44";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_project.BackColor = System.Drawing.Color.Transparent;
+            this.label_project.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_project.ForeColor = System.Drawing.Color.Black;
+            this.label_project.Location = new System.Drawing.Point(3, 87);
+            this.label_project.Name = "label_project";
+            this.label_project.Size = new System.Drawing.Size(188, 42);
+            this.label_project.TabIndex = 97;
+            this.label_project.Text = "44";
+            this.label_project.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel3
             // 
@@ -402,7 +403,7 @@ namespace company_management.View.UC
             this.guna2Panel3.BorderRadius = 20;
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.guna2GradientPanel1);
-            this.guna2Panel3.Controls.Add(this.label_todoTask);
+            this.guna2Panel3.Controls.Add(this.label_member);
             this.guna2Panel3.FillColor = System.Drawing.Color.White;
             this.guna2Panel3.Location = new System.Drawing.Point(612, 17);
             this.guna2Panel3.Name = "guna2Panel3";
@@ -440,17 +441,17 @@ namespace company_management.View.UC
             this.label.Text = "Thành viên";
             this.label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_todoTask
+            // label_member
             // 
-            this.label_todoTask.BackColor = System.Drawing.Color.Transparent;
-            this.label_todoTask.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_todoTask.ForeColor = System.Drawing.Color.Black;
-            this.label_todoTask.Location = new System.Drawing.Point(3, 90);
-            this.label_todoTask.Name = "label_todoTask";
-            this.label_todoTask.Size = new System.Drawing.Size(190, 42);
-            this.label_todoTask.TabIndex = 97;
-            this.label_todoTask.Text = "44";
-            this.label_todoTask.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_member.BackColor = System.Drawing.Color.Transparent;
+            this.label_member.Font = new System.Drawing.Font("Segoe UI", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_member.ForeColor = System.Drawing.Color.Black;
+            this.label_member.Location = new System.Drawing.Point(3, 90);
+            this.label_member.Name = "label_member";
+            this.label_member.Size = new System.Drawing.Size(190, 42);
+            this.label_member.TabIndex = 97;
+            this.label_member.Text = "44";
+            this.label_member.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnEdit
             // 
@@ -507,16 +508,16 @@ namespace company_management.View.UC
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_project;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label_task;
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label label_todoTask;
+        private System.Windows.Forms.Label label_member;
 
         private System.Windows.Forms.Label label_teamName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturebox_teamAvatar;

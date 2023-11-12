@@ -12,24 +12,21 @@ namespace company_management.View.UC
         public UcHome()
         {
             InitializeComponent();
+            LoadData();
         }
-
         private void LoadData()
         {
-            LoadHomeStatistics();
-        }
+            // Assuming you have DAO methods to get counts
+            int projectCount = ProjectDAO.Instance.GetTotalProjectCount();
+            int teamCount = TeamDAO.Instance.GetTotalTeamCount();
+            int taskCount = TaskDAO.Instance.GetTotalTaskCount();
+            int leaveRequestCount = RequestDAO.Instance.GetTotalRequestCount();
 
-        private void LoadHomeStatistics()
-        {
-            using (company_management_Entities entity = new company_management_Entities())
-            {
-
-            }
-        }
-
-        private void UcHome_Load(object sender, EventArgs e)
-        {
-            LoadData();
+            // Update labels with the counts
+            label_project.Text = $"{projectCount}";
+            label_team.Text = $"{teamCount}";
+            label_task.Text = $"{taskCount}";
+            label_request.Text = $"{leaveRequestCount}";
         }
     }
 }
