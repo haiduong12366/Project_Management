@@ -15,6 +15,8 @@ using System.Web.Configuration;
 using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
+using System.Runtime.Remoting.Contexts;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project_Management.DAO
 {
@@ -148,6 +150,19 @@ namespace Project_Management.DAO
                 }
             }
         }
+
+        public List<user> GetUsersByTeamID(int idTeam) 
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var listUsers = from user in entity.users
+                            join userTeam in entity.user_team on user.id equals userTeam.idUser
+                            where userTeam.idTeam == idTeam
+                            select user;
+                return listUsers.ToList();
+            }
+        }
+
         public void CheckEmployeeIsReadOnlyStatus(Guna2TextBox txt)
         {
             int idPos = (int)UserSession.LoggedInUser.idPosition;

@@ -107,7 +107,6 @@
             this.combobox_taskProgressFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_taskProgressFilter.ItemHeight = 26;
             this.combobox_taskProgressFilter.Items.AddRange(new object[] {
-            "Lọc theo tiến độ",
             "Tất cả",
             "Cần làm ",
             "Đang làm",
@@ -153,7 +152,6 @@
             this.combobox_taskStatusFilter.ItemHeight = 26;
             this.combobox_taskStatusFilter.Items.AddRange(new object[] {
             "Tất cả",
-            "Đã tạo\t",
             "Được giao"});
             this.combobox_taskStatusFilter.Location = new System.Drawing.Point(12, 16);
             this.combobox_taskStatusFilter.Margin = new System.Windows.Forms.Padding(2);

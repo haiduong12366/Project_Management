@@ -30,8 +30,6 @@ namespace Project_Management.view
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddTask));
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBox_cretor = new Guna.UI2.WinForms.Guna2TextBox();
             this.combbox_Project = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,47 +46,10 @@ namespace Project_Management.view
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.gboxTask = new System.Windows.Forms.GroupBox();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
+            this.combbox_UserOfTeam = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.labAssigneesUser = new System.Windows.Forms.Label();
             this.gboxTask.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(521, 91);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
-            this.label5.TabIndex = 123;
-            this.label5.Text = "Creator";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtBox_cretor
-            // 
-            this.txtBox_cretor.BorderColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.BorderRadius = 5;
-            this.txtBox_cretor.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBox_cretor.DefaultText = "";
-            this.txtBox_cretor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBox_cretor.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBox_cretor.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBox_cretor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_cretor.ForeColor = System.Drawing.Color.Black;
-            this.txtBox_cretor.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBox_cretor.Location = new System.Drawing.Point(524, 111);
-            this.txtBox_cretor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtBox_cretor.Name = "txtBox_cretor";
-            this.txtBox_cretor.PasswordChar = '\0';
-            this.txtBox_cretor.PlaceholderText = "";
-            this.txtBox_cretor.ReadOnly = true;
-            this.txtBox_cretor.SelectedText = "";
-            this.txtBox_cretor.Size = new System.Drawing.Size(225, 26);
-            this.txtBox_cretor.TabIndex = 124;
             // 
             // combbox_Project
             // 
@@ -101,7 +62,7 @@ namespace Project_Management.view
             this.combbox_Project.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.combbox_Project.ForeColor = System.Drawing.Color.Black;
             this.combbox_Project.ItemHeight = 30;
-            this.combbox_Project.Location = new System.Drawing.Point(524, 246);
+            this.combbox_Project.Location = new System.Drawing.Point(524, 185);
             this.combbox_Project.Margin = new System.Windows.Forms.Padding(2);
             this.combbox_Project.Name = "combbox_Project";
             this.combbox_Project.Size = new System.Drawing.Size(226, 36);
@@ -114,7 +75,7 @@ namespace Project_Management.view
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(521, 224);
+            this.label4.Location = new System.Drawing.Point(521, 163);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 18);
@@ -195,7 +156,7 @@ namespace Project_Management.view
             this.combbox_Assignee.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combbox_Assignee.ForeColor = System.Drawing.Color.Black;
             this.combbox_Assignee.ItemHeight = 30;
-            this.combbox_Assignee.Location = new System.Drawing.Point(524, 178);
+            this.combbox_Assignee.Location = new System.Drawing.Point(523, 115);
             this.combbox_Assignee.Margin = new System.Windows.Forms.Padding(2);
             this.combbox_Assignee.Name = "combbox_Assignee";
             this.combbox_Assignee.Size = new System.Drawing.Size(226, 36);
@@ -239,12 +200,12 @@ namespace Project_Management.view
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(521, 156);
+            this.label7.Location = new System.Drawing.Point(521, 88);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 18);
+            this.label7.Size = new System.Drawing.Size(113, 18);
             this.label7.TabIndex = 113;
-            this.label7.Text = "Assignees";
+            this.label7.Text = "Assignees team";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtbox_Desciption
@@ -337,9 +298,9 @@ namespace Project_Management.view
             // 
             // gboxTask
             // 
+            this.gboxTask.Controls.Add(this.combbox_UserOfTeam);
+            this.gboxTask.Controls.Add(this.labAssigneesUser);
             this.gboxTask.Controls.Add(this.btnClose);
-            this.gboxTask.Controls.Add(this.label5);
-            this.gboxTask.Controls.Add(this.txtBox_cretor);
             this.gboxTask.Controls.Add(this.combbox_Project);
             this.gboxTask.Controls.Add(this.label4);
             this.gboxTask.Controls.Add(this.label1);
@@ -381,6 +342,39 @@ namespace Project_Management.view
             this.btnClose.Text = "Close";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // combbox_UserOfTeam
+            // 
+            this.combbox_UserOfTeam.BackColor = System.Drawing.Color.Transparent;
+            this.combbox_UserOfTeam.BorderRadius = 5;
+            this.combbox_UserOfTeam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combbox_UserOfTeam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combbox_UserOfTeam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_UserOfTeam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combbox_UserOfTeam.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combbox_UserOfTeam.ForeColor = System.Drawing.Color.Black;
+            this.combbox_UserOfTeam.ItemHeight = 30;
+            this.combbox_UserOfTeam.Location = new System.Drawing.Point(522, 257);
+            this.combbox_UserOfTeam.Margin = new System.Windows.Forms.Padding(2);
+            this.combbox_UserOfTeam.Name = "combbox_UserOfTeam";
+            this.combbox_UserOfTeam.Size = new System.Drawing.Size(226, 36);
+            this.combbox_UserOfTeam.TabIndex = 128;
+            this.combbox_UserOfTeam.SelectedIndexChanged += new System.EventHandler(this.combbox_UserOfTeam_SelectedIndexChanged);
+            // 
+            // labAssigneesUser
+            // 
+            this.labAssigneesUser.AutoSize = true;
+            this.labAssigneesUser.BackColor = System.Drawing.Color.Transparent;
+            this.labAssigneesUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labAssigneesUser.ForeColor = System.Drawing.Color.Black;
+            this.labAssigneesUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labAssigneesUser.Location = new System.Drawing.Point(520, 230);
+            this.labAssigneesUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labAssigneesUser.Name = "labAssigneesUser";
+            this.labAssigneesUser.Size = new System.Drawing.Size(109, 18);
+            this.labAssigneesUser.TabIndex = 127;
+            this.labAssigneesUser.Text = "Assignees user";
+            this.labAssigneesUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FormAddTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,9 +392,6 @@ namespace Project_Management.view
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtBox_cretor;
         private Guna.UI2.WinForms.Guna2ComboBox combbox_Project;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -417,5 +408,7 @@ namespace Project_Management.view
         private Guna.UI2.WinForms.Guna2TextBox txtbox_taskName;
         private System.Windows.Forms.GroupBox gboxTask;
         private Guna.UI2.WinForms.Guna2Button btnClose;
+        private Guna.UI2.WinForms.Guna2ComboBox combbox_UserOfTeam;
+        private System.Windows.Forms.Label labAssigneesUser;
     }
 }

@@ -10,6 +10,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Globalization;
+using System.Drawing;
 
 namespace Project_Management.View.UC
 {
@@ -94,18 +97,98 @@ namespace Project_Management.View.UC
 
                     dataGridView.Rows.Add(t.id, t.taskName, (t.deadline != null ? t.deadline?.ToString("dd/MM/yyyy") : ""), t.progress + " %", assignee, teamName);
                 }
-            } 
+                LoadProgressChart(false);
+            }
+            else
+            {
+                LoadProgressChart(true);
+            }
         }
 
+        public void LoadProgressChart(Boolean isNull)
+        {
+            String todoPercent;
+            String inProgressPercent;
+            String donePrecent;
+
+            if(!isNull)
+            {
+                double todo = 0;
+                double inProgress = 0;
+                double done = 0;
 
 
+                foreach (DataGridViewRow row in dataGridView_Task.Rows)
+                {
+                    if (row.Cells[3].Value != null && row.Cells[3].Value != DBNull.Value)
+                    {
+                        int progress = int.TryParse(row.Cells[3].Value.ToString().Replace("%", "").Trim(), out int result) ? result : 0;
 
 
+                        if (progress == 0)
+                        {
+                            todo++;
+                            continue;
+                        }
+                        if (progress == 100)
+                        {
+                            done++;
+                            continue;
+                        }
+                        inProgress++;
+                    }
+                }
 
+
+                double total = todo + inProgress + done;
+                todoPercent = ((todo / total) * 100).ToString("0.00");
+                inProgressPercent = ((inProgress / total) * 100).ToString("0.00");
+                donePrecent = ((done / total) * 100).ToString("0.00");
+
+                if(todoPercent == "NaN" || inProgressPercent == "NaN" || donePrecent == "NaN")
+                {
+                    EmptyProgressChart();
+                    return;
+                }
+
+                chart_taskProgress.Series["SeriesProgress"].Points.Clear();
+                chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", todoPercent);
+                chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", inProgressPercent);
+                chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", donePrecent);
+
+                //chart_taskProgress.Series["SeriesProgress"].IsValueShownAsLabel = false;
+
+                chart_taskProgress.Legends.Clear();
+
+                chart_taskProgress.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(214, 40, 40);
+                chart_taskProgress.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
+                chart_taskProgress.Series["SeriesProgress"].Points[2].Color = Color.FromArgb(67, 97, 238);
+
+                label_todoTask.Text = todoPercent + "%";
+                label_inprogressTask.Text = inProgressPercent + "%";
+                label_doneTask.Text = donePrecent + "%";
+            }
+            else
+            {
+                EmptyProgressChart();
+            }
+        }
+
+        public void EmptyProgressChart()
+        {
+            chart_taskProgress.Series["SeriesProgress"].Points.Clear();
+            chart_taskProgress.Series["SeriesProgress"].Points.AddXY("", "100");
+            chart_taskProgress.Legends.Clear();
+            chart_taskProgress.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(228, 228, 228);
+
+            label_todoTask.Text = "0%";
+            label_inprogressTask.Text = "0%";
+            label_doneTask.Text = "0%";
+        }
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            if(_userDao.Value.IsManager() || _userDao.Value.IsHumanResources())
+            if(_userDao.Value.IsManager() || _userDao.Value.IsHumanResources() || _userDao.Value.IsLeader())
             {
                 StackForm.FormMain.ChildForm.Open(new FormAddTask());
             }
@@ -117,7 +200,7 @@ namespace Project_Management.View.UC
 
         private void btnRemoveTask_Click(object sender, EventArgs e)
         {
-            if(_userDao.Value.IsManager() || _userDao.Value.IsHumanResources())
+            if(_userDao.Value.IsManager() || _userDao.Value.IsHumanResources() || _userDao.Value.IsLeader())
             {
                 if (_selectedId != 0)
                 {
@@ -190,10 +273,10 @@ namespace Project_Management.View.UC
                     tasks = _taskDao.Value.GetListTaskByPosition();
                     break;
                 case 1:
-                    tasks = null;
+                    tasks = _taskDao.Value.GetMyTask();
                     break;
                 default:
-                    tasks = _taskDao.Value.GetMyTask();
+                    tasks = _taskDao.Value.GetListTaskByPosition();
                     break;
             }
 
@@ -207,15 +290,12 @@ namespace Project_Management.View.UC
             switch (selectedIndex)
             {
                 case 1:
-                    tasks = _taskDao.Value.GetListTaskByPosition();
-                    break;
-                case 2:
                     tasks = _taskDao.Value.GetTodoTasks();
                     break;
-                case 3:
+                case 2:
                     tasks = _taskDao.Value.GetInprogressTasks();
                     break;
-                case 4:
+                case 3:
                     tasks = _taskDao.Value.GetDoneTasks();
                     break;
                 default:

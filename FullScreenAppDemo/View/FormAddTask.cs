@@ -20,6 +20,7 @@ namespace Project_Management.view
     {
 
         private int idTask = 0;
+        private UserDAO _userDAO = new UserDAO();
         public FormAddTask()
         {
             InitializeComponent();
@@ -33,6 +34,26 @@ namespace Project_Management.view
                 MessageBox.Show(@"Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
                 return false;
             }
+            try
+            {
+                float bonus = (float)Convert.ToDouble(textBox_Bonus.Text);
+                if(bonus < 0)
+                {
+                    MessageBox.Show(@"Bonus nhỏ hơn 0???");
+                    return false;
+                }
+            }
+            catch
+            {
+                MessageBox.Show(@"Bonus không phải giá trị số!!!");
+                return false;
+            }
+            if (dateTime_deadline.Value.Date <= DateTime.Now.Date)
+            {
+                MessageBox.Show(@"Deadling bạn chọn không phù hợp!!!");
+                return false;
+            }
+
             return true;
         }
         private void ClearFields()
@@ -63,7 +84,11 @@ namespace Project_Management.view
         }
         private void Load()
         {
-            txtBox_cretor.Text = UserSession.LoggedInUser.fullName;
+            if (!_userDAO.IsLeader())
+            {
+                labAssigneesUser.Visible = false; 
+                combbox_UserOfTeam.Visible = false;
+            }
             GetDataToCombobox(combbox_Assignee, -1);
             CheckControlStatusForEmployee();
         }
@@ -75,38 +100,61 @@ namespace Project_Management.view
         {
             if (CheckDataInput())
             {
-                int idTeam = (combbox_Assignee.SelectedItem as team).id;
                 TeamDAO _teamDao = new TeamDAO();
-                int idAssigee = _teamDao.GetLeaderIDByTeamID(idTeam);
+                int idTeam = (combbox_Assignee.SelectedItem as team).id;
+
+                int idAssigee;
+                if (!_userDAO.IsLeader())
+                {
+                    idAssigee = _teamDao.GetLeaderIDByTeamID(idTeam);
+                }
+                else
+                {
+                    idAssigee = (combbox_UserOfTeam.SelectedItem as user).id;
+                }
+
                 int idproject = (combbox_Project.SelectedItem as project).id;
-                float bonus = (float)Convert.ToInt32(textBox_Bonus.Text);
+                double bonus = Math.Round((double)Convert.ToDouble(textBox_Bonus.Text), 3);
+
                 TaskDAO.Instance.AddTask(txtbox_taskName.Text, txtbox_Desciption.Text,
                                               dateTime_deadline.Value, idTeam, idAssigee, idproject, bonus);
 
                 ClearFields();
+                StackForm.FormMain.ChildForm.AddUc(new UcTask());
             }
-            StackForm.FormMain.ChildForm.AddUc(new UcTask());
 
         }
 
         private void combbox_Assignee_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-                int id = (combbox_Assignee.SelectedItem as team).id;
-                List<project> list = ProjectDAO.Instance.GetProjectByTeam(id);
+            int idTeam = (combbox_Assignee.SelectedItem as team).id;
+            List<project> list = ProjectDAO.Instance.GetProjectByTeam(idTeam);
 
-                combbox_Project.DataSource = list;
-                combbox_Project.DisplayMember = "name";
-                if (combbox_Project.Items.Count > 0)
-                {
-                    combbox_Project.SelectedIndex = 0;
-                }
+            combbox_Project.DataSource = list;
+            combbox_Project.DisplayMember = "name";
+            if (combbox_Project.Items.Count > 0)
+            {
+                combbox_Project.SelectedIndex = 0;
+            }
+            if (_userDAO.IsLeader())
+            {
+                List<user> listUser = UserDAO.Instance.GetUsersByTeamID(idTeam);
+                combbox_UserOfTeam.DataSource = listUser;
+                combbox_UserOfTeam.DisplayMember = "fullName";
+                combbox_UserOfTeam.SelectedIndex = 0;
+            }      
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
             StackForm.FormMain.ChildForm.AddUc(new UcTask());
+        }
+
+        private void combbox_UserOfTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

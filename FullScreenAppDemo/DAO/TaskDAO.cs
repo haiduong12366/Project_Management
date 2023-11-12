@@ -70,8 +70,7 @@ namespace Project_Management.DAO
             }
             else
             {
-                int idTeam = _teamDao.GetIDTeamByUserID(idUser);
-                result = GetTasksByIDTeam(idTeam);
+                result = GetTasksAssignedByCurrentUser(idUser);
             }
             return result;
         }
@@ -116,7 +115,7 @@ namespace Project_Management.DAO
         }
 
         public void AddTask(string taskName, string description, DateTime deadline, int idTeam,
-            int idAssignee, int idProject, float bonus)
+            int idAssignee, int idProject, double bonus)
         {
             try
             {
@@ -149,7 +148,7 @@ namespace Project_Management.DAO
         }
 
         public void UpdateTask(int taskId, string taskName, string description, DateTime deadline, int idTeam,
-    int idAssignee, int progress, int idProject, float bonus)
+    int idAssignee, int progress, int idProject, double bonus)
         {
             try
             {
