@@ -31,6 +31,7 @@ namespace Project_Management.View.UC
             _taskDao = new Lazy<TaskDAO>(() => new TaskDAO());
             _teamDao = new Lazy<TeamDAO>(() => new TeamDAO());
             _userDao = new Lazy<UserDAO>(() => new UserDAO());
+            _projectDao = new Lazy<ProjectDAO> (() => new ProjectDAO());
         }
         
         private void UC_Task_Load(object sender, EventArgs e)
