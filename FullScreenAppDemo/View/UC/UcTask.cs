@@ -21,6 +21,7 @@ namespace Project_Management.View.UC
         private readonly Lazy<TaskDAO> _taskDao;
         private readonly Lazy<TeamDAO> _teamDao;
         private readonly Lazy<UserDAO> _userDao;
+        private readonly Lazy<ProjectDAO> _projectDao;
         private static task infoTask;
         private int _selectedId;
 
@@ -51,19 +52,22 @@ namespace Project_Management.View.UC
         {
             var userDao = _userDao.Value;
             var teamDao = _teamDao.Value;
+            var projectDao = _projectDao.Value;
 
 
             dataGridView.ColumnCount = 7;
-            dataGridView.Columns[0].Name = "Mã";
+            dataGridView.Columns[0].Name = "ID";
             dataGridView.Columns[0].Visible = false;
-            dataGridView.Columns[1].Name = "Tên task";
+            dataGridView.Columns[1].Name = "Task Name";
             dataGridView.Columns[1].Width = 275;
             dataGridView.Columns[2].Name = "Deadline";
-            dataGridView.Columns[3].Name = "Tiến độ";
-            dataGridView.Columns[4].Name = "Người được giao";
+            dataGridView.Columns[3].Name = "Progress";
+            dataGridView.Columns[4].Name = "Assigneed Person";
             dataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView.Columns[5].Name = "Team được giao";
+            dataGridView.Columns[5].Name = "Assigneed Team";
             dataGridView.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridView.Columns[6].Name = "Project Name";
+            dataGridView.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView.Rows.Clear();
 
             if (listTask != null)
@@ -84,6 +88,7 @@ namespace Project_Management.View.UC
                 {
                     string assignee = "";
                     string teamName = "";
+                    string projectName = "";
 
                     if (t.idAssignee != null)
                     {
@@ -95,7 +100,12 @@ namespace Project_Management.View.UC
                         teamName = teamDao.GetNameTeamByID((int)t.idTeam);
                     }
 
-                    dataGridView.Rows.Add(t.id, t.taskName, (t.deadline != null ? t.deadline?.ToString("dd/MM/yyyy") : ""), t.progress + " %", assignee, teamName);
+                    if(t.idProject != null)
+                    {
+                        projectName = projectDao.GetNameProjectByID((int)t.idProject);
+                    }
+
+                    dataGridView.Rows.Add(t.id, t.taskName, (t.deadline != null ? t.deadline?.ToString("dd/MM/yyyy") : ""), t.progress + " %", assignee, teamName, projectName);
                 }
                 LoadProgressChart(false);
             }
@@ -194,7 +204,7 @@ namespace Project_Management.View.UC
             }
             else
             {
-                MessageBox.Show("Bạn không đủ quyền hạn để truy cập chức năng này!!!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Access denied!!! Insufficient permissions to access feature.", "Message", MessageBoxButtons.OK);
             }
         }
 
@@ -204,18 +214,18 @@ namespace Project_Management.View.UC
             {
                 if (_selectedId != 0)
                 {
-                    DialogResult result = MessageBox.Show("Delete task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Do you want to delete task?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
                         _taskDao.Value.DeleteTask(infoTask.id);
                         LoadData(GetData());
                     }
                 }
-                else MessageBox.Show("Bọn chưa chọn Task nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Bạn không đủ quyền hạn để truy cập chức năng này!!!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Access denied!!! Insufficient permissions to access feature.", "Message", MessageBoxButtons.OK);
             }
 
         }
@@ -226,7 +236,7 @@ namespace Project_Management.View.UC
             {
                 StackForm.FormMain.ChildForm.Open(new FormViewOrUpdateTask(infoTask, true));
             }
-            else MessageBox.Show("Bọn chưa chọn Task nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnEditTask_Click(object sender, EventArgs e)
@@ -237,11 +247,11 @@ namespace Project_Management.View.UC
                 {
                     StackForm.FormMain.ChildForm.Open(new FormViewOrUpdateTask(infoTask, false));
                 }
-                else MessageBox.Show("Bọn chưa chọn Task nào!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Bạn không đủ quyền hạn để truy cập chức năng này!!!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Access denied!! Insufficient permissions to access feature.", "Message", MessageBoxButtons.OK);
             }
         }
 

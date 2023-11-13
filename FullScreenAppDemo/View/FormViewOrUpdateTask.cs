@@ -241,9 +241,14 @@ namespace Project_Management.View
 
         private bool CheckDataInput()
         {
-            if (string.IsNullOrEmpty(txtbox_Taskname.Text) || string.IsNullOrEmpty(txtbox_Desciption.Text))
+            if (string.IsNullOrEmpty(txtbox_Taskname.Text))
             {
-                MessageBox.Show(@"Các trường bắt buộc chưa được điền. Vui lòng điền đầy đủ thông tin!");
+                MessageBox.Show(@"Task name must not be empty!!!!");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtbox_Desciption.Text))
+            {
+                MessageBox.Show(@"Task description must not be empty!!!!");
                 return false;
             }
             try
@@ -251,18 +256,18 @@ namespace Project_Management.View
                 float bonus = (float)Convert.ToDouble(textBox_Bonus.Text);
                 if (bonus < 0)
                 {
-                    MessageBox.Show(@"Bonus nhỏ hơn 0???");
+                    MessageBox.Show(@"Bonus cannot be less than 0!!!");
                     return false;
                 }
             }
             catch
             {
-                MessageBox.Show(@"Bonus không phải giá trị số!!!");
+                MessageBox.Show(@"Bonus must be a numeric value!!!");
                 return false;
             }
-            if (dateTime_deadline.Value.Date <= DateTime.Now.Date)
+            if (dateTime_deadline.Value.Date < DateTime.Now.Date)
             {
-                MessageBox.Show(@"Deadling bạn chọn không phù hợp!!!");
+                MessageBox.Show(@"The chosen dealine is not suitable!!!");
                 return false;
             }
             return true;
