@@ -4,8 +4,6 @@ using Project_Management.DAO;
 using Project_Management.DTO;
 
 ﻿using company_management.DTO;
-using company_management.View;
-using FullScreenAppDemo.DTO;
 
 using Project_Management;
 using Project_Management.Utils;
@@ -269,7 +267,7 @@ namespace Project_Management.DAO
             {
                 if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
                 {
-                    return GetALlTask().Count;
+                    return GetAllTask().Count;
                 }
                 else
                 {

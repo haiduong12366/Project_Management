@@ -1,6 +1,6 @@
-﻿using company_management.View.UC;
-using FullScreenAppDemo.DAO;
+﻿
 using Project_Management;
+using Project_Management.DAO;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -24,7 +24,7 @@ namespace Project_Management.View
         private void LoadIdLeaders()
         {
             // Assuming you have a method in your UserDAO to get a list of leaders
-            List<user> leaders = UserDAO.Instance.GetALlUser();
+            List<user> leaders = UserDAO.Instance.GetAllUser();
 
             // Assuming you have a property in your user class like "Username" for display
             cb_Leader.DataSource = leaders;

@@ -2,10 +2,6 @@
 ﻿using Project_Management.View;
 using Project_Management.DAO;
 
-﻿using company_management.View;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -14,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Project_Management.DTO;
 
 namespace Project_Management.DAO
 {

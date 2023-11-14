@@ -1,7 +1,6 @@
-﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-using Project_Management;
+﻿using Project_Management;
 using Project_Management.DAO;
+using Project_Management.DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -68,7 +67,7 @@ namespace Project_Management.View.UC
             CbThang.SelectedIndex = DateTime.Now.Month - 1;
 
 
-            List<user> user = UserDAO.Instance.GetALlUser();
+            List<user> user = UserDAO.Instance.GetAllUser();
             cb_changeUser.Items.Add("All user");
             foreach (user u in user)
                 cb_changeUser.Items.Add(u);

@@ -1,5 +1,4 @@
-﻿using FullScreenAppDemo.DAO;
-using Project_Management.Utils;
+﻿using Project_Management.Utils;
 using Project_Management;
 using System;
 using System.Collections.Generic;
@@ -12,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Win32;
+using Project_Management.DAO;
 
 namespace Project_Management.View
 {
@@ -44,7 +44,7 @@ namespace Project_Management.View
                 tb_Desciption.Text = currentTeam.description;
 
                 // Assuming you have a method to get a list of leaders from the UserDAO
-                List<user> leaders = UserDAO.Instance.GetALlUser();
+                List<user> leaders = UserDAO.Instance.GetAllUser();
                 cb_Leader.DataSource = leaders;
                 cb_Leader.DisplayMember = "Username";
                 cb_Leader.ValueMember = "Id";

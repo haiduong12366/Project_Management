@@ -1,9 +1,7 @@
-﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
-using FullScreenAppDemo.View;
-using Guna.UI2.WinForms.Suite;
+﻿using Guna.UI2.WinForms.Suite;
 using Project_Management;
 using Project_Management.DAO;
+using Project_Management.DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

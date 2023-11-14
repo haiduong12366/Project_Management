@@ -1,12 +1,6 @@
 ﻿
-
 using Project_Management.View;
 using Project_Management.DTO;
-
-using company_management.DTO;
-using company_management.View;
-using FullScreenAppDemo.DTO;
-
 using Project_Management;
 using Project_Management.DAO;
 using Project_Management.Utils;
@@ -20,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+using company_management.DTO;
 
 namespace Project_Management.DAO
 {
@@ -38,13 +33,19 @@ namespace Project_Management.DAO
 
         public List<project> GetAllProject()
         {
-            return entity.projects.ToList<project>();
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                return entity.projects.ToList<project>();
+            }
         }
 
         public String GetNameProjectByID(int idProject)
         {
-            var result = entity.projects.Find(idProject);
-            return result.name;
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var result = entity.projects.Find(idProject);
+                return result.name;
+            }
         }
 
 

@@ -2,10 +2,6 @@
 ﻿using Project_Management.View;
 using Project_Management.DAO;
 
-﻿using company_management.DTO;
-using company_management.View;
-using FullScreenAppDemo.DAO;
-
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using company_management.DTO;
 
 namespace Project_Management.Utils
 {
