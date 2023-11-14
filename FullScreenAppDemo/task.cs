@@ -18,7 +18,7 @@ namespace Project_Management
         public Nullable<int> idAssignee { get; set; }
         public string taskName { get; set; }
         public string description { get; set; }
-        public Nullable <System.DateTime> deadline { get; set; }
+        public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<int> progress { get; set; }
         public Nullable<int> idTeam { get; set; }
         public Nullable<double> bonus { get; set; }

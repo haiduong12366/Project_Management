@@ -21,6 +21,7 @@ namespace Project_Management
             this.leaveRequests = new HashSet<leaveRequest>();
             this.leaveRequests1 = new HashSet<leaveRequest>();
             this.projects = new HashSet<project>();
+            this.salaries = new HashSet<salary>();
             this.tasks = new HashSet<task>();
             this.teams = new HashSet<team>();
             this.user_salary = new HashSet<user_salary>();
@@ -46,7 +47,8 @@ namespace Project_Management
         public virtual position position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<project> projects { get; set; }
-        public virtual salary salary { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<salary> salaries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<task> tasks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

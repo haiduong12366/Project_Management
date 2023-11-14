@@ -55,6 +55,8 @@
         <EntityType Name="salary">
           <Key>
             <PropertyRef Name="idUser" />
+            <PropertyRef Name="fromDate" />
+            <PropertyRef Name="toDate" />
           </Key>
           <Property Name="idUser" Type="int" Nullable="false" />
           <Property Name="basicSalary" Type="float" />
@@ -66,8 +68,8 @@
           <Property Name="tax" Type="float" />
           <Property Name="insurance" Type="float" />
           <Property Name="finalSalary" Type="float" />
-          <Property Name="fromDate" Type="datetime" />
-          <Property Name="toDate" Type="datetime" />
+          <Property Name="fromDate" Type="datetime" Nullable="false" />
+          <Property Name="toDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -186,7 +188,7 @@
         </Association>
         <Association Name="FK_salary_users">
           <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="salary" Type="Self.salary" Multiplicity="0..1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
@@ -477,6 +479,8 @@
         <EntityType Name="salary">
           <Key>
             <PropertyRef Name="idUser" />
+            <PropertyRef Name="fromDate" />
+            <PropertyRef Name="toDate" />
           </Key>
           <Property Name="idUser" Type="Int32" Nullable="false" />
           <Property Name="basicSalary" Type="Double" />
@@ -488,8 +492,8 @@
           <Property Name="tax" Type="Double" />
           <Property Name="insurance" Type="Double" />
           <Property Name="finalSalary" Type="Double" />
-          <Property Name="fromDate" Type="DateTime" Precision="3" />
-          <Property Name="toDate" Type="DateTime" Precision="3" />
+          <Property Name="fromDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="toDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="user" Relationship="Self.FK_salary_users" FromRole="salary" ToRole="users" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -573,7 +577,7 @@
           <NavigationProperty Name="leaveRequests1" Relationship="Self.FK_leaveRequest_users" FromRole="users" ToRole="leaveRequest" />
           <NavigationProperty Name="position" Relationship="Self.FK_users_position" FromRole="users" ToRole="position" />
           <NavigationProperty Name="projects" Relationship="Self.FK_project_assignee" FromRole="users" ToRole="project" />
-          <NavigationProperty Name="salary" Relationship="Self.FK_salary_users" FromRole="users" ToRole="salary" />
+          <NavigationProperty Name="salaries" Relationship="Self.FK_salary_users" FromRole="users" ToRole="salary" />
           <NavigationProperty Name="tasks" Relationship="Self.FK_tasks_assignee" FromRole="users" ToRole="task" />
           <NavigationProperty Name="teams" Relationship="Self.FK_teams_leader" FromRole="users" ToRole="teams" />
           <NavigationProperty Name="user_salary" Relationship="Self.FK_user_salary_users" FromRole="users" ToRole="user_salary" />
@@ -665,7 +669,7 @@
         </Association>
         <Association Name="FK_salary_users">
           <End Role="users" Type="Self.user" Multiplicity="1" />
-          <End Role="salary" Type="Self.salary" Multiplicity="0..1" />
+          <End Role="salary" Type="Self.salary" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />

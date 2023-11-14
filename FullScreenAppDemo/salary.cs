@@ -24,8 +24,8 @@ namespace Project_Management
         public Nullable<double> tax { get; set; }
         public Nullable<double> insurance { get; set; }
         public Nullable<double> finalSalary { get; set; }
-        public Nullable<System.DateTime> fromDate { get; set; }
-        public Nullable<System.DateTime> toDate { get; set; }
+        public System.DateTime fromDate { get; set; }
+        public System.DateTime toDate { get; set; }
     
         public virtual user user { get; set; }
     }
