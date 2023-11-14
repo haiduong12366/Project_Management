@@ -69,9 +69,10 @@ namespace Project_Management.view
         
         private void GetDataToCombobox(ComboBox assignees, int selected)
         {
-            List<team> list = TeamDAO.Instance.GetTeamByID();
+            List<team> list = TeamDAO.Instance.GetTeamByManagerOrLeader();
             assignees.DataSource = list;
             assignees.DisplayMember = "name";
+
             assignees.ValueMember = "id";
             if (selected == -1)
             {
@@ -81,6 +82,7 @@ namespace Project_Management.view
             {
                 assignees.SelectedValue = selected;
             }
+
         }
 
         private void CheckControlStatusForEmployee()
@@ -89,12 +91,14 @@ namespace Project_Management.view
         }
         private void Load()
         {
+
             if (!_userDAO.IsLeader())
             {
                 labAssigneesUser.Visible = false; 
                 combbox_UserOfTeam.Visible = false;
             }
             GetDataToCombobox(combbox_Assignee, -1);
+
             CheckControlStatusForEmployee();
         }
         private void btnCancel_Click(object sender, EventArgs e)

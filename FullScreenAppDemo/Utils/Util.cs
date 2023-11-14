@@ -1,11 +1,21 @@
+
 ﻿using Project_Management.View;
 using Project_Management.DAO;
+
+﻿using company_management.DTO;
+using company_management.View;
+using FullScreenAppDemo.DAO;
+
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Project_Management.Utils
 {
@@ -54,5 +64,74 @@ namespace Project_Management.Utils
                 return false;
             }
         }
+
+        public void LoadProgressChart<T>(Chart chart, Label todo, Label inprogress, Label done, List<T> list)
+        {
+            TaskStatusPercentage taskStatus;
+
+            if (typeof(T) == typeof(task))
+            {
+                List<task> taskList = list.Cast<task>().ToList();
+                taskStatus = TaskDAO.Instance.GetTaskStatusPercentage(taskList);
+            }
+            else
+            {
+                List<project> projects = list.Cast<project>().ToList();
+                taskStatus = ProjectDAO.Instance.GetProjectStatusPercentage(projects);
+            }
+
+            double todoPercent = taskStatus.TodoPercent;
+            double inprogressPercent = taskStatus.InprogressPercent;
+            double donePercent = taskStatus.DonePercent;
+
+            // Định dạng giá trị với 2 chữ số sau dấu thập phân
+            string todoPercentFormatted = todoPercent.ToString("0.00");
+            string inprogressPercentFormatted = inprogressPercent.ToString("0.00");
+            string donePercentFormatted = donePercent.ToString("0.00");
+
+            chart.Series["SeriesProgress"].Points.Clear();
+
+            // Thêm các phần tử vào danh sách
+            chart.Series["SeriesProgress"].Points.AddXY("", todoPercent);
+            chart.Series["SeriesProgress"].Points.AddXY("", inprogressPercent);
+            chart.Series["SeriesProgress"].Points.AddXY("", donePercent);
+
+            // Ẩn nhãn trên biểu đồ tròn
+            chart.Series["SeriesProgress"].IsValueShownAsLabel = false;
+
+            chart.Legends.Clear();
+
+            chart.Series["SeriesProgress"].Points[0].Color = Color.FromArgb(214, 40, 40);
+            chart.Series["SeriesProgress"].Points[1].Color = Color.FromArgb(0, 255, 0);
+            chart.Series["SeriesProgress"].Points[2].Color = Color.FromArgb(67, 97, 238);
+
+            todo.Text = todoPercentFormatted + @"%";
+            inprogress.Text = inprogressPercentFormatted + @"%";
+            done.Text = donePercentFormatted + @"%";
+        }
+        public byte[] ImageToByteArray(Image image)
+        {
+            if (image == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public Image ByteArrayToImage(byte[] byteArray)
+        {
+            if (byteArray == null)
+                return null;
+
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+
+
     }
 }

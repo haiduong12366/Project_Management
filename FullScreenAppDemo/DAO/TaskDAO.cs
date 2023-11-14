@@ -1,6 +1,12 @@
+
 ﻿using Project_Management.View;
 using Project_Management.DAO;
 using Project_Management.DTO;
+
+﻿using company_management.DTO;
+using company_management.View;
+using FullScreenAppDemo.DTO;
+
 using Project_Management;
 using Project_Management.Utils;
 using System;
@@ -206,6 +212,72 @@ namespace Project_Management.DAO
             catch (Exception ex)
             {
                 Util.Instance.Alert("Delete task fail!!!", FormAlert.enmType.Error);
+            }
+        }
+
+        internal void DeleteTasksByProject(int projectId)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                try
+                {
+                    var tasksToDelete = entity.tasks.Where(t => t.idProject == projectId);
+                    if (tasksToDelete.Any())
+                    {
+                        entity.tasks.RemoveRange(tasksToDelete);
+                        entity.SaveChanges();
+                        Util.Instance.Alert("Delete task success", FormAlert.enmType.Success);
+                    }
+                    else
+                    {
+                        Util.Instance.Alert("Not found task!", FormAlert.enmType.Warning);
+                    }
+                }
+                catch (Exception)
+                {
+                    Util.Instance.Alert("Delete task fail!", FormAlert.enmType.Error);
+                }
+            }
+        }
+
+        internal TaskStatusPercentage GetTaskStatusPercentage(List<task> taskList)
+        {
+            TaskStatusPercentage taskStatus = new TaskStatusPercentage(0, 0, 0);
+
+            if (taskList.Count > 0)
+            {
+                double totalTasks = taskList.Count;
+                double todoCount = taskList.Count(task => task.progress == 0);
+                double inprogressCount = taskList.Count(task => task.progress > 0 && task.progress < 100);
+                double doneCount = taskList.Count(task => task.progress == 100);
+
+                taskStatus.TodoPercent = (todoCount / totalTasks) * 100;
+                taskStatus.InprogressPercent = (inprogressCount / totalTasks) * 100;
+                taskStatus.DonePercent = (doneCount / totalTasks) * 100;
+            }
+
+            return taskStatus;
+        }
+
+        private List<task> GetTaskByIdUser(int id)
+        {
+            return entity.tasks.Where(t => t.idAssignee == id).ToList<task>();
+        }
+        public int CountTotalTasks()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+                {
+                    return GetALlTask().Count;
+                }
+                else
+                {
+                    return GetTaskByIdUser(UserSession.LoggedInUser.id).Count;
+                }
+
+
+                return 0;
             }
         }
 

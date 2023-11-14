@@ -139,15 +139,8 @@ namespace Project_Management.DAO
 
             using (company_management_Entities entity = new company_management_Entities())
             {
-                try
-                {
                     user user = entity.users.SingleOrDefault(u => u.id.Equals(id));
                     return user;
-                }
-                catch (Exception e)
-                {
-                    return null;
-                }
             }
         }
 
@@ -265,6 +258,25 @@ namespace Project_Management.DAO
                             u.phoneNumber.Contains(keyword)).ToList<user>();
                 return userList;
             }
+        }
+        public int CountTotalProjects()
+        {
+            return ProjectDAO.Instance.CountTotalProjects();
+        }
+
+        public int CountTotalTasks()
+        {
+            return TaskDAO.Instance.CountTotalTasks();
+        }
+
+        public int CountTotalTeams()
+        {
+            return TeamDAO.Instance.CountTotalTeams();
+        }
+
+        public int CountTotalRequests()
+        {
+            return RequestDAO.Instance.CountTotalRequests();
         }
 
     }

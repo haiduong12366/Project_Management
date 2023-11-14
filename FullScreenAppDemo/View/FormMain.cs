@@ -128,7 +128,9 @@ namespace Project_Management.View
                    
                     break;
                 case 3:
+                    UserSession.LogoutUser();
                     this.Close();
+                    
                     break;
             }
         }

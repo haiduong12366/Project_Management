@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcLeaveRequest));
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.combobox_requestStatusFilter = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -131,36 +131,36 @@
             // 
             // datagridview_leaveRequest
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            this.datagridview_leaveRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.datagridview_leaveRequest.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridview_leaveRequest.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview_leaveRequest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview_leaveRequest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridview_leaveRequest.ColumnHeadersHeight = 30;
             this.datagridview_leaveRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview_leaveRequest.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview_leaveRequest.DefaultCellStyle = dataGridViewCellStyle3;
             this.datagridview_leaveRequest.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.datagridview_leaveRequest.Location = new System.Drawing.Point(12, 58);
             this.datagridview_leaveRequest.Margin = new System.Windows.Forms.Padding(2);
             this.datagridview_leaveRequest.Name = "datagridview_leaveRequest";
             this.datagridview_leaveRequest.RowHeadersVisible = false;
             this.datagridview_leaveRequest.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.datagridview_leaveRequest.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.datagridview_leaveRequest.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridview_leaveRequest.RowTemplate.Height = 30;
             this.datagridview_leaveRequest.Size = new System.Drawing.Size(916, 366);
             this.datagridview_leaveRequest.TabIndex = 0;
@@ -248,7 +248,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 26);
             this.label9.TabIndex = 98;
-            this.label9.Text = "Đã hủy bỏ";
+            this.label9.Text = "Cancelled";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel3
@@ -301,7 +301,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 26);
             this.label7.TabIndex = 96;
-            this.label7.Text = "Đang chờ";
+            this.label7.Text = "Pending";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel2
@@ -355,7 +355,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 26);
             this.label5.TabIndex = 94;
-            this.label5.Text = "Từ chối";
+            this.label5.Text = "Refused";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel1
@@ -407,9 +407,9 @@
             this.label3.Location = new System.Drawing.Point(24, 54);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 26);
+            this.label3.Size = new System.Drawing.Size(76, 26);
             this.label3.TabIndex = 94;
-            this.label3.Text = "Đã duyệt";
+            this.label3.Text = "Approved";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelFields
@@ -435,7 +435,7 @@
             // label2
             // 
             this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
-            this.label2.Location = new System.Drawing.Point(106, 53);
+            this.label2.Location = new System.Drawing.Point(126, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 28);
@@ -457,12 +457,12 @@
             // 
             this.label_basic.BackColor = System.Drawing.Color.Transparent;
             this.label_basic.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_basic.Location = new System.Drawing.Point(21, 54);
+            this.label_basic.Location = new System.Drawing.Point(18, 53);
             this.label_basic.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_basic.Name = "label_basic";
-            this.label_basic.Size = new System.Drawing.Size(81, 26);
+            this.label_basic.Size = new System.Drawing.Size(131, 26);
             this.label_basic.TabIndex = 92;
-            this.label_basic.Text = "Tất cả đơn";
+            this.label_basic.Text = "All Application";
             this.label_basic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1

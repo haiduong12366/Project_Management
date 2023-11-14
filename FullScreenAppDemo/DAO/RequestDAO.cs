@@ -156,5 +156,20 @@ namespace Project_Management.DAO
                 }
             }
         }
+        public int CountTotalRequests()
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+                {
+                    return GetALlRequest().Count;
+                }
+                else
+                {
+                    return GetMyLeaveRequests().Count;
+                }
+            }
+        }
+
     }
 }
