@@ -115,7 +115,7 @@ namespace Project_Management.DAO
                         entity.users.Remove(user);
                         entity.SaveChanges();
                     }
-                    Util.Instance.Alert("Delete user success", FormAlert.enmType.Error);
+                    Util.Instance.Alert("Delete user success", FormAlert.enmType.Success);
                 }
                 catch (Exception ex)
                 {

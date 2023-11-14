@@ -40,7 +40,22 @@ namespace Project_Management.DAO
             return list;
         }
 
+        public List<team> GetTeamByID()
+        {
+            List<team> teams = new List<team>();
 
+
+            if (UserDAO.Instance.IsHumanResources() || UserDAO.Instance.IsManager())
+            {
+                teams = TeamDAO.instance.GetAllTeams();
+            }
+            else if (UserDAO.Instance.IsLeader())
+            {
+                teams = TeamDAO.instance.GetTeamByLeader(UserSession.LoggedInUser.id);
+            }
+
+            return teams;
+        }
         public List<team> GetTeamByLeader(int idLeader)
         {
             var query = from item in entity.teams where item.idLeader == idLeader select item;
