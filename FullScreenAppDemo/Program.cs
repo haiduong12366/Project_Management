@@ -1,4 +1,4 @@
-﻿using company_management.View;
+﻿using Project_Management.View;
 using Project_Management;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     static class Program
     {

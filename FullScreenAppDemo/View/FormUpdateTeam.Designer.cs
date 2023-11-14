@@ -1,4 +1,4 @@
-﻿namespace FullScreenAppDemo.View
+﻿namespace Project_Management.View
 {
     partial class FormUpdateTeam
     {

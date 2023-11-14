@@ -1,5 +1,5 @@
 ﻿
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     partial class FormAddProject
     {

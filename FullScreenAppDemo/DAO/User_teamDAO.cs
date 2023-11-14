@@ -1,6 +1,11 @@
+
+﻿using Project_Management.View;
+using Project_Management.DAO;
+
 ﻿using company_management.View;
 using FullScreenAppDemo.DAO;
 using FullScreenAppDemo.DTO;
+
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;
@@ -21,7 +26,7 @@ namespace Project_Management.DAO
             private set => User_teamDAO.instance = value;
         }
 
-        private User_teamDAO() { }
+        public User_teamDAO() { }
 
         public void AddUser_Team(string username, int idteam)
         {

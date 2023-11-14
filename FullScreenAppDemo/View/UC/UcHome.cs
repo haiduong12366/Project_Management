@@ -1,10 +1,10 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using Project_Management.DAO;
 using Project_Management;
 using System;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace company_management.View.UC
+namespace Project_Management.View.UC
 {
     public partial class UcHome : UserControl
     {

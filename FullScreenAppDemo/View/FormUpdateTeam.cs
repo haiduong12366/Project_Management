@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Win32;
 
-namespace FullScreenAppDemo.View
+namespace Project_Management.View
 {
     public partial class FormUpdateTeam : Form
     {

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 // ReSharper disable All
 
-namespace company_management.View.UC
+namespace Project_Management.View.UC
 {
     public partial class UcSalary : UserControl
     {

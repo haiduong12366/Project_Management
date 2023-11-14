@@ -1,4 +1,4 @@
-﻿using FullScreenAppDemo.DAO;
+﻿using Project_Management.DAO;
 using Project_Management;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     public partial class FormAddProject : Form
     {

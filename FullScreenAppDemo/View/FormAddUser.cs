@@ -1,5 +1,4 @@
-﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.DTO;
 using Project_Management;
 using Project_Management.DAO;
 using Project_Management.Utils;
@@ -14,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FullScreenAppDemo
+namespace Project_Management
 {
     public partial class FormAddUser : Form
     {

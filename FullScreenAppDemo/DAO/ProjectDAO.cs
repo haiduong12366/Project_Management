@@ -1,7 +1,12 @@
 ﻿
+
+using Project_Management.View;
+using Project_Management.DTO;
+
 using company_management.DTO;
 using company_management.View;
 using FullScreenAppDemo.DTO;
+
 using Project_Management;
 using Project_Management.DAO;
 using Project_Management.Utils;
@@ -16,7 +21,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class ProjectDAO
     {
@@ -28,7 +33,19 @@ namespace FullScreenAppDemo.DAO
             private set => ProjectDAO.instance = value;
         }
 
-        private ProjectDAO() { }
+        public ProjectDAO() { }
+
+
+        public List<project> GetAllProject()
+        {
+            return entity.projects.ToList<project>();
+        }
+
+        public String GetNameProjectByID(int idProject)
+        {
+            var result = entity.projects.Find(idProject);
+            return result.name;
+        }
 
 
         public void AddProject(int idAssignee, string name, string description,

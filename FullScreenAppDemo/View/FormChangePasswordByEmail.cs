@@ -1,6 +1,6 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View;
+using Project_Management.DAO;
+using Project_Management.DTO;
 using Project_Management.Utils;
 using System;
 using System.Collections.Generic;

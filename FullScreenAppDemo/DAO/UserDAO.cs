@@ -1,5 +1,5 @@
-﻿using company_management.View;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.View;
+using Project_Management.DTO;
 using Guna.UI2.WinForms;
 using LiveCharts.Configurations;
 using Project_Management;
@@ -15,8 +15,10 @@ using System.Web.Configuration;
 using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
+using System.Runtime.Remoting.Contexts;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace FullScreenAppDemo.DAO
+namespace Project_Management.DAO
 {
     internal class UserDAO
     {
@@ -28,9 +30,9 @@ namespace FullScreenAppDemo.DAO
             private set => UserDAO.instance = value;
         }
 
-        private UserDAO() { }
+        public UserDAO() { }
 
-        public List<user> GetALlUser()
+        public List<user> GetAllUser()
         {
             using (company_management_Entities entity = new company_management_Entities())
             {
@@ -141,6 +143,19 @@ namespace FullScreenAppDemo.DAO
                     return user;
             }
         }
+
+        public List<user> GetUsersByTeamID(int idTeam) 
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var listUsers = from user in entity.users
+                            join userTeam in entity.user_team on user.id equals userTeam.idUser
+                            where userTeam.idTeam == idTeam
+                            select user;
+                return listUsers.ToList();
+            }
+        }
+
         public void CheckEmployeeIsReadOnlyStatus(Guna2TextBox txt)
         {
             int idPos = (int)UserSession.LoggedInUser.idPosition;

@@ -1,12 +1,12 @@
-﻿using FullScreenAppDemo.DAO;
-using FullScreenAppDemo.DTO;
+﻿using Project_Management.DAO;
+using Project_Management.DTO;
 using Project_Management;
 using Project_Management.Utils;
 using System;
 using System.Windows.Forms;
 // ReSharper disable All
 
-namespace company_management.View
+namespace Project_Management.View
 {
     public partial class FormPasswordChange : Form
     {
