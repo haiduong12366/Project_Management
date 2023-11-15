@@ -107,10 +107,10 @@
             this.combobox_taskProgressFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_taskProgressFilter.ItemHeight = 26;
             this.combobox_taskProgressFilter.Items.AddRange(new object[] {
-            "Tất cả",
-            "Cần làm ",
-            "Đang làm",
-            "Đã hoàn thành"});
+            "All",
+            "To do",
+            "In progress",
+            "Done"});
             this.combobox_taskProgressFilter.Location = new System.Drawing.Point(170, 16);
             this.combobox_taskProgressFilter.Margin = new System.Windows.Forms.Padding(2);
             this.combobox_taskProgressFilter.Name = "combobox_taskProgressFilter";
@@ -151,8 +151,8 @@
             this.combobox_taskStatusFilter.ForeColor = System.Drawing.Color.Black;
             this.combobox_taskStatusFilter.ItemHeight = 26;
             this.combobox_taskStatusFilter.Items.AddRange(new object[] {
-            "Tất cả",
-            "Được giao"});
+            "All",
+            "Assigned"});
             this.combobox_taskStatusFilter.Location = new System.Drawing.Point(12, 16);
             this.combobox_taskStatusFilter.Margin = new System.Windows.Forms.Padding(2);
             this.combobox_taskStatusFilter.Name = "combobox_taskStatusFilter";

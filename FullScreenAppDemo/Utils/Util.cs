@@ -25,7 +25,7 @@ namespace Project_Management.Utils
             private set => Util.instance = value;
         }
 
-        private Util() { }
+        public Util() { }
         public bool IsPhoneNumber(string number)
         {
             // Loại bỏ các ký tự trống và dấu gạch ngang
