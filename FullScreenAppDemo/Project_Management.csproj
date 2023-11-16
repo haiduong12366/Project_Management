@@ -120,6 +120,7 @@
     <Compile Include="DAO\CheckIn_CheckOutDAO.cs" />
     <Compile Include="DAO\ProjectDAO.cs" />
     <Compile Include="DAO\RequestDAO.cs" />
+    <Compile Include="DAO\SalaryDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DAO\TeamDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
@@ -211,11 +212,11 @@
     <Compile Include="View\FormAlert.designer.cs">
       <DependentUpon>FormAlert.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormCalculateSalary.cs">
+    <Compile Include="View\FormCaculateSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormCalculateSalary.designer.cs">
-      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
+    <Compile Include="View\FormCaculateSalary.Designer.cs">
+      <DependentUpon>FormCaculateSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormChangePasswordByEmail.cs">
       <SubType>Form</SubType>
@@ -348,8 +349,8 @@
     <EmbeddedResource Include="View\FormAlert.resx">
       <DependentUpon>FormAlert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormCalculateSalary.resx">
-      <DependentUpon>FormCalculateSalary.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormCaculateSalary.resx">
+      <DependentUpon>FormCaculateSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormChangePasswordByEmail.resx">
       <DependentUpon>FormChangePasswordByEmail.cs</DependentUpon>

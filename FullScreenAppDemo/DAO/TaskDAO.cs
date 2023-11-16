@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
-
+using System.Windows.Media;
 
 namespace Project_Management.DAO
 {
@@ -23,6 +23,7 @@ namespace Project_Management.DAO
         company_management_Entities entity = new company_management_Entities();
         private readonly UserDAO _userDao = new UserDAO();
         private readonly TeamDAO _teamDao = new TeamDAO();
+        private readonly Util _util = new Util();
         private static TaskDAO instance;
 
         public static TaskDAO Instance
@@ -116,6 +117,29 @@ namespace Project_Management.DAO
         {
             var result = entity.tasks.Find(taskID);
             return result;
+        }
+
+        public double CalculateBonusForEmployee(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            double totalBonus = 0;
+
+            try
+            {
+                var tasks = entity.tasks
+                    .Where(t => t.idAssignee == idUser && t.deadline >= fromDate && t.deadline <= toDate && t.progress == 100)
+                    .ToList();
+
+                foreach (var task in tasks)
+                {
+                    totalBonus += task.bonus ?? 0;
+                }
+            }
+            catch (Exception)
+            {
+                _util.Alert("Error when calculating total bonus!!!", FormAlert.enmType.Error);
+            }
+
+            return totalBonus;
         }
 
         public void AddTask(string taskName, string description, DateTime deadline, int idTeam,

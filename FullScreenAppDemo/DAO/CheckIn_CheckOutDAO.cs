@@ -23,7 +23,7 @@ namespace Project_Management.DAO
             private set => CheckIn_CheckOutDAO.instance = value;
         }
 
-        private CheckIn_CheckOutDAO() { }
+        public CheckIn_CheckOutDAO() { }
 
 
         internal List<checkin_checkout> GetAllCICO(int thang)
@@ -126,6 +126,42 @@ namespace Project_Management.DAO
                     Util.Instance.Alert("Delete checkin_checkout fail!", FormAlert.enmType.Error);
                 }
             }
+        }
+
+        public double GetTotalHours(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var totalHours = entity.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours) ?? 0;
+
+                return totalHours;
+            }
+        }
+
+        public double GetOvertimeHours(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var overtimeHours = entity.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours > 8 ? cc.totalHours - 8 : 0) ?? 0;
+
+                return overtimeHours;
+            }
+        }
+
+        public double GetLeaveHours(int idUser, DateTime fromDate, DateTime toDate)
+        {
+            using (company_management_Entities entity = new company_management_Entities())
+            {
+                var leaveHours = entity.checkin_checkout
+                .Where(cc => cc.idUser == idUser && cc.date >= fromDate.Date && cc.date <= toDate.Date)
+                .Sum(cc => cc.totalHours < 8 ? 8 - cc.totalHours : 0) ?? 0;
+
+                return leaveHours;
+            }        
         }
     }
 }
