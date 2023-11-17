@@ -22,11 +22,6 @@ namespace Project_Management.View
             _salaryDao = new Lazy<SalaryDAO>(() => new SalaryDAO());
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            StackForm.FormMain.ChildForm.AddUc(new UcSalary());
-        }
-
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             StackForm.FormMain.ChildForm.AddUc(new UcSalary());
@@ -45,7 +40,7 @@ namespace Project_Management.View
             {
                 _salaryDao.CalculateAndSaveSalaryForAllEmployees(firstDayOfMonth, lastDayOfMonth);
             }
-            catch (Exception ex)
+            catch
             {
                 string[] months = new string[]
                 {
@@ -63,7 +58,13 @@ namespace Project_Management.View
                     "November",
                     "December"
                 };
-                MessageBox.Show("The salary for " + months[month] + ", " + year + " has been calculated");
+                
+                DialogResult result = MessageBox.Show("The salary for " + months[month] + ", " + year + " has been calculated!!!\n\nDo you want to recalculate?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    _salaryDao.DeleteAllSalaryOfMonth(firstDayOfMonth, lastDayOfMonth);
+                    _salaryDao.CalculateAndSaveSalaryForAllEmployees(firstDayOfMonth, lastDayOfMonth);
+                }
             }
             StackForm.FormMain.ChildForm.AddUc(new UcSalary());
         }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Project_Management.Utils;
 using System.Globalization;
+using System.Text;
+using System.Windows.Media.TextFormatting;
 
 // ReSharper disable All
 
@@ -14,6 +16,7 @@ namespace Project_Management.View.UC
         private readonly Lazy<SalaryDAO> _salaryDao;
         private readonly Lazy<UserDAO> _userDao;
         private salary selectedSalary = null;
+        private List<salary> listSalary = null;
 
         public UcSalary()
         {
@@ -26,14 +29,18 @@ namespace Project_Management.View.UC
 
         private void UCSalary_Load(object sender, EventArgs e)
         {
-            LoadDataToDataGirdView(GetData(), datagridview_salary);
+            List<salary> listSalary = GetData();
+            SortListSalaryByLatest(listSalary);
+
             if (_userDao.Value.IsHumanResources())
             {
                 btn_caculateSalary.Visible = true;
+                btn_showAllSalariesOf.Visible = true;
             }
             else
             {
                 btn_caculateSalary.Visible = false;
+                btn_showAllSalariesOf.Visible = false;
             }
         }
 
@@ -55,8 +62,8 @@ namespace Project_Management.View.UC
             dataGridView.Columns[5].Name = "Leave";
             dataGridView.Columns[6].Name = "Bonus";
             dataGridView.Columns[7].Name = "Allowance";
-            dataGridView.Columns[9].Name = "Tax";
-            dataGridView.Columns[8].Name = "Insurance";
+            dataGridView.Columns[8].Name = "Tax";
+            dataGridView.Columns[9].Name = "Insurance";
             dataGridView.Columns[10].Name = "Final salary";
             dataGridView.Columns[11].Name = "From day";
             dataGridView.Columns[12].Name = "To day";
@@ -71,6 +78,74 @@ namespace Project_Management.View.UC
                     s.totalHours?.ToString("0.0'h'"), s.overtimeHours?.ToString("0.0'h'"), s.leaveHours?.ToString("0.0'h'"), s.bonus, s.allowance,
                     s.tax, s.insurance, s.finalSalary, s.fromDate.ToString("dd/MM/yyyy"), s.toDate.ToString("dd/MM/yyyy"));
             }
+
+            ShowStatisticsData();
+        }
+
+        public string RemoveNonNumericCharacters(string input)
+        {
+            StringBuilder result = new StringBuilder();
+            foreach (char c in input)
+            {
+                if (char.IsDigit(c) || c == '.')
+                {
+                    result.Append(c);
+                }
+            }
+            return result.ToString();
+        }
+
+        private void ShowStatisticsData()
+        {
+            int countRow = datagridview_salary.RowCount;
+            double totalHours = 0;
+            double totalAllowances = 0;
+            double totalInsurances = 0;
+            double totalTaxs = 0;
+            double totalSalares = 0;
+            if(countRow > 0)
+            {
+                foreach (DataGridViewRow row in datagridview_salary.Rows)
+                {
+                    double temp = 0;
+                    
+                    if(row.Cells[3].Value != null)
+                    {
+                        temp = double.Parse(RemoveNonNumericCharacters(row.Cells[3].Value.ToString()));
+                        totalHours += temp;
+                        temp = 0;
+                    }
+                    if (row.Cells[7].Value != null)
+                    {
+                        temp = double.Parse(RemoveNonNumericCharacters(row.Cells[7].Value.ToString()));
+                        totalAllowances += temp;
+                        temp = 0;
+                    }
+                    if (row.Cells[9].Value != null)
+                    {
+                        temp = double.Parse(RemoveNonNumericCharacters(row.Cells[9].Value.ToString()));
+                        totalInsurances += temp;
+                        temp = 0;
+                    }
+                    if (row.Cells[8].Value != null)
+                    {
+                        temp = double.Parse(RemoveNonNumericCharacters(row.Cells[8].Value.ToString()));
+                        totalTaxs += temp;
+                        temp = 0;
+                    }
+                    if (row.Cells[10].Value != null)
+                    {
+                        temp = double.Parse(RemoveNonNumericCharacters(row.Cells[10].Value.ToString()));
+                        totalSalares += temp;
+                        temp = 0;
+                    }
+                }
+            }
+            label_totalHours.Text = totalHours.ToString() + "h";
+            label_totalAllowance.Text = "$" + totalAllowances.ToString();
+            label_totalInsurance.Text = "$" + totalInsurances.ToString();
+            label_totalTax.Text = "$" + totalTaxs.ToString();
+            label_totalFinalSalary.Text = "$" + totalSalares.ToString();
         }
 
         private void btn_caculateSalary_Click(object sender, EventArgs e)
@@ -80,7 +155,11 @@ namespace Project_Management.View.UC
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            LoadDataToDataGirdView(GetData(), datagridview_salary);
+            combobox_month.SelectedIndex = 0;
+            combobox_year.SelectedIndex = 0;
+
+            List<salary> listSalary = GetData();
+            SortListSalaryByLatest(listSalary);
         }
 
         private void button_remove_Click(object sender, EventArgs e)
@@ -94,7 +173,8 @@ namespace Project_Management.View.UC
                     {
                         _salaryDao.Value.DeleteAllSalary(selectedSalary);
                         selectedSalary = null;
-                        LoadDataToDataGirdView(GetData(), datagridview_salary);
+                        List<salary> listSalary = GetData();
+                        SortListSalaryByLatest(listSalary);
                     }
                 }
                 else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -107,7 +187,11 @@ namespace Project_Management.View.UC
 
         private void btn_showAll_Click(object sender, EventArgs e)
         {
-            LoadDataToDataGirdView(GetData(), datagridview_salary);
+            combobox_month.SelectedIndex = 0;
+            combobox_year.SelectedIndex = 0;
+
+            List<salary> listSalary = GetData();
+            SortListSalaryByLatest(listSalary);
         }
 
         private void combobox_month_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,7 +201,7 @@ namespace Project_Management.View.UC
                 int month = int.Parse(combobox_month.SelectedItem.ToString());
                 int year  = int.Parse(combobox_year.SelectedItem.ToString());
                 List<salary> listSalary = _salaryDao.Value.GetListSalaryByMonthOfYear(month, year);
-                LoadDataToDataGirdView(listSalary, datagridview_salary);
+                SortListSalaryByLatest(listSalary);
             } 
         }
 
@@ -128,7 +212,7 @@ namespace Project_Management.View.UC
                 int month = int.Parse(combobox_month.SelectedItem.ToString());
                 int year = int.Parse(combobox_year.SelectedItem.ToString());
                 List<salary> listSalary = _salaryDao.Value.GetListSalaryByMonthOfYear(month, year);
-                LoadDataToDataGirdView(listSalary, datagridview_salary);
+                SortListSalaryByLatest(listSalary);
             }
         }
 
@@ -152,6 +236,76 @@ namespace Project_Management.View.UC
                     selectedSalary = _salaryDao.Value.GetSalaryForUser(idUser, fromDate, toDate);
                 }
             }
+        }
+
+        private void SortListSalaryByLatest(List<salary> listSalary)
+        {
+            if(listSalary != null)
+            {
+                listSalary.Sort((x, y) =>
+                {
+                    if (x.fromDate == null && y.fromDate == null)
+                        return 0;
+                    else if (x.fromDate == null)
+                        return 1;
+                    else if (y.fromDate == null)
+                        return -1;
+                    else
+                        return DateTime.Compare(y.fromDate.Date, x.fromDate.Date);
+                });
+                this.listSalary = listSalary;
+
+                combobox_sortByDate.SelectedIndex = 0;
+                LoadDataToDataGirdView(this.listSalary, datagridview_salary);
+            }
+        }
+
+        private void SortListSalaryByOldest(List<salary> listSalary)
+        {
+            if (listSalary != null)
+            {
+                listSalary.Sort((x, y) =>
+                {
+                    if (x.fromDate == null && y.fromDate == null)
+                        return 0;
+                    else if (x.fromDate == null)
+                        return 1;
+                    else if (y.fromDate == null)
+                        return -1;
+                    else
+                        return DateTime.Compare(x.fromDate.Date, y.fromDate.Date);
+                });
+                this.listSalary = listSalary;
+
+                LoadDataToDataGirdView(this.listSalary, datagridview_salary);
+            }
+        }
+
+        private void combobox_sortByDate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = combobox_sortByDate.SelectedIndex;
+            switch (selectedIndex)
+            {
+                case 0:
+                    SortListSalaryByLatest(this.listSalary);
+                    break;
+                case 1:
+                    SortListSalaryByOldest(this.listSalary);
+                    break;
+                default:
+                    SortListSalaryByLatest(this.listSalary);
+                    break;
+            }
+        }
+
+        private void btn_showAllSalariesOf_Click(object sender, EventArgs e)
+        {
+            if (selectedSalary != null)
+            {
+                List<salary> listSalary = _salaryDao.Value.GetSalariesOfUserByID(selectedSalary.idUser);
+                SortListSalaryByLatest(listSalary);
+            }
+            else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcSalary));
             this.panelData = new Guna.UI2.WinForms.Guna2Panel();
             this.combobox_year = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -57,6 +57,8 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.btn_caculateSalary = new Guna.UI2.WinForms.Guna2Button();
             this.button_remove = new Guna.UI2.WinForms.Guna2Button();
+            this.combobox_sortByDate = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btn_showAllSalariesOf = new Guna.UI2.WinForms.Guna2Button();
             this.panelData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_salary)).BeginInit();
             this.panelFields.SuspendLayout();
@@ -72,6 +74,8 @@
             this.panelData.BorderColor = System.Drawing.Color.White;
             this.panelData.BorderRadius = 20;
             this.panelData.BorderThickness = 1;
+            this.panelData.Controls.Add(this.btn_showAllSalariesOf);
+            this.panelData.Controls.Add(this.combobox_sortByDate);
             this.panelData.Controls.Add(this.combobox_year);
             this.panelData.Controls.Add(this.combobox_month);
             this.panelData.Controls.Add(this.btn_showAll);
@@ -111,7 +115,7 @@
             "2026",
             "2027",
             "2028"});
-            this.combobox_year.Location = new System.Drawing.Point(211, 15);
+            this.combobox_year.Location = new System.Drawing.Point(197, 15);
             this.combobox_year.Margin = new System.Windows.Forms.Padding(2);
             this.combobox_year.Name = "combobox_year";
             this.combobox_year.Size = new System.Drawing.Size(93, 32);
@@ -145,7 +149,7 @@
             "10",
             "11",
             "12"});
-            this.combobox_month.Location = new System.Drawing.Point(106, 15);
+            this.combobox_month.Location = new System.Drawing.Point(91, 15);
             this.combobox_month.Margin = new System.Windows.Forms.Padding(2);
             this.combobox_month.Name = "combobox_month";
             this.combobox_month.Size = new System.Drawing.Size(93, 32);
@@ -162,7 +166,7 @@
             this.btn_showAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btn_showAll.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_showAll.ForeColor = System.Drawing.Color.Black;
-            this.btn_showAll.Location = new System.Drawing.Point(18, 15);
+            this.btn_showAll.Location = new System.Drawing.Point(12, 15);
             this.btn_showAll.Margin = new System.Windows.Forms.Padding(2);
             this.btn_showAll.Name = "btn_showAll";
             this.btn_showAll.Size = new System.Drawing.Size(72, 32);
@@ -192,36 +196,36 @@
             // 
             this.datagridview_salary.AllowUserToOrderColumns = true;
             this.datagridview_salary.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.datagridview_salary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            this.datagridview_salary.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.datagridview_salary.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridview_salary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridview_salary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.datagridview_salary.ColumnHeadersHeight = 60;
             this.datagridview_salary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridview_salary.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridview_salary.DefaultCellStyle = dataGridViewCellStyle23;
             this.datagridview_salary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.datagridview_salary.Location = new System.Drawing.Point(12, 63);
             this.datagridview_salary.Margin = new System.Windows.Forms.Padding(2);
             this.datagridview_salary.Name = "datagridview_salary";
             this.datagridview_salary.RowHeadersVisible = false;
             this.datagridview_salary.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.datagridview_salary.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            this.datagridview_salary.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.datagridview_salary.RowTemplate.Height = 30;
             this.datagridview_salary.Size = new System.Drawing.Size(916, 341);
             this.datagridview_salary.TabIndex = 0;
@@ -289,7 +293,7 @@
             this.label_basic.Name = "label_basic";
             this.label_basic.Size = new System.Drawing.Size(137, 26);
             this.label_basic.TabIndex = 92;
-            this.label_basic.Text = "Tổng giờ làm";
+            this.label_basic.Text = "Total working hours";
             this.label_basic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel1
@@ -333,7 +337,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 26);
             this.label3.TabIndex = 94;
-            this.label3.Text = "Tổng phụ cấp";
+            this.label3.Text = "Total allowance";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel2
@@ -372,12 +376,12 @@
             // 
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 54);
+            this.label5.Location = new System.Drawing.Point(13, 54);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 26);
+            this.label5.Size = new System.Drawing.Size(165, 26);
             this.label5.TabIndex = 94;
-            this.label5.Text = "Tổng tiền bảo hiểm";
+            this.label5.Text = "Total insurance amount";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel4
@@ -421,7 +425,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 26);
             this.label9.TabIndex = 98;
-            this.label9.Text = "Tổng lương ";
+            this.label9.Text = "Total salary";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -444,7 +448,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 26);
             this.label7.TabIndex = 96;
-            this.label7.Text = "Tổng thuế";
+            this.label7.Text = "Total tax";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_totalTax
@@ -522,6 +526,46 @@
             this.button_remove.TabIndex = 104;
             this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
+            // combobox_sortByDate
+            // 
+            this.combobox_sortByDate.BackColor = System.Drawing.Color.Transparent;
+            this.combobox_sortByDate.BorderRadius = 5;
+            this.combobox_sortByDate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combobox_sortByDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combobox_sortByDate.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.combobox_sortByDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_sortByDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.combobox_sortByDate.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.combobox_sortByDate.ForeColor = System.Drawing.Color.Black;
+            this.combobox_sortByDate.ItemHeight = 26;
+            this.combobox_sortByDate.Items.AddRange(new object[] {
+            "Latest",
+            "Oldest"});
+            this.combobox_sortByDate.Location = new System.Drawing.Point(304, 15);
+            this.combobox_sortByDate.Margin = new System.Windows.Forms.Padding(2);
+            this.combobox_sortByDate.Name = "combobox_sortByDate";
+            this.combobox_sortByDate.Size = new System.Drawing.Size(95, 32);
+            this.combobox_sortByDate.StartIndex = 0;
+            this.combobox_sortByDate.TabIndex = 110;
+            this.combobox_sortByDate.SelectedIndexChanged += new System.EventHandler(this.combobox_sortByDate_SelectedIndexChanged);
+            // 
+            // btn_showAllSalariesOf
+            // 
+            this.btn_showAllSalariesOf.BorderRadius = 15;
+            this.btn_showAllSalariesOf.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_showAllSalariesOf.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_showAllSalariesOf.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_showAllSalariesOf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_showAllSalariesOf.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_showAllSalariesOf.ForeColor = System.Drawing.Color.Black;
+            this.btn_showAllSalariesOf.Location = new System.Drawing.Point(693, 15);
+            this.btn_showAllSalariesOf.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_showAllSalariesOf.Name = "btn_showAllSalariesOf";
+            this.btn_showAllSalariesOf.Size = new System.Drawing.Size(135, 32);
+            this.btn_showAllSalariesOf.TabIndex = 111;
+            this.btn_showAllSalariesOf.Text = "All it\'s salaries";
+            this.btn_showAllSalariesOf.Click += new System.EventHandler(this.btn_showAllSalariesOf_Click);
+            // 
             // UcSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,5 +622,7 @@
         private Guna.UI2.WinForms.Guna2Button btn_showAll;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_year;
         private Guna.UI2.WinForms.Guna2ComboBox combobox_month;
+        private Guna.UI2.WinForms.Guna2ComboBox combobox_sortByDate;
+        private Guna.UI2.WinForms.Guna2Button btn_showAllSalariesOf;
     }
 }
