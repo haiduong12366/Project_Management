@@ -574,7 +574,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcTask";
             this.Size = new System.Drawing.Size(969, 640);
-            this.Load += new System.EventHandler(this.UC_Task_Load);
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Task)).EndInit();
             this.panelFields.ResumeLayout(false);

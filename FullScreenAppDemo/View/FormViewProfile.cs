@@ -54,7 +54,7 @@ namespace Project_Management.View
                 List<user_team> list = User_teamDAO.Instance.GetTeamByID(UserSession.LoggedInUser.id);
                 foreach (user_team team in list)
                 {
-                    tbTeam.Text = tbTeam.Text + TeamDAO.Instance.idTeamToString((int)team.idTeam);
+                    tbTeam.Text = TeamDAO.Instance.idTeamToString((int)team.idTeam);
                 }
             }
             pic = UserSession.LoggedInUser.avatar;

@@ -20,6 +20,7 @@ namespace Project_Management.View
     {
         private int idTask = 0;
         private Boolean isView = false;
+        private DateTime currentDeadline = DateTime.MinValue;
 
         private TeamDAO _teamDao = new TeamDAO();
         private UserDAO _userDao = new UserDAO();
@@ -100,6 +101,7 @@ namespace Project_Management.View
             {
                 Load(infoTask);
                 this.idTask = infoTask.id;
+                this.currentDeadline = (DateTime)infoTask.deadline;
                 ProjectDAO _projectDao = new ProjectDAO();
 
                 gboxTask.Text = "Update Task";
@@ -223,8 +225,18 @@ namespace Project_Management.View
                 idAssigee = (combbox_AssigneePerson.SelectedItem as user).id;
 
                 int idproject = (combbox_Project.SelectedItem as project).id;
-                double bonus = Math.Round((double)Convert.ToDouble(textBox_Bonus.Text), 3);
+                double bonus = 0;
                 int progress = int.Parse(combobox_progress.SelectedItem.ToString());
+
+                if(progress == 100 && DateTime.Now.Date > dateTime_deadline.Value.Date)
+                {
+                    bonus = 0;
+                    MessageBox.Show("Task completed after deadline!!! \n\nThere will be no bonus money");
+                }
+                else
+                {
+                    bonus = Math.Round((double)Convert.ToDouble(textBox_Bonus.Text), 3);
+                }
 
                 TaskDAO.Instance.UpdateTask(this.idTask, txtbox_Taskname.Text, txtbox_Desciption.Text,
                                               dateTime_deadline.Value, idTeam, idAssigee, progress, idproject, bonus);
@@ -265,8 +277,10 @@ namespace Project_Management.View
                 MessageBox.Show(@"Bonus must be a numeric value!!!");
                 return false;
             }
-            if (dateTime_deadline.Value.Date < DateTime.Now.Date)
+            if (this.currentDeadline != DateTime.MinValue && this.currentDeadline.Date != dateTime_deadline.Value.Date && dateTime_deadline.Value.Date < DateTime.Now.Date)
             {
+                var temp = this.currentDeadline.Date;
+                var tempp = dateTime_deadline.Value.Date;
                 MessageBox.Show(@"The chosen dealine is not suitable!!!");
                 return false;
             }

@@ -9,6 +9,7 @@ using Project_Management.Utils;
 using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Project_Management.DTO;
+using System.Windows.Controls;
 
 namespace Project_Management.DAO
 {
@@ -140,6 +141,11 @@ namespace Project_Management.DAO
             return result != null ? result.FirstOrDefault() : null;
         }
 
+        public List<salary> GetSalariesOfUserByID(int idUser)
+        {
+            return GetListSalaryByPosition().Where(t => t.idUser ==  (int)idUser).ToList();
+        }
+
         public void DeleteAllSalary(salary salaryDelete)
         {
             try
@@ -152,6 +158,17 @@ namespace Project_Management.DAO
             {
                 _util.Value.Alert("Deleted salary failed", FormAlert.enmType.Error);
             }
+        }
+
+        public void DeleteAllSalaryOfMonth( DateTime fromDate, DateTime toDate)
+        {
+            var rowDelete = entity.salaries.Where(t => t.fromDate == fromDate && t.toDate == toDate).ToList();
+            entity.salaries.RemoveRange(rowDelete);
+            entity.SaveChanges();
+
+            rowDelete = entity.salaries.Where(t => t.fromDate == fromDate && t.toDate == toDate).ToList();
+            entity.salaries.RemoveRange(rowDelete);
+            entity.SaveChanges();
         }
 }
 }
