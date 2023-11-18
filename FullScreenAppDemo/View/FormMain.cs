@@ -121,11 +121,12 @@ namespace Project_Management.View
                     }
                     break;
                 case 1:
-                    UcTask uCTask = new UcTask();
+                    UcTask uCTask = new UcTask(UserSession.LoggedInUser.id);
                     AddUc(uCTask);
                     break;
                 case 2:
-                   
+                    UcSalary uCSalary = new UcSalary(UserSession.LoggedInUser.id);
+                    AddUc(uCSalary);
                     break;
                 case 3:
                     UserSession.LogoutUser();

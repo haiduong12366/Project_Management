@@ -583,7 +583,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcSalary";
             this.Size = new System.Drawing.Size(969, 640);
-            this.Load += new System.EventHandler(this.UCSalary_Load);
             this.panelData.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_salary)).EndInit();
             this.panelFields.ResumeLayout(false);

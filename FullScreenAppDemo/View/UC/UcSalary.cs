@@ -13,12 +13,12 @@ namespace Project_Management.View.UC
 {
     public partial class UcSalary : UserControl
     {
-        private readonly Lazy<SalaryDAO> _salaryDao;
-        private readonly Lazy<UserDAO> _userDao;
+        private Lazy<SalaryDAO> _salaryDao;
+        private Lazy<UserDAO> _userDao;
         private salary selectedSalary = null;
         private List<salary> listSalary = null;
 
-        public UcSalary()
+        private void init()
         {
             InitializeComponent();
             _salaryDao = new Lazy<SalaryDAO>(() => new SalaryDAO());
@@ -27,9 +27,29 @@ namespace Project_Management.View.UC
             combobox_year.SelectedIndex = 0;
         }
 
-        private void UCSalary_Load(object sender, EventArgs e)
+        public UcSalary()
         {
-            List<salary> listSalary = GetData();
+            init();
+            LoadForm(-1);
+        }
+
+        public UcSalary(int idUser)
+        {
+            init();
+            LoadForm(idUser);
+        }
+
+        private void LoadForm(int idUser)
+        {
+            List<salary> listSalary = null;
+            if(idUser == -1)
+            {
+                listSalary = GetData();
+            }
+            else
+            {
+                listSalary = GetMySalaries(idUser);
+            }
             SortListSalaryByLatest(listSalary);
 
             if (_userDao.Value.IsHumanResources())
@@ -47,6 +67,11 @@ namespace Project_Management.View.UC
         private List<salary> GetData()
         {
             return _salaryDao.Value.GetListSalaryByPosition();
+        }
+
+        private List<salary> GetMySalaries(int idUser)
+        {
+            return _salaryDao.Value.GetSalariesOfUserByID(idUser);
         }
 
         private void LoadDataToDataGirdView(List<salary> salaryList, DataGridView dataGridView) 
