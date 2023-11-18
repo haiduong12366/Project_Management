@@ -129,8 +129,8 @@ namespace Project_Management.DAO
 
         public string idTeamToString(int id)
         {
-            var team = from t in entity.teams where t.id == id select t.name;
-            string name = team.ToString();
+            team team = entity.teams.SingleOrDefault(t => t.id == id);
+            string name = team.name;
             return name;
         }
 
