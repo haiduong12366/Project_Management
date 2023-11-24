@@ -180,6 +180,7 @@ namespace Project_Management.View.UC
                 ci.checkinTime = DateTime.Now;
                 ci.idUser = UserSession.LoggedInUser.id;
                 CheckIn_CheckOutDAO.Instance.AddCICO(ci);
+                check();
             }
             else
             {
