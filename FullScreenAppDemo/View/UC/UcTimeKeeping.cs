@@ -37,28 +37,37 @@ namespace Project_Management.View.UC
             datetime_date.Value = DateTime.Now.Date;
             datetime_Checkin.Value = DateTime.Now;
             datetime_Checkout.Value = DateTime.Now;
+            datetime_date.Enabled = false;
+            datetime_Checkin.Enabled = false;
+            datetime_Checkout.Enabled = false;
         }
 
         void LoadTimeWorking()
         {
             List<checkin_checkout> listCiCo = CheckIn_CheckOutDAO.Instance.GetCICOByIDUser(UserSession.LoggedInUser.id, selectindexthang);
-            label_totalDate.Text = listCiCo.Count.ToString();
-            float totaltime = 0;
-            float timeleave = 0;
-            float ot = 0;
-            foreach (checkin_checkout c in listCiCo)
+            if (listCiCo != null)
             {
-                totaltime += (float)c.totalHours;
-                if (c.totalHours < 8)
-                    timeleave += (8 - (float)c.totalHours);
-                else
+                label_totalDate.Text = listCiCo.Count.ToString();
+                float totaltime = 0;
+                float timeleave = 0;
+                float ot = 0;
+                foreach (checkin_checkout c in listCiCo)
                 {
-                    ot += ((float)c.totalHours - 8);
+                    if (c.totalHours != null)
+                    {
+                        totaltime += (float)c.totalHours;
+                        if (c.totalHours < 8)
+                            timeleave += (8 - (float)c.totalHours);
+                        else
+                        {
+                            ot += ((float)c.totalHours - 8);
+                        }
+                    }
                 }
+                label_totalHours.Text = totaltime.ToString();
+                label_leaveHours.Text = timeleave.ToString();
+                label_overtimeHours.Text = ot.ToString();
             }
-            label_totalHours.Text = totaltime.ToString();
-            label_leaveHours.Text = timeleave.ToString();
-            label_overtimeHours.Text = ot.ToString();
         }
         void LoadCB()
         {
@@ -179,7 +188,7 @@ namespace Project_Management.View.UC
                     cico.checkoutTime = DateTime.Now;
                     DateTime d1 = (DateTime)cico.checkoutTime;
                     DateTime d2 = cico.checkinTime;
-                    cico.totalHours =   Math.Round((d1 - d2).TotalHours,2);
+                    cico.totalHours = Math.Round((d1 - d2).TotalHours, 2);
                     CheckIn_CheckOutDAO.Instance.UpdateCICO(cico);
                 }
             }
