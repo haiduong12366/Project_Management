@@ -62,11 +62,13 @@ namespace Project_Management.View.UC
             {
                 btn_caculateSalary.Visible = true;
                 btn_showAllSalariesOf.Visible = true;
+                guna2Button1.Visible = true;
             }
             else
             {
                 btn_caculateSalary.Visible = false;
                 btn_showAllSalariesOf.Visible = false;
+                guna2Button1.Visible = false;
             }
         }
 
@@ -341,7 +343,13 @@ namespace Project_Management.View.UC
 
         private void cbprint_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(false);
+            form1.ShowDialog();
+        }
+        
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1(true);
             form1.ShowDialog();
         }
     }

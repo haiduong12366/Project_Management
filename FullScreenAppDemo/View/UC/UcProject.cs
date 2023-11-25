@@ -32,6 +32,11 @@ namespace Project_Management.View.UC
                 buttonAdd.Visible = false;
                 button_remove.Visible = false;
             }
+            else
+            {
+                buttonAdd.Visible = true;
+                button_remove.Visible = true;
+            }
         }
         private void LoadCB()
         {
