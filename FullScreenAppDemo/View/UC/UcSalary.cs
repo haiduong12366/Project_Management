@@ -6,6 +6,12 @@ using Project_Management.Utils;
 using System.Globalization;
 using System.Text;
 using System.Windows.Media.TextFormatting;
+using System.Linq;
+using Project_Management.DTO;
+using CrystalDecisions.ReportSource;
+using Project_Management.View.Crystal_Report;
+using System.Data;
+using System.Drawing;
 
 // ReSharper disable All
 
@@ -331,6 +337,12 @@ namespace Project_Management.View.UC
                 SortListSalaryByLatest(listSalary);
             }
             else MessageBox.Show("You haven't selected a task!!!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void cbprint_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }
