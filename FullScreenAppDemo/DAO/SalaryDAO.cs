@@ -128,7 +128,7 @@ namespace Project_Management.DAO
 
             if(userIds.Count() <= 0)
             {
-                _util.Value.Alert("No check-in data for this!!!", FormAlert.enmType.Error);
+                _util.Value.Alert("No checkin data for this!!!", FormAlert.enmType.Error);
                 return;
             }
 
