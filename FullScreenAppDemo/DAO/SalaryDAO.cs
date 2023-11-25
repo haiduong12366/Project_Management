@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Project_Management.DTO;
 using System.Windows.Controls;
+using System.Runtime.Remoting.Contexts;
 
 namespace Project_Management.DAO
 {
@@ -112,15 +113,24 @@ namespace Project_Management.DAO
             return newSalaryOfUser;
         }
 
-        private List<int> GetUserIdList()
+        private List<int> GetUserIdList(DateTime fromDate, DateTime toDate)
         {
-            List<int> userIdList = entity.users.Select(u => u.id).ToList();
-            return userIdList;
+            List<int> listIdUser = (from c in entity.checkin_checkout
+                        where c.date >= fromDate && c.date <= toDate
+                        select c.idUser).ToList();
+
+            return listIdUser;
         }
 
         public void CalculateAndSaveSalaryForAllEmployees(DateTime fromDate, DateTime toDate)
         {
-            List<int> userIds = GetUserIdList();
+            List<int> userIds = GetUserIdList(fromDate, toDate);
+
+            if(userIds.Count() <= 0)
+            {
+                _util.Value.Alert("No checkin data for this!!!", FormAlert.enmType.Error);
+                return;
+            }
 
             foreach (int idUser in userIds)
             {
