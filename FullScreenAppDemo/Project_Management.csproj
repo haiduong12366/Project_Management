@@ -201,11 +201,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="View\Crystal_Report\Form1.cs">
+    <Compile Include="View\Crystal_Report\CrystalReportForSalary.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Crystal_Report\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\Crystal_Report\CrystalReportForSalary.Designer.cs">
+      <DependentUpon>CrystalReportForSalary.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormAddTeam.cs">
       <SubType>Form</SubType>
@@ -363,8 +363,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Crystal_Report\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="View\Crystal_Report\CrystalReportForSalary.resx">
+      <DependentUpon>CrystalReportForSalary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAddTeam.resx">
       <DependentUpon>FormAddTeam.cs</DependentUpon>

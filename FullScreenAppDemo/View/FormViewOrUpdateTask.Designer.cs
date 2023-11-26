@@ -478,6 +478,7 @@
             this.Controls.Add(this.gboxTask);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormViewOrUpdateTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormViewOrUpdateTask";
             ((System.ComponentModel.ISupportInitialize)(this.picturebox_teamAvatar)).EndInit();
             this.circleProgressBar.ResumeLayout(false);

@@ -133,6 +133,7 @@
             this.Controls.Add(this.guna2Button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCaculateSalary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCaculateSalary";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

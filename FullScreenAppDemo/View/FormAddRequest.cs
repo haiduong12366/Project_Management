@@ -43,8 +43,18 @@ namespace Project_Management
         {
             if (CheckDataInput())
             {
-                if(RequestDAO.Instance.AddRequest(datetime_startDate.Value, datetime_endDate.Value, datetime_requestDate.Value, txtbox_content.Text))
+                int check = (datetime_endDate.Value - datetime_startDate.Value).Days;
+                if(check <0)
+                {
+                    MessageBox.Show("Invalid date", "Error");
+                    return;
+                }
+                if (RequestDAO.Instance.AddRequest(datetime_startDate.Value, datetime_endDate.Value, datetime_requestDate.Value, txtbox_content.Text))
+                {
                     ClearFields();
+                    this.Close();
+                }
+                
             }
             
         }

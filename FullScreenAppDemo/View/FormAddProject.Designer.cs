@@ -301,6 +301,7 @@ namespace Project_Management
             this.Controls.Add(this.tb_projectName);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddProject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddProject";
             this.ResumeLayout(false);
             this.PerformLayout();

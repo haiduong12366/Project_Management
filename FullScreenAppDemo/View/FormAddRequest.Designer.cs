@@ -222,6 +222,7 @@ namespace Project_Management
             this.Controls.Add(this.txtbox_content);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormAddRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddRequest";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);

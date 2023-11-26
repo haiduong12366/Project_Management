@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Project_Management.View.Crystal_Report
 {
-    public partial class Form1 : Form
+    public partial class CrystalReportForSalary : Form
     {
-        public Form1(bool iS)
+        public CrystalReportForSalary(bool iS)
         {
             InitializeComponent();
 

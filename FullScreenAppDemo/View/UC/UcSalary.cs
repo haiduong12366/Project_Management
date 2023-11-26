@@ -343,13 +343,13 @@ namespace Project_Management.View.UC
 
         private void cbprint_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(false);
+            CrystalReportForSalary form1 = new CrystalReportForSalary(false);
             form1.ShowDialog();
         }
         
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(true);
+            CrystalReportForSalary form1 = new CrystalReportForSalary(true);
             form1.ShowDialog();
         }
     }
